@@ -1,0 +1,18 @@
+import { t as supabase } from "./supabase-JQDjdr8i.js";
+import { createFileRoute, lazyRouteComponent } from "@tanstack/react-router";
+//#region src/routes/research.tsx
+var $$splitComponentImporter = () => import("./research-Dh0XTvna.js");
+var Route = createFileRoute("/research")({
+	head: () => ({ meta: [{ title: "Research — Neutrino Science Club" }, {
+		name: "description",
+		content: "Papers, replications, and open datasets from the NSC research wing."
+	}] }),
+	loader: async () => {
+		const { data: research_papers, error } = await supabase.from("research_papers").select("*").order("sort_order");
+		if (error) throw error;
+		return { research_papers };
+	},
+	component: lazyRouteComponent($$splitComponentImporter, "component")
+});
+//#endregion
+export { Route as t };
