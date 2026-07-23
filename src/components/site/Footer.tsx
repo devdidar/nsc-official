@@ -1,5 +1,5 @@
 import { Link } from "@tanstack/react-router";
-import { Atom, Github, Instagram, Linkedin, Twitter, Youtube, ArrowUpRight } from "lucide-react";
+import { Facebook, Linkedin, ArrowUpRight } from "lucide-react";
 
 export function Footer() {
   return (
@@ -17,7 +17,7 @@ export function Footer() {
               />
               <span className="flex flex-col leading-tight">
                 <span className="font-display text-base font-bold whitespace-nowrap">Neutrino Science Club</span>
-                <span className="text-[10px] uppercase tracking-[0.22em] text-muted-foreground">Curiosity · Code · Cosmos</span>
+                <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Science in Thought · Innovation in Creation</span>
               </span>
             </Link>
             <p className="mt-5 max-w-md text-sm text-muted-foreground leading-relaxed">
@@ -25,11 +25,24 @@ export function Footer() {
               and computation — building the next generation of curious minds.
             </p>
             <div className="mt-6 flex items-center gap-2">
-              {[Github, Twitter, Linkedin, Instagram, Youtube].map((I, i) => (
-                <a key={i} href="#" className="grid h-10 w-10 place-items-center rounded-xl glass hover:bg-white/10 transition-colors">
-                  <I className="h-4 w-4" />
-                </a>
-              ))}
+              <a
+                href="https://www.facebook.com/neutrinoscienceclub"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="Facebook"
+                className="grid h-10 w-10 place-items-center rounded-xl glass hover:bg-white/10 transition-colors"
+              >
+                <Facebook className="h-4 w-4" />
+              </a>
+              <a
+                href="https://www.linkedin.com/company/neutrino-science-club/"
+                target="_blank"
+                rel="noreferrer"
+                aria-label="LinkedIn"
+                className="grid h-10 w-10 place-items-center rounded-xl glass hover:bg-white/10 transition-colors"
+              >
+                <Linkedin className="h-4 w-4" />
+              </a>
             </div>
           </div>
 

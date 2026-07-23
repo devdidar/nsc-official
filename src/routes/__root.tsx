@@ -63,7 +63,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Neutrino Science Club — Curiosity, Code, Cosmos" },
+      { title: "Neutrino Science Club — Science in Thought · Innovation in Creation" },
       { name: "description", content: "Neutrino Science Club (NSC) is a student-led community exploring science, AI, robotics, astronomy and research through workshops, bootcamps and projects." },
       { name: "author", content: "Neutrino Science Club" },
       { name: "theme-color", content: "#0b1020" },
@@ -72,7 +72,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:title", content: "Neutrino Science Club" },
-      { name: "twitter:description", content: "Curiosity, Code, Cosmos." },
+      { name: "twitter:description", content: "Science in Thought · Innovation in Creation." },
     ],
     links: [
       { rel: "stylesheet", href: appCss },

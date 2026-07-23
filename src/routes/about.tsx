@@ -27,7 +27,7 @@ function About() {
       <PageHero
         eyebrow="About NSC"
         title={<>A community for people who <span className="text-gradient">build the future</span>.</>}
-        description="Neutrino began in 2019 with twelve students and a whiteboard. Today it's a global collective of curious minds — meeting weekly, shipping monthly, publishing yearly."
+        description="Neutrino began in 2024 with a passion for discovery. Today it's a growing collective of curious minds — meeting weekly, shipping monthly, competing nationally."
       >
         <CTAButton to="/team">Meet the team</CTAButton>
         <CTAButton to="/contact" variant="ghost">Get involved</CTAButton>
@@ -55,8 +55,8 @@ function About() {
 
           <div className="grid grid-cols-2 gap-3" data-reveal>
             {[
-              ["12", "Founding members"],
-              ["1,200+", "Active today"],
+              ["2024", "Founded"],
+              ["300+", "Active members"],
               ["46", "Awards won"],
               ["22", "Partner schools"],
             ].map(([v, l]) => (

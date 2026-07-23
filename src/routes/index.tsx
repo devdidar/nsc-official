@@ -45,7 +45,7 @@ const projects = [
 ] as const;
 
 const stats = [
-  { value: 1200, suffix: "+", label: "Active members" },
+  { value: 300, suffix: "+", label: "Active members" },
   { value: 180, suffix: "+", label: "Workshops hosted" },
   { value: 74, suffix: "", label: "Live projects" },
   { value: 22, suffix: "", label: "Partner schools" },
@@ -53,11 +53,11 @@ const stats = [
 ] as const;
 
 const timeline = [
-  { year: "2019", title: "Founded", desc: "Twelve students, one whiteboard, a lot of questions." },
-  { year: "2021", title: "First bootcamp", desc: "48-hour AI sprint kicks off our flagship series." },
-  { year: "2023", title: "Research wing", desc: "Mentored papers accepted at three regional conferences." },
-  { year: "2024", title: "Robotics lab", desc: "A dedicated lab with 3D printers, mills and dev boards." },
-  { year: "2026", title: "1000+ members", desc: "A global network across 22 partner institutions." },
+  { year: "2024", title: "Founded", desc: "Neutrino Science Club was officially established." },
+  { year: "2025", title: "First National Science Fair", desc: "Organized and participated in our first national science fair." },
+  { year: "2025", title: "Builder Wing", desc: "Launched Builder Wing and won 2 national competitions." },
+  { year: "2026", title: "Robotics Lab", desc: "Established a dedicated robotics lab." },
+  { year: "Present", title: "300+ Members", desc: "Expanded into a thriving community of over 300 active members." },
 ] as const;
 
 const testimonials = [
@@ -376,7 +376,7 @@ function Timeline() {
           {timeline.map((t, i) => {
             const right = i % 2 === 1;
             return (
-              <li key={t.year} data-reveal className="reveal relative sm:grid sm:grid-cols-2 sm:gap-10">
+              <li key={`${t.year}-${i}`} data-reveal className="reveal relative sm:grid sm:grid-cols-2 sm:gap-10">
                 <div className={`hidden sm:block ${right ? "order-2" : ""}`} />
                 <div className={`relative pl-12 sm:pl-0 ${right ? "sm:pr-10 sm:text-right sm:order-1" : "sm:pl-10"}`}>
                   <span className="absolute left-2 sm:left-1/2 top-1.5 -translate-x-1/2 grid h-5 w-5 place-items-center rounded-full bg-gradient-primary shadow-glow">

@@ -598,6 +598,16 @@ var Database = createLucideIcon("database", [
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
+var Facebook = createLucideIcon("facebook", [["path", {
+	d: "M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z",
+	key: "1jg4f8"
+}]]);
+/**
+* @license lucide-react v0.575.0 - ISC
+*
+* This source code is licensed under the ISC license.
+* See the LICENSE file in the root directory of this source tree.
+*/
 var FileArchive = createLucideIcon("file-archive", [
 	["path", {
 		d: "M13.659 22H18a2 2 0 0 0 2-2V8a2.4 2.4 0 0 0-.706-1.706l-3.588-3.588A2.4 2.4 0 0 0 14 2H6a2 2 0 0 0-2 2v11.5",
@@ -787,34 +797,6 @@ var HeartHandshake = createLucideIcon("heart-handshake", [["path", {
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
-var Instagram = createLucideIcon("instagram", [
-	["rect", {
-		width: "20",
-		height: "20",
-		x: "2",
-		y: "2",
-		rx: "5",
-		ry: "5",
-		key: "2e1cvw"
-	}],
-	["path", {
-		d: "M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z",
-		key: "9exkf1"
-	}],
-	["line", {
-		x1: "17.5",
-		x2: "17.51",
-		y1: "6.5",
-		y2: "6.5",
-		key: "r4j83e"
-	}]
-]);
-/**
-* @license lucide-react v0.575.0 - ISC
-*
-* This source code is licensed under the ISC license.
-* See the LICENSE file in the root directory of this source tree.
-*/
 var Layers = createLucideIcon("layers", [
 	["path", {
 		d: "M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z",
@@ -944,16 +926,6 @@ var Menu = createLucideIcon("menu", [
 		key: "1djgab"
 	}]
 ]);
-/**
-* @license lucide-react v0.575.0 - ISC
-*
-* This source code is licensed under the ISC license.
-* See the LICENSE file in the root directory of this source tree.
-*/
-var MessageCircle = createLucideIcon("message-circle", [["path", {
-	d: "M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719",
-	key: "1sd12s"
-}]]);
 /**
 * @license lucide-react v0.575.0 - ISC
 *
@@ -1320,22 +1292,9 @@ var X = createLucideIcon("x", [["path", {
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
-var Youtube = createLucideIcon("youtube", [["path", {
-	d: "M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17",
-	key: "1q2vi4"
-}], ["path", {
-	d: "m10 15 5-3-5-3z",
-	key: "1jp15x"
-}]]);
-/**
-* @license lucide-react v0.575.0 - ISC
-*
-* This source code is licensed under the ISC license.
-* See the LICENSE file in the root directory of this source tree.
-*/
 var Zap = createLucideIcon("zap", [["path", {
 	d: "M4 14a1 1 0 0 1-.78-1.63l9.9-10.2a.5.5 0 0 1 .86.46l-1.92 6.02A1 1 0 0 0 13 10h7a1 1 0 0 1 .78 1.63l-9.9 10.2a.5.5 0 0 1-.86-.46l1.92-6.02A1 1 0 0 0 11 14z",
 	key: "1xq2db"
 }]]);
 //#endregion
-export { Bot as $, HeartHandshake as A, Compass as B, MapPin as C, Lightbulb as D, Linkedin as E, FlaskConical as F, CircleCheck as G, CodeXml as H, FileText as I, ChevronDown as J, ChevronRight as K, FileArchive as L, Github as M, GitBranch as N, Layers as O, Gamepad2 as P, Calculator as Q, Database as R, Menu as S, Lock as T, Clock as U, Code as V, CircleQuestionMark as W, Calendar as X, Check as Y, CalendarDays as Z, School as _, Video as a, Microscope as b, Trophy as c, Target as d, BookOpen as et, Star as f, Send as g, ShieldCheck as h, Wrench as i, ArrowRight as it, GraduationCap as j, Instagram as k, Terminal as l, Sigma as m, Youtube as n, Award as nt, Users as o, Sparkles as p, ChevronLeft as q, X as r, ArrowUpRight as rt, Twitter as s, Zap as t, Beaker as tt, Telescope as u, Rocket as v, Mail as w, MessageCircle as x, Quote as y, Cpu as z };
+export { Beaker as $, GitBranch as A, CodeXml as B, Lock as C, HeartHandshake as D, Layers as E, Facebook as F, ChevronLeft as G, CircleQuestionMark as H, Database as I, Calendar as J, ChevronDown as K, Cpu as L, FlaskConical as M, FileText as N, GraduationCap as O, FileArchive as P, BookOpen as Q, Compass as R, Mail as S, Lightbulb as T, CircleCheck as U, Clock as V, ChevronRight as W, Calculator as X, CalendarDays as Y, Bot as Z, Rocket as _, Users as a, Menu as b, Terminal as c, Star as d, Award as et, Sparkles as f, School as g, Send as h, Video as i, Gamepad2 as j, Github as k, Telescope as l, ShieldCheck as m, X as n, ArrowRight as nt, Twitter as o, Sigma as p, Check as q, Wrench as r, Trophy as s, Zap as t, ArrowUpRight as tt, Target as u, Quote as v, Linkedin as w, MapPin as x, Microscope as y, Code as z };

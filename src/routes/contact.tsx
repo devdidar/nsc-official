@@ -1,6 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
-import { Mail, MapPin, MessageCircle, Send, CheckCircle2 } from "lucide-react";
+import { Mail, MapPin, Send, CheckCircle2 } from "lucide-react";
 import { PageHero, Section, GlassCard, Eyebrow } from "@/components/site/primitives";
 import { useRevealAll } from "@/hooks/use-reveal";
 import { sendContactEmail } from "@/lib/email";
@@ -65,14 +65,7 @@ function Contact() {
             <GlassCard className="p-6">
               <MapPin className="h-5 w-5 text-primary" />
               <div className="mt-4 text-xs uppercase tracking-widest text-muted-foreground">Lab</div>
-              <div className="mt-1 font-display text-lg">Room 3B, Sagan Building</div>
-              <div className="text-sm text-muted-foreground">Open Mon–Sat, 4pm – late</div>
-            </GlassCard>
-            <GlassCard className="p-6">
-              <MessageCircle className="h-5 w-5 text-primary" />
-              <div className="mt-4 text-xs uppercase tracking-widest text-muted-foreground">Discord</div>
-              <div className="mt-1 font-display text-lg">neutrino.chat/invite</div>
-              <div className="text-sm text-muted-foreground">1,200+ members online</div>
+              <div className="mt-1 font-display text-lg">College gate, Tongi, Gazipur.</div>
             </GlassCard>
           </div>
 

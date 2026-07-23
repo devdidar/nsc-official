@@ -2,7 +2,7 @@ import { i as __toESM } from "../_runtime.mjs";
 import { t as cn } from "./utils-C_uf36nf.mjs";
 import { c as require_react, s as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[...].mjs";
 import { h as Link } from "../_libs/@tanstack/react-router+[...].mjs";
-import { it as ArrowRight } from "../_libs/lucide-react.mjs";
+import { nt as ArrowRight } from "../_libs/lucide-react.mjs";
 //#region node_modules/.nitro/vite/services/ssr/assets/use-reveal-b167KTr4.js
 var import_react = /* @__PURE__ */ __toESM(require_react());
 var import_jsx_runtime = require_jsx_runtime();
