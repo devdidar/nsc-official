@@ -1,0 +1,145 @@
+//#region node_modules/.nitro/vite/services/ssr/assets/_tanstack-start-manifest_v-DPvPJiLL.js
+var tsrStartManifest = () => ({ routes: {
+	__root__: {
+		filePath: "/Users/didarulazammahi/Desktop/nsc-official/src/routes/__root.tsx",
+		children: [
+			"/",
+			"/about",
+			"/activities",
+			"/bootcamps",
+			"/contact",
+			"/events",
+			"/gallery",
+			"/research",
+			"/resources",
+			"/sitemap.xml",
+			"/team",
+			"/bootcamp/python"
+		],
+		preloads: [
+			"/assets/index-BmwtVpHd.js",
+			"/assets/utils-Bun0kNdv.js",
+			"/assets/createClientRpc-B9EtXeb6.js",
+			"/assets/redirect-Dhm19zUi.js"
+		],
+		scripts: [{ attrs: {
+			type: "module",
+			async: !0,
+			src: "/assets/index-BmwtVpHd.js"
+		} }]
+	},
+	"/": {
+		filePath: "/Users/didarulazammahi/Desktop/nsc-official/src/routes/index.tsx",
+		children: void 0,
+		preloads: [
+			"/assets/routes-RzPQqHHF.js",
+			"/assets/use-reveal-LGChwvdm.js",
+			"/assets/telescope-CkXWbsbE.js",
+			"/assets/calendar-days-DPvDOoLm.js",
+			"/assets/cpu-BZvVZRn3.js",
+			"/assets/mail-CqRGmFP7.js",
+			"/assets/Blobs-CrqVoU9J.js",
+			"/assets/rocket-C9C6SbC4.js",
+			"/assets/sparkles-DWsGohGS.js"
+		]
+	},
+	"/about": {
+		filePath: "/Users/didarulazammahi/Desktop/nsc-official/src/routes/about.tsx",
+		children: void 0,
+		preloads: [
+			"/assets/about-DHYSpVjY.js",
+			"/assets/use-reveal-LGChwvdm.js",
+			"/assets/heart-handshake-Dff3FENk.js",
+			"/assets/rocket-C9C6SbC4.js",
+			"/assets/sparkles-DWsGohGS.js"
+		]
+	},
+	"/activities": {
+		filePath: "/Users/didarulazammahi/Desktop/nsc-official/src/routes/activities.tsx",
+		children: void 0,
+		preloads: [
+			"/assets/activities-W_mohvvB.js",
+			"/assets/use-reveal-LGChwvdm.js",
+			"/assets/telescope-CkXWbsbE.js",
+			"/assets/cpu-BZvVZRn3.js",
+			"/assets/sparkles-DWsGohGS.js"
+		]
+	},
+	"/bootcamps": {
+		filePath: "/Users/didarulazammahi/Desktop/nsc-official/src/routes/bootcamps.tsx",
+		children: void 0,
+		preloads: ["/assets/bootcamps-BNKNeCAx.js", "/assets/use-reveal-LGChwvdm.js"]
+	},
+	"/contact": {
+		filePath: "/Users/didarulazammahi/Desktop/nsc-official/src/routes/contact.tsx",
+		children: void 0,
+		preloads: [
+			"/assets/contact-BJMQPcwW.js",
+			"/assets/use-reveal-LGChwvdm.js",
+			"/assets/mail-CqRGmFP7.js",
+			"/assets/map-pin-FZsxndJD.js"
+		]
+	},
+	"/events": {
+		filePath: "/Users/didarulazammahi/Desktop/nsc-official/src/routes/events.tsx",
+		children: void 0,
+		preloads: [
+			"/assets/events-DxjsGTmO.js",
+			"/assets/use-reveal-LGChwvdm.js",
+			"/assets/calendar-days-DPvDOoLm.js",
+			"/assets/clock-Cfrj-ASC.js",
+			"/assets/map-pin-FZsxndJD.js"
+		]
+	},
+	"/gallery": {
+		filePath: "/Users/didarulazammahi/Desktop/nsc-official/src/routes/gallery.tsx",
+		children: void 0,
+		preloads: [
+			"/assets/gallery-OaqCKebf.js",
+			"/assets/use-reveal-LGChwvdm.js",
+			"/assets/chevron-right-DcVl9_15.js"
+		]
+	},
+	"/research": {
+		filePath: "/Users/didarulazammahi/Desktop/nsc-official/src/routes/research.tsx",
+		children: void 0,
+		preloads: [
+			"/assets/research-DKic0kd5.js",
+			"/assets/use-reveal-LGChwvdm.js",
+			"/assets/file-text-s4oYWEZl.js"
+		]
+	},
+	"/resources": {
+		filePath: "/Users/didarulazammahi/Desktop/nsc-official/src/routes/resources.tsx",
+		children: void 0,
+		preloads: [
+			"/assets/resources-D4IkfhnB.js",
+			"/assets/use-reveal-LGChwvdm.js",
+			"/assets/video-Luizcjm0.js"
+		]
+	},
+	"/team": {
+		filePath: "/Users/didarulazammahi/Desktop/nsc-official/src/routes/team.tsx",
+		children: void 0,
+		preloads: ["/assets/team-CCx9g1U0.js", "/assets/use-reveal-LGChwvdm.js"]
+	},
+	"/bootcamp/python": {
+		filePath: "/Users/didarulazammahi/Desktop/nsc-official/src/routes/bootcamp/python.tsx",
+		children: void 0,
+		preloads: [
+			"/assets/python-C2rOYchX.js",
+			"/assets/use-reveal-LGChwvdm.js",
+			"/assets/video-Luizcjm0.js",
+			"/assets/chevron-right-DcVl9_15.js",
+			"/assets/clock-Cfrj-ASC.js",
+			"/assets/cpu-BZvVZRn3.js",
+			"/assets/file-text-s4oYWEZl.js",
+			"/assets/heart-handshake-Dff3FENk.js",
+			"/assets/mail-CqRGmFP7.js",
+			"/assets/Blobs-CrqVoU9J.js",
+			"/assets/sparkles-DWsGohGS.js"
+		]
+	}
+} });
+//#endregion
+export { tsrStartManifest };

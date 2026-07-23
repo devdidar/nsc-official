@@ -1,0 +1,600 @@
+import { i as __toESM } from "../_runtime.mjs";
+import { t as cn } from "./utils-C_uf36nf.mjs";
+import { c as require_react, s as require_jsx_runtime } from "../_libs/@radix-ui/react-accordion+[...].mjs";
+import { c as HeadContent, d as Outlet, f as lazyRouteComponent, g as useRouter, h as Link, m as createRootRouteWithContext, p as createFileRoute, s as Scripts, u as createRouter } from "../_libs/@tanstack/react-router+[...].mjs";
+import { E as Linkedin, H as CodeXml, M as Github, S as Menu, k as Instagram, n as Youtube, r as X, rt as ArrowUpRight, s as Twitter } from "../_libs/lucide-react.mjs";
+import { t as Route$7 } from "./activities-Bv9SVVJE.mjs";
+import { t as Route$8 } from "./events-HQGJYx_-.mjs";
+import { t as Route$9 } from "./gallery-DFLdmwlw.mjs";
+import { t as Route$10 } from "./research-C1-zDTp1.mjs";
+import { t as Route$11 } from "./resources-DT-eDAj0.mjs";
+import { t as Route$12 } from "./team-FyPOhIkG.mjs";
+import { t as QueryClient } from "../_libs/tanstack__query-core.mjs";
+import { t as QueryClientProvider } from "../_libs/tanstack__react-query.mjs";
+//#region node_modules/.nitro/vite/services/ssr/assets/router-vhXAEy8m.js
+var import_react = /* @__PURE__ */ __toESM(require_react());
+var import_jsx_runtime = require_jsx_runtime();
+var styles_default = "/assets/styles-DsmiFzHS.css";
+var links = [
+	{
+		to: "/",
+		label: "Home"
+	},
+	{
+		to: "/about",
+		label: "About"
+	},
+	{
+		to: "/activities",
+		label: "Activities"
+	},
+	{
+		to: "/events",
+		label: "Events"
+	},
+	{
+		to: "/bootcamps",
+		label: "Bootcamps"
+	},
+	{
+		to: "/research",
+		label: "Research"
+	},
+	{
+		to: "/resources",
+		label: "Resources"
+	},
+	{
+		to: "/team",
+		label: "Team"
+	},
+	{
+		to: "/gallery",
+		label: "Gallery"
+	},
+	{
+		to: "/contact",
+		label: "Contact"
+	}
+];
+function Navbar() {
+	const [scrolled, setScrolled] = (0, import_react.useState)(false);
+	const [open, setOpen] = (0, import_react.useState)(false);
+	(0, import_react.useEffect)(() => {
+		const on = () => setScrolled(window.scrollY > 12);
+		on();
+		window.addEventListener("scroll", on, { passive: true });
+		return () => window.removeEventListener("scroll", on);
+	}, []);
+	(0, import_react.useEffect)(() => {
+		document.body.style.overflow = open ? "hidden" : "";
+		return () => {
+			document.body.style.overflow = "";
+		};
+	}, [open]);
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("header", {
+		className: cn("fixed inset-x-0 top-0 z-50 transition-all duration-500", scrolled ? "py-2" : "py-4"),
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+			className: "mx-auto max-w-7xl px-4 sm:px-6",
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: cn("flex items-center justify-between rounded-2xl px-4 sm:px-5 py-3 transition-all duration-500", scrolled ? "glass-strong shadow-elevated" : "bg-transparent"),
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
+						to: "/",
+						className: "group flex items-center gap-2.5",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+							src: "/favicon.svg",
+							alt: "Neutrino Science Club Logo",
+							className: "h-8 w-8 object-contain transition-transform group-hover:scale-105"
+						}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+							className: "font-display text-sm sm:text-base font-bold tracking-tight text-foreground whitespace-nowrap",
+							children: "Neutrino Science Club"
+						})]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("nav", {
+						className: "hidden lg:flex items-center gap-1",
+						children: links.map((l) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+							to: l.to,
+							className: "relative rounded-lg px-3 py-1.5 text-sm text-muted-foreground transition-colors hover:text-foreground",
+							activeProps: { className: "text-foreground" },
+							activeOptions: { exact: l.to === "/" },
+							children: l.label
+						}, l.to))
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+						className: "hidden lg:flex items-center gap-2",
+						children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+							to: "/bootcamp/python",
+							className: "relative rounded-full bg-gradient-primary px-4 py-2 text-sm font-medium text-primary-foreground animate-glow-border animate-pulse-glow transition-transform hover:scale-[1.06] hover:shadow-[0_0_32px_oklch(0.72_0.19_245_/_0.5)]",
+							children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+								className: "relative z-10 flex items-center gap-1.5",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CodeXml, { className: "h-4 w-4" }), "Python Bootcamp"]
+							})
+						})
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+						"aria-label": "Menu",
+						onClick: () => setOpen((s) => !s),
+						className: "lg:hidden grid h-10 w-10 place-items-center rounded-xl glass",
+						children: open ? /* @__PURE__ */ (0, import_jsx_runtime.jsx)(X, { className: "h-5 w-5" }) : /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Menu, { className: "h-5 w-5" })
+					})
+				]
+			})
+		}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+			className: cn("lg:hidden fixed inset-x-0 top-[76px] mx-4 rounded-3xl transition-all duration-300 origin-top", open ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-95 pointer-events-none"),
+			children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+				className: "glass-strong rounded-3xl p-4 shadow-elevated",
+				children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "grid gap-1",
+					children: [links.map((l) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+						to: l.to,
+						onClick: () => setOpen(false),
+						className: "rounded-xl px-4 py-3 text-sm text-muted-foreground hover:bg-white/5 hover:text-foreground",
+						activeProps: { className: "bg-white/5 text-foreground" },
+						activeOptions: { exact: l.to === "/" },
+						children: l.label
+					}, l.to)), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
+						to: "/bootcamp/python",
+						onClick: () => setOpen(false),
+						className: "mt-2 flex items-center justify-center gap-1.5 rounded-xl bg-gradient-primary px-4 py-3 text-center text-sm font-medium text-primary-foreground animate-glow-border",
+						children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)(CodeXml, { className: "h-4 w-4" }), "Python Bootcamp"]
+					})]
+				})
+			})
+		})]
+	});
+}
+function Footer() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("footer", {
+		className: "relative mt-32 border-t border-white/5",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", { className: "pointer-events-none absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "mx-auto max-w-7xl px-4 sm:px-6 py-16",
+			children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]",
+				children: [
+					/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)(Link, {
+							to: "/",
+							className: "flex items-center gap-2.5",
+							children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("img", {
+								src: "/favicon.svg",
+								alt: "Neutrino Science Club Logo",
+								className: "h-9 w-9 object-contain"
+							}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("span", {
+								className: "flex flex-col leading-tight",
+								children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: "font-display text-base font-bold whitespace-nowrap",
+									children: "Neutrino Science Club"
+								}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("span", {
+									className: "text-[10px] uppercase tracking-[0.22em] text-muted-foreground",
+									children: "Curiosity · Code · Cosmos"
+								})]
+							})]
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+							className: "mt-5 max-w-md text-sm text-muted-foreground leading-relaxed",
+							children: "A student-led community exploring the frontiers of science, engineering and computation — building the next generation of curious minds."
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+							className: "mt-6 flex items-center gap-2",
+							children: [
+								Github,
+								Twitter,
+								Linkedin,
+								Instagram,
+								Youtube
+							].map((I, i) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+								href: "#",
+								className: "grid h-10 w-10 place-items-center rounded-xl glass hover:bg-white/10 transition-colors",
+								children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(I, { className: "h-4 w-4" })
+							}, i))
+						})
+					] }),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FooterCol, {
+						title: "Explore",
+						links: [
+							["About", "/about"],
+							["Activities", "/activities"],
+							["Events", "/events"],
+							["Python Bootcamp", "/bootcamp/python"]
+						]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FooterCol, {
+						title: "Community",
+						links: [
+							["Research", "/research"],
+							["Resources", "/resources"],
+							["Team", "/team"],
+							["Gallery", "/gallery"]
+						]
+					}),
+					/* @__PURE__ */ (0, import_jsx_runtime.jsx)(FooterCol, {
+						title: "Reach us",
+						links: [
+							["Contact", "/contact"],
+							["Partnerships", "/contact"],
+							["Press kit", "#"],
+							["Code of conduct", "#"]
+						]
+					})
+				]
+			}), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+				className: "mt-14 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-white/5 pt-6 text-xs text-muted-foreground",
+				children: [/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("p", { children: [
+					"© ",
+					(/* @__PURE__ */ new Date()).getFullYear(),
+					" Neutrino Science Club. Crafted with curiosity."
+				] }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "flex items-center gap-4",
+					children: [
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+							href: "#",
+							className: "hover:text-foreground",
+							children: "Privacy"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+							href: "#",
+							className: "hover:text-foreground",
+							children: "Terms"
+						}),
+						/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("a", {
+							href: "#",
+							className: "inline-flex items-center gap-1 hover:text-foreground",
+							children: ["Status ", /* @__PURE__ */ (0, import_jsx_runtime.jsx)(ArrowUpRight, { className: "h-3 w-3" })]
+						})
+					]
+				})]
+			})]
+		})]
+	});
+}
+function FooterCol({ title, links }) {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", { children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h4", {
+		className: "text-xs uppercase tracking-[0.2em] text-muted-foreground",
+		children: title
+	}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("ul", {
+		className: "mt-4 space-y-2.5 text-sm",
+		children: links.map(([label, href]) => /* @__PURE__ */ (0, import_jsx_runtime.jsx)("li", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+			to: href,
+			className: "text-foreground/80 hover:text-foreground transition-colors",
+			children: label
+		}) }, label))
+	})] });
+}
+function NotFoundComponent() {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+		className: "flex min-h-screen items-center justify-center px-4",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "max-w-md text-center",
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
+					className: "font-display text-8xl font-bold text-gradient",
+					children: "404"
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h2", {
+					className: "mt-4 text-xl font-semibold",
+					children: "Lost in the void"
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+					className: "mt-2 text-sm text-muted-foreground",
+					children: "This page drifted beyond our observable universe."
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+					className: "mt-6",
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Link, {
+						to: "/",
+						className: "inline-flex items-center justify-center rounded-full bg-gradient-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-glow",
+						children: "Return home"
+					})
+				})
+			]
+		})
+	});
+}
+function ErrorComponent({ error, reset }) {
+	console.error(error);
+	const router = useRouter();
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)("div", {
+		className: "flex min-h-screen items-center justify-center px-4",
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "max-w-md text-center",
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("h1", {
+					className: "font-display text-2xl font-semibold",
+					children: "Something went sideways"
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("p", {
+					className: "mt-2 text-sm text-muted-foreground",
+					children: "Try again — we'll rerun the experiment."
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+					className: "mt-6 flex flex-wrap justify-center gap-2",
+					children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("button", {
+						onClick: () => {
+							router.invalidate();
+							reset();
+						},
+						className: "rounded-full bg-gradient-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-glow",
+						children: "Try again"
+					}), /* @__PURE__ */ (0, import_jsx_runtime.jsx)("a", {
+						href: "/",
+						className: "rounded-full glass px-5 py-2.5 text-sm",
+						children: "Go home"
+					})]
+				})
+			]
+		})
+	});
+}
+var Route$6 = createRootRouteWithContext()({
+	head: () => ({
+		meta: [
+			{ charSet: "utf-8" },
+			{
+				name: "viewport",
+				content: "width=device-width, initial-scale=1"
+			},
+			{ title: "Neutrino Science Club — Curiosity, Code, Cosmos" },
+			{
+				name: "description",
+				content: "Neutrino Science Club (NSC) is a student-led community exploring science, AI, robotics, astronomy and research through workshops, bootcamps and projects."
+			},
+			{
+				name: "author",
+				content: "Neutrino Science Club"
+			},
+			{
+				name: "theme-color",
+				content: "#0b1020"
+			},
+			{
+				property: "og:title",
+				content: "Neutrino Science Club"
+			},
+			{
+				property: "og:description",
+				content: "A student-led community exploring the frontiers of science and technology."
+			},
+			{
+				property: "og:type",
+				content: "website"
+			},
+			{
+				name: "twitter:card",
+				content: "summary_large_image"
+			},
+			{
+				name: "twitter:title",
+				content: "Neutrino Science Club"
+			},
+			{
+				name: "twitter:description",
+				content: "Curiosity, Code, Cosmos."
+			}
+		],
+		links: [
+			{
+				rel: "stylesheet",
+				href: styles_default
+			},
+			{
+				rel: "icon",
+				href: "/favicon.svg",
+				type: "image/svg+xml"
+			},
+			{
+				rel: "preconnect",
+				href: "https://fonts.googleapis.com"
+			},
+			{
+				rel: "preconnect",
+				href: "https://fonts.gstatic.com",
+				crossOrigin: "anonymous"
+			},
+			{
+				rel: "stylesheet",
+				href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap"
+			}
+		]
+	}),
+	shellComponent: RootShell,
+	component: RootComponent,
+	notFoundComponent: NotFoundComponent,
+	errorComponent: ErrorComponent
+});
+function RootShell({ children }) {
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("html", {
+		lang: "en",
+		className: "dark",
+		children: [/* @__PURE__ */ (0, import_jsx_runtime.jsx)("head", { children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(HeadContent, {}) }), /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("body", { children: [children, /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Scripts, {})] })]
+	});
+}
+function RootComponent() {
+	const { queryClient } = Route$6.useRouteContext();
+	return /* @__PURE__ */ (0, import_jsx_runtime.jsx)(QueryClientProvider, {
+		client: queryClient,
+		children: /* @__PURE__ */ (0, import_jsx_runtime.jsxs)("div", {
+			className: "relative min-h-screen",
+			children: [
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Navbar, {}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)("main", {
+					className: "relative",
+					children: /* @__PURE__ */ (0, import_jsx_runtime.jsx)(Outlet, {})
+				}),
+				/* @__PURE__ */ (0, import_jsx_runtime.jsx)(Footer, {})
+			]
+		})
+	});
+}
+var $$splitComponentImporter$4 = () => import("./routes-5zNwGUkP.mjs");
+var Route$5 = createFileRoute("/")({
+	head: () => ({ meta: [{ title: "Neutrino Science Club — Science in Thought, Innovation in Creation." }, {
+		name: "description",
+		content: "A student-led community building the next generation of scientists, engineers and researchers."
+	}] }),
+	component: lazyRouteComponent($$splitComponentImporter$4, "component")
+});
+var $$splitComponentImporter$3 = () => import("./about-BnkmuRJ0.mjs");
+var Route$4 = createFileRoute("/about")({
+	head: () => ({ meta: [{ title: "About — Neutrino Science Club" }, {
+		name: "description",
+		content: "The story, values and people behind Neutrino Science Club."
+	}] }),
+	component: lazyRouteComponent($$splitComponentImporter$3, "component")
+});
+var $$splitComponentImporter$2 = () => import("./bootcamps-DMs-dViP.mjs");
+var Route$3 = createFileRoute("/bootcamps")({
+	head: () => ({ meta: [{ title: "Bootcamps — Neutrino Science Club" }, {
+		name: "description",
+		content: "Immersive Python Bootcamp — learn from zero to real projects with live classes, mentorship, and certification."
+	}] }),
+	component: lazyRouteComponent($$splitComponentImporter$2, "component")
+});
+var $$splitComponentImporter$1 = () => import("./contact-CwgV-n96.mjs");
+var Route$2 = createFileRoute("/contact")({
+	head: () => ({ meta: [{ title: "Contact — Neutrino Science Club" }, {
+		name: "description",
+		content: "Reach the Neutrino Science Club — join, partner, mentor, or just say hi."
+	}] }),
+	component: lazyRouteComponent($$splitComponentImporter$1, "component")
+});
+var BASE_URL = "";
+var Route$1 = createFileRoute("/sitemap.xml")({ server: { handlers: { GET: async () => {
+	const xml = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${[
+		{
+			path: "/",
+			changefreq: "weekly",
+			priority: "1.0"
+		},
+		{
+			path: "/about",
+			changefreq: "monthly",
+			priority: "0.8"
+		},
+		{
+			path: "/activities",
+			changefreq: "monthly",
+			priority: "0.8"
+		},
+		{
+			path: "/events",
+			changefreq: "weekly",
+			priority: "0.9"
+		},
+		{
+			path: "/bootcamps",
+			changefreq: "monthly",
+			priority: "0.8"
+		},
+		{
+			path: "/research",
+			changefreq: "monthly",
+			priority: "0.7"
+		},
+		{
+			path: "/resources",
+			changefreq: "monthly",
+			priority: "0.7"
+		},
+		{
+			path: "/team",
+			changefreq: "monthly",
+			priority: "0.6"
+		},
+		{
+			path: "/gallery",
+			changefreq: "monthly",
+			priority: "0.6"
+		},
+		{
+			path: "/contact",
+			changefreq: "yearly",
+			priority: "0.5"
+		}
+	].map((e) => `  <url>\n    <loc>${BASE_URL}${e.path}</loc>\n    <changefreq>${e.changefreq}</changefreq>\n    <priority>${e.priority}</priority>\n  </url>`).join("\n")}\n</urlset>`;
+	return new Response(xml, { headers: {
+		"Content-Type": "application/xml",
+		"Cache-Control": "public, max-age=3600"
+	} });
+} } } });
+var $$splitComponentImporter = () => import("./python-Bmnzze10.mjs");
+var Route = createFileRoute("/bootcamp/python")({
+	head: () => ({ meta: [{ title: "NSC Python Bootcamp — Launch Scholarship | Neutrino Science Club" }, {
+		name: "description",
+		content: "Claim your Launch Scholarship for the Founding Batch of NSC Python Bootcamp. Regular ৳299 — FREE for the First 50 Students. 4 Weeks, 8 Live Classes, Projects & Certificate."
+	}] }),
+	component: lazyRouteComponent($$splitComponentImporter, "component")
+});
+var rootRouteChildren = {
+	IndexRoute: Route$5.update({
+		id: "/",
+		path: "/",
+		getParentRoute: () => Route$6
+	}),
+	AboutRoute: Route$4.update({
+		id: "/about",
+		path: "/about",
+		getParentRoute: () => Route$6
+	}),
+	ActivitiesRoute: Route$7.update({
+		id: "/activities",
+		path: "/activities",
+		getParentRoute: () => Route$6
+	}),
+	BootcampsRoute: Route$3.update({
+		id: "/bootcamps",
+		path: "/bootcamps",
+		getParentRoute: () => Route$6
+	}),
+	ContactRoute: Route$2.update({
+		id: "/contact",
+		path: "/contact",
+		getParentRoute: () => Route$6
+	}),
+	EventsRoute: Route$8.update({
+		id: "/events",
+		path: "/events",
+		getParentRoute: () => Route$6
+	}),
+	GalleryRoute: Route$9.update({
+		id: "/gallery",
+		path: "/gallery",
+		getParentRoute: () => Route$6
+	}),
+	ResearchRoute: Route$10.update({
+		id: "/research",
+		path: "/research",
+		getParentRoute: () => Route$6
+	}),
+	ResourcesRoute: Route$11.update({
+		id: "/resources",
+		path: "/resources",
+		getParentRoute: () => Route$6
+	}),
+	SitemapDotxmlRoute: Route$1.update({
+		id: "/sitemap.xml",
+		path: "/sitemap.xml",
+		getParentRoute: () => Route$6
+	}),
+	TeamRoute: Route$12.update({
+		id: "/team",
+		path: "/team",
+		getParentRoute: () => Route$6
+	}),
+	BootcampPythonRoute: Route.update({
+		id: "/bootcamp/python",
+		path: "/bootcamp/python",
+		getParentRoute: () => Route$6
+	})
+};
+var routeTree = Route$6._addFileChildren(rootRouteChildren)._addFileTypes();
+var getRouter = () => {
+	return createRouter({
+		routeTree,
+		context: { queryClient: new QueryClient() },
+		scrollRestoration: true,
+		defaultPreloadStaleTime: 0
+	});
+};
+//#endregion
+export { getRouter };
