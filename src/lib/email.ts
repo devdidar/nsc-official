@@ -1,5 +1,5 @@
 import { createServerFn } from "@tanstack/react-start";
-import { supabase } from "./supabase";
+import { supabase, getSupabaseAdmin } from "./supabase";
 
 export const sendContactEmail = createServerFn({ method: "POST" })
   .validator(
@@ -26,11 +26,12 @@ export const sendContactEmail = createServerFn({ method: "POST" })
       const resend = new Resend(apiKey);
 
       const fromEmail = process.env.RESEND_FROM_EMAIL || "NSC Contact <onboarding@resend.dev>";
-      console.log("[sendContactEmail] Sending email from:", fromEmail, "to: neutrinoscienceclub@gmail.com");
+      const toEmail = process.env.RESEND_TO_EMAIL || "neutrinoscienceclub@gmail.com";
+      console.log("[sendContactEmail] Sending email from:", fromEmail, "to:", toEmail);
 
       const response = await resend.emails.send({
         from: fromEmail,
-        to: ["neutrinoscienceclub@gmail.com"],
+        to: [toEmail],
         subject: data.subject || "New contact form message",
         html: `<p><strong>Name:</strong> ${data.name}</p><p><strong>Email:</strong> ${data.email}</p><p><strong>Message:</strong></p><p>${data.message.replace(/\n/g, "<br>")}</p>`,
       });
@@ -42,7 +43,8 @@ export const sendContactEmail = createServerFn({ method: "POST" })
         return { success: false, error: `Email failed: ${response.error.message || "Unknown error"}` };
       }
 
-      const { error: submitError } = await supabase
+      const supabaseClient = process.env.SUPABASE_SERVICE_ROLE_KEY ? getSupabaseAdmin() : supabase;
+      const { error: submitError } = await supabaseClient
         .from("contact_messages")
         .insert([data]);
 
