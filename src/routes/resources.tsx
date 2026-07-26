@@ -43,7 +43,7 @@ function Resources() {
             return (
             <GlassCard key={title} data-reveal style={{ transitionDelay: `${k * 50}ms` }} className="group">
               <div className="flex items-center gap-3">
-                <div className="inline-grid h-10 w-10 place-items-center rounded-xl bg-gradient-primary shadow-glow">
+                <div className="inline-grid h-10 w-10 place-items-center rounded-xl bg-primary">
                   <I className="h-4 w-4 text-primary-foreground" />
                 </div>
                 <span className="rounded-full glass px-2.5 py-1 text-[10px] uppercase tracking-widest text-muted-foreground">{tag}</span>

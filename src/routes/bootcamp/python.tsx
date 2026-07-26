@@ -302,9 +302,9 @@ function PythonBootcamp() {
 
 function ScarcityBanner() {
   return (
-    <div className="relative z-40 bg-gradient-to-r from-primary/20 via-cyan/25 to-purple-500/20 border-b border-primary/30 pt-24 pb-3 px-4 text-center text-xs sm:text-sm font-medium">
-      <div className="mx-auto max-w-7xl flex items-center justify-center gap-2 flex-wrap text-foreground/90">
-        <span className="inline-flex items-center gap-1.5 rounded-full bg-primary/20 border border-primary/40 px-2.5 py-0.5 text-[11px] font-bold text-primary">
+    <div className="relative z-40 bg-secondary/80 border-b border-secondary pt-20 sm:pt-24 pb-3 px-4 text-center text-xs sm:text-sm font-medium">
+      <div className="mx-auto max-w-7xl flex items-center justify-center gap-2 flex-wrap text-foreground">
+        <span className="inline-flex items-center gap-1.5 rounded-full bg-primary text-primary-foreground px-2.5 py-0.5 text-[11px] font-bold">
           <Zap className="h-3 w-3" /> Launch Scholarship
         </span>
         <span>
@@ -327,7 +327,7 @@ function BootcampHero() {
         <div className="grid gap-12 lg:grid-cols-12 items-center">
           {/* Left — Content */}
           <div className="lg:col-span-7 animate-blur-in">
-            <div className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs animate-glow-border">
+            <div className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs">
               <Sparkles className="h-3.5 w-3.5 text-primary" />
               <span className="uppercase tracking-[0.18em] font-semibold text-primary">Founding Batch • Launch Scholarship</span>
             </div>
@@ -338,7 +338,7 @@ function BootcampHero() {
             </h1>
 
             <p className="mt-5 text-lg text-muted-foreground leading-relaxed max-w-xl">
-              Master coding step-by-step — from your first <code className="text-cyan font-mono text-base px-1.5 py-0.5 rounded bg-white/5">print("Hello World")</code> to building your own interactive <strong className="text-foreground font-semibold">Python Arcade</strong>.
+              Master coding step-by-step — from your first <code className="text-secondary-foreground font-mono text-base px-2 py-0.5 rounded-md bg-secondary">print("Hello World")</code> to building your own interactive <strong className="text-foreground font-semibold">Python Arcade</strong>.
             </p>
 
             <div className="mt-6 flex flex-wrap gap-3 text-sm text-muted-foreground">
@@ -357,7 +357,7 @@ function BootcampHero() {
               <CTAButton href="https://forms.gle/UzsuiN3qGDn4Xuge7" target="_blank" rel="noopener noreferrer">
                 Register Now
               </CTAButton>
-              <a href="#curriculum" className="group inline-flex items-center gap-2 rounded-full glass px-5 py-2.5 text-sm font-medium hover:bg-white/10 transition-colors">
+              <a href="#curriculum" className="group inline-flex items-center gap-2 rounded-full bg-white/80 border border-black/5 px-5 py-2.5 text-sm font-semibold text-foreground hover:bg-white transition-colors">
                 <BookOpen className="h-4 w-4 text-primary" />
                 View 4-Week Syllabus
               </a>
@@ -366,7 +366,7 @@ function BootcampHero() {
             <div className="mt-8 flex items-center gap-4 text-sm text-muted-foreground">
               <div className="flex -space-x-2">
                 {[Code2, Gamepad2, Star, Trophy].map((IconComponent, i) => (
-                  <div key={i} className="grid h-8 w-8 place-items-center rounded-full bg-gradient-primary text-primary-foreground text-xs font-bold ring-2 ring-background">
+                  <div key={i} className="grid h-8 w-8 place-items-center rounded-full bg-primary text-primary-foreground text-xs font-bold ring-2 ring-background">
                     <IconComponent className="h-4 w-4 text-primary-foreground" />
                   </div>
                 ))}
@@ -387,20 +387,20 @@ function BootcampHero() {
 
 function HeroScholarshipCard() {
   return (
-    <div className="relative rounded-3xl glass-strong p-6 sm:p-8 border border-primary/30 shadow-elevated overflow-hidden animate-glow-border">
+    <div className="relative rounded-3xl bg-white/90 border border-black/5 p-6 sm:p-8 overflow-hidden">
       {/* Background glow */}
-      <div className="pointer-events-none absolute -top-20 -right-20 h-64 w-64 rounded-full bg-primary/20 blur-3xl" />
-      <div className="pointer-events-none absolute -bottom-20 -left-20 h-56 w-56 rounded-full bg-cyan/20 blur-3xl" />
+      <div className="pointer-events-none absolute -top-20 -right-20 h-64 w-64 rounded-full bg-primary/10 blur-3xl" />
+      <div className="pointer-events-none absolute -bottom-20 -left-20 h-56 w-56 rounded-full bg-secondary blur-3xl" />
 
       <div className="relative">
         <div className="flex items-center justify-between gap-2">
           <span className="text-xs uppercase tracking-widest font-semibold text-muted-foreground font-mono">NSC Python Bootcamp</span>
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-primary px-3 py-1 text-xs font-bold text-primary-foreground shadow-glow">
+          <span className="inline-flex items-center gap-1.5 rounded-full bg-primary px-3 py-1 text-xs font-bold text-primary-foreground">
             <Sparkles className="h-3 w-3" /> Launch Scholarship
           </span>
         </div>
 
-        <div className="mt-6 border-y border-white/10 py-5">
+        <div className="mt-6 border-y border-black/5 py-5">
           <div className="flex items-center justify-between">
             <span className="text-sm text-muted-foreground">Regular Fee</span>
             <span className="text-lg font-medium text-muted-foreground line-through decoration-primary/70">৳299</span>
@@ -471,7 +471,7 @@ function ValueSection() {
         {valueCards.map(({ icon: I, title, desc }, i) => (
           <div key={title} data-reveal className="reveal" style={{ transitionDelay: `${i * 60}ms` }}>
             <GlassCard className="h-full p-6 hover:border-primary/40 transition-colors">
-              <div className="mb-4 inline-grid h-12 w-12 place-items-center rounded-xl bg-gradient-primary shadow-glow">
+              <div className="mb-4 inline-grid h-12 w-12 place-items-center rounded-xl bg-primary">
                 <I className="h-5 w-5 text-primary-foreground" />
               </div>
               <h3 className="font-display text-lg font-semibold flex items-center gap-2">
@@ -506,13 +506,13 @@ function CurriculumSection() {
           <div
             key={week.weekNum}
             data-reveal
-            className="reveal rounded-3xl glass-strong p-6 sm:p-8 shadow-elevated border border-white/10"
+            className="reveal rounded-3xl glass-strong p-6 sm:p-8 border border-white/10"
             style={{ transitionDelay: `${wIdx * 100}ms` }}
           >
             {/* Week Header */}
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 border-b border-white/10 pb-6">
               <div>
-                <div className="inline-flex items-center gap-2 rounded-full bg-gradient-primary/20 border border-primary/40 px-3 py-1 text-xs font-semibold text-primary">
+                <div className="inline-flex items-center gap-2 rounded-full bg-primary/20 border border-primary/40 px-3 py-1 text-xs font-semibold text-primary">
                   <Calendar className="h-3.5 w-3.5" />
                   <span>{week.weekNum}</span>
                 </div>
@@ -582,9 +582,9 @@ function CurriculumSection() {
 
             {/* Milestone Card if present */}
             {week.milestone && (
-              <div className="mt-6 rounded-2xl bg-gradient-to-r from-primary/20 via-cyan/15 to-purple-500/20 border border-primary/40 p-6 shadow-glow">
+              <div className="mt-6 rounded-2xl bg-primary/15 border border-primary/40 p-6">
                 <div className="flex items-center gap-2">
-                  <span className="inline-flex items-center gap-1.5 rounded-full bg-gradient-primary px-3 py-1 text-xs font-bold text-primary-foreground shadow-glow">
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-primary px-3 py-1 text-xs font-bold text-primary-foreground">
                     <Layers className="h-3.5 w-3.5" />
                     {week.milestone.badge}
                   </span>
@@ -618,7 +618,7 @@ function WhatYoullBuild() {
         {projects.map(({ icon: I, name, desc }, i) => (
           <div key={name} data-reveal className="reveal" style={{ transitionDelay: `${i * 60}ms` }}>
             <GlassCard className="h-full p-6 text-left hover:border-primary/40 transition-colors">
-              <div className="mb-4 inline-grid h-11 w-11 place-items-center rounded-xl bg-gradient-primary shadow-glow">
+              <div className="mb-4 inline-grid h-11 w-11 place-items-center rounded-xl bg-primary">
                 <I className="h-5 w-5 text-primary-foreground" />
               </div>
               <h3 className="font-display font-semibold text-lg">{name}</h3>
@@ -654,7 +654,7 @@ function MeetInstructor() {
       </div>
 
       <div className="mt-14 max-w-5xl mx-auto" data-reveal>
-        <div className="relative overflow-hidden rounded-[32px] glass-strong p-8 sm:p-12 shadow-elevated border border-primary/20">
+        <div className="relative overflow-hidden rounded-[32px] glass-strong p-8 sm:p-12 border border-primary/20">
           {/* Background glow accents */}
           <div className="pointer-events-none absolute -top-32 -left-32 h-[350px] w-[350px] rounded-full opacity-20 blur-3xl bg-primary" />
           <div className="pointer-events-none absolute -bottom-32 -right-32 h-[350px] w-[350px] rounded-full opacity-20 blur-3xl bg-cyan" />
@@ -663,11 +663,11 @@ function MeetInstructor() {
             {/* Left Column: Portrait & Details */}
             <div className="lg:col-span-5 flex flex-col items-center text-center">
               <div className="relative group">
-                <div className="absolute -inset-1.5 rounded-3xl bg-gradient-primary opacity-50 blur-lg group-hover:opacity-75 transition duration-500" />
+                <div className="absolute -inset-1.5 rounded-3xl bg-primary opacity-30 blur-lg group-hover:opacity-50 transition duration-500" />
                 <img
                   src="/instructor_mahi.png"
                   alt="Didarul Azam Mahi - Lead Instructor"
-                  className="relative h-72 w-72 object-cover object-center rounded-2xl border border-white/10 shadow-elevated"
+                  className="relative h-72 w-72 object-cover object-center rounded-2xl border border-white/10"
                 />
               </div>
 
@@ -715,7 +715,7 @@ function MeetInstructor() {
               </div>
 
               {/* Personal Promise Card */}
-              <div className="mt-6 rounded-2xl bg-gradient-to-r from-primary/15 via-cyan/10 to-purple-500/15 border border-primary/30 p-5 sm:p-6 shadow-glow">
+              <div className="mt-6 rounded-2xl bg-primary/10 border border-primary/30 p-5 sm:p-6">
                 <div className="flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-primary">
                   <HeartHandshake className="h-4 w-4" />
                   <span>My Promise to Every Student</span>
@@ -764,7 +764,7 @@ function LearningTimeline() {
         <div className="relative flex items-start gap-0 min-w-[850px] px-4">
           <div className="absolute top-8 left-8 right-8 h-0.5 bg-white/10">
             <div
-              className="h-full bg-gradient-primary origin-left transition-transform duration-[2s] ease-out"
+              className="h-full bg-primary origin-left transition-transform duration-[2s] ease-out"
               style={{ transform: visible ? "scaleX(1)" : "scaleX(0)" }}
             />
           </div>
@@ -779,7 +779,7 @@ function LearningTimeline() {
                 transition: `opacity 0.6s ease ${i * 150}ms, transform 0.6s ease ${i * 150}ms`,
               }}
             >
-              <div className="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-gradient-primary shadow-glow text-primary-foreground font-bold text-sm">
+              <div className="mx-auto grid h-16 w-16 place-items-center rounded-2xl bg-primary text-primary-foreground font-bold text-sm">
                 {item.week}
               </div>
               <h3 className="mt-4 font-display font-semibold text-sm">{item.title}</h3>
@@ -826,7 +826,7 @@ function TestimonialsSection() {
                   <Quote className="h-8 w-8 text-primary/60" />
                   <p className="mt-5 text-lg text-foreground/90 leading-relaxed italic">"{t.quote}"</p>
                   <div className="mt-6 flex items-center gap-3 border-t border-white/5 pt-5">
-                    <div className="grid h-12 w-12 place-items-center rounded-full bg-gradient-primary text-primary-foreground font-bold">
+                    <div className="grid h-12 w-12 place-items-center rounded-full bg-primary text-primary-foreground font-bold">
                       {t.name.split(" ").map((s) => s[0]).slice(0, 2).join("")}
                     </div>
                     <div>
@@ -851,7 +851,7 @@ function TestimonialsSection() {
               key={i}
               onClick={() => setActive(i)}
               className={`h-2 rounded-full transition-all duration-300 ${
-                i === active ? "w-8 bg-gradient-primary" : "w-2 bg-white/20"
+                i === active ? "w-8 bg-primary" : "w-2 bg-white/20"
               }`}
             />
           ))}
@@ -913,10 +913,9 @@ function PricingSection() {
       </div>
 
       <div className="mt-14 mx-auto max-w-lg" data-reveal>
-        <div className="relative overflow-hidden rounded-[28px] glass-strong p-px shadow-elevated animate-glow-border">
+        <div className="relative overflow-hidden rounded-[28px] glass-strong p-px">
           <div className="relative rounded-[27px] bg-card/80 p-8 sm:p-10">
-            <div className="pointer-events-none absolute -top-20 -right-20 h-[300px] w-[300px] rounded-full opacity-25 blur-3xl"
-              style={{ background: "radial-gradient(circle, oklch(0.72 0.19 245 / 0.5), transparent 60%)" }} />
+
 
             <div className="relative">
               <div className="text-center">
@@ -946,13 +945,13 @@ function PricingSection() {
               </div>
 
               <div className="mt-6 rounded-xl bg-primary/10 border border-primary/20 p-3 text-center text-xs text-primary font-medium">
-                ⚡ This scholarship is available only for the first 50 registrations.
+                This scholarship is available only for the first 50 registrations.
               </div>
 
               <ul className="mt-6 space-y-3">
                 {pricingFeatures.map((feature) => (
                   <li key={feature} className="flex items-center gap-3 text-sm">
-                    <div className="grid h-5 w-5 place-items-center rounded-full bg-gradient-primary shrink-0">
+                    <div className="grid h-5 w-5 place-items-center rounded-full bg-primary shrink-0">
                       <Check className="h-3 w-3 text-primary-foreground" />
                     </div>
                     <span className="text-foreground/90">{feature}</span>
@@ -965,7 +964,7 @@ function PricingSection() {
                   href="https://forms.gle/UzsuiN3qGDn4Xuge7"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex w-full items-center justify-center gap-2 rounded-full bg-gradient-primary px-6 py-3.5 text-sm font-medium text-primary-foreground shadow-glow hover:scale-[1.02] transition-transform"
+                  className="flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground hover:scale-[1.02] transition-transform"
                 >
                   Register Now — Claim Launch Scholarship
                   <ArrowRight className="h-4 w-4" />
@@ -985,8 +984,7 @@ function PricingSection() {
 function FinalCTA() {
   return (
     <Section>
-      <div data-reveal className="reveal relative overflow-hidden rounded-[32px] glass-strong p-10 sm:p-16 text-center shadow-elevated">
-        <div className="pointer-events-none absolute inset-0 opacity-70" style={{ background: "var(--gradient-hero)" }} />
+      <div data-reveal className="reveal relative overflow-hidden rounded-[32px] glass-strong p-10 sm:p-16 text-center">
         <div className="pointer-events-none absolute inset-0 grid-bg opacity-40" />
 
         <div className="relative mx-auto max-w-2xl">
@@ -1006,7 +1004,7 @@ function FinalCTA() {
               href="https://forms.gle/UzsuiN3qGDn4Xuge7"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-gradient-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-glow hover:scale-[1.03] transition-transform"
+              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:scale-[1.03] transition-transform"
             >
               Register Now <ArrowRight className="h-4 w-4" />
             </a>

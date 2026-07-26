@@ -25,7 +25,7 @@ function NotFoundComponent() {
         <div className="mt-6">
           <Link
             to="/"
-            className="inline-flex items-center justify-center rounded-full bg-gradient-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-glow"
+            className="inline-flex items-center justify-center rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground"
           >
             Return home
           </Link>
@@ -47,7 +47,7 @@ function ErrorComponent({ error, reset }: { error: Error; reset: () => void }) {
         <div className="mt-6 flex flex-wrap justify-center gap-2">
           <button
             onClick={() => { router.invalidate(); reset(); }}
-            className="rounded-full bg-gradient-primary px-5 py-2.5 text-sm font-medium text-primary-foreground shadow-glow"
+            className="rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground"
           >
             Try again
           </button>
@@ -66,7 +66,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { title: "Neutrino Science Club — Science in Thought · Innovation in Creation" },
       { name: "description", content: "Neutrino Science Club (NSC) is a student-led community exploring science, AI, robotics, astronomy and research through workshops, bootcamps and projects." },
       { name: "author", content: "Neutrino Science Club" },
-      { name: "theme-color", content: "#0b1020" },
+      { name: "theme-color", content: "#f8f8fd" },
       { property: "og:title", content: "Neutrino Science Club" },
       { property: "og:description", content: "A student-led community exploring the frontiers of science and technology." },
       { property: "og:type", content: "website" },
@@ -79,7 +79,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
       { rel: "preconnect", href: "https://fonts.googleapis.com" },
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
-      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" },
+      { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400..800;1,400..800&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" },
     ],
   }),
   shellComponent: RootShell,
@@ -90,7 +90,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
 
 function RootShell({ children }: { children: ReactNode }) {
   return (
-    <html lang="en" className="dark">
+    <html lang="en" className="light">
       <head>
         <HeadContent />
       </head>

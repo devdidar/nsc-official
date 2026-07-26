@@ -3,9 +3,7 @@ import { Facebook, Linkedin, ArrowUpRight } from "lucide-react";
 
 export function Footer() {
   return (
-    <footer className="relative mt-32 border-t border-white/5">
-      <div className="pointer-events-none absolute inset-x-0 -top-px h-px bg-gradient-to-r from-transparent via-primary/60 to-transparent" />
-
+    <footer className="relative mt-32 border-t border-black/5 bg-white/50 backdrop-blur-md">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 py-16">
         <div className="grid gap-12 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
           <div>
@@ -16,8 +14,8 @@ export function Footer() {
                 className="h-9 w-9 object-contain"
               />
               <span className="flex flex-col leading-tight">
-                <span className="font-display text-base font-bold whitespace-nowrap">Neutrino Science Club</span>
-                <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground">Science in Thought · Innovation in Creation</span>
+                <span className="font-display text-base font-bold whitespace-nowrap text-foreground">Neutrino Science Club</span>
+                <span className="text-[10px] uppercase tracking-[0.18em] text-muted-foreground font-medium">Science in Thought · Innovation in Creation</span>
               </span>
             </Link>
             <p className="mt-5 max-w-md text-sm text-muted-foreground leading-relaxed">
@@ -30,7 +28,7 @@ export function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="Facebook"
-                className="grid h-10 w-10 place-items-center rounded-xl glass hover:bg-white/10 transition-colors"
+                className="grid h-10 w-10 place-items-center rounded-xl bg-white border border-black/5 hover:bg-black/5 transition-colors text-foreground"
               >
                 <Facebook className="h-4 w-4" />
               </a>
@@ -39,7 +37,7 @@ export function Footer() {
                 target="_blank"
                 rel="noreferrer"
                 aria-label="LinkedIn"
-                className="grid h-10 w-10 place-items-center rounded-xl glass hover:bg-white/10 transition-colors"
+                className="grid h-10 w-10 place-items-center rounded-xl bg-white border border-black/5 hover:bg-black/5 transition-colors text-foreground"
               >
                 <Linkedin className="h-4 w-4" />
               </a>
@@ -52,7 +50,7 @@ export function Footer() {
           ]} />
           <FooterCol title="Community" links={[
             ["Research", "/research"], ["Resources", "/resources"],
-            ["Team", "/team"], ["Gallery", "/gallery"],
+            ["Bootcamps", "/bootcamps"], ["Contact", "/contact"],
           ]} />
           <FooterCol title="Reach us" links={[
             ["Contact", "/contact"], ["Partnerships", "/contact"],
@@ -60,7 +58,7 @@ export function Footer() {
           ]} />
         </div>
 
-        <div className="mt-14 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-white/5 pt-6 text-xs text-muted-foreground">
+        <div className="mt-14 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 border-t border-black/5 pt-6 text-xs text-muted-foreground">
           <p>© {new Date().getFullYear()} Neutrino Science Club. Crafted with curiosity.</p>
           <div className="flex items-center gap-4">
             <a href="#" className="hover:text-foreground">Privacy</a>

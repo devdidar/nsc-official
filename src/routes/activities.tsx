@@ -38,7 +38,7 @@ function Activities() {
             return (
             <GlassCard key={title} className="h-full" data-reveal style={{ transitionDelay: `${k * 50}ms` }}>
               <div className="flex items-start justify-between">
-                <div className="inline-grid h-11 w-11 place-items-center rounded-xl bg-gradient-primary shadow-glow">
+                <div className="inline-grid h-11 w-11 place-items-center rounded-xl bg-primary">
                   <I className="h-5 w-5 text-primary-foreground" />
                 </div>
                 <span className="rounded-full glass px-2.5 py-1 text-[10px] uppercase tracking-widest text-muted-foreground">{tag}</span>

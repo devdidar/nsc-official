@@ -78,7 +78,6 @@ function Home() {
       <Timeline />
       <FeaturedProjects />
       <Research />
-      <GalleryPreview />
       <Testimonials />
       <Partners />
       <Newsletter />
@@ -102,8 +101,8 @@ function Hero() {
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 w-full">
         <div className="mx-auto max-w-4xl text-center animate-blur-in">
           <div className="flex justify-center">
-            <div className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs animate-glow-border">
-              <span className="h-2 w-2 rounded-full bg-gradient-primary animate-pulse-glow" />
+            <div className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs">
+              <span className="h-2 w-2 rounded-full bg-primary" />
               <span className="uppercase tracking-[0.18em] text-muted-foreground">Science in Thought · Innovation in Creation</span>
             </div>
           </div>
@@ -115,8 +114,8 @@ function Hero() {
           </p>
           <div className="mt-9 flex flex-wrap justify-center gap-3">
             <CTAButton to="/bootcamp/python">Explore Python Bootcamp</CTAButton>
-            <Link to="/about" className="group inline-flex items-center gap-2 rounded-full glass px-5 py-2.5 text-sm font-medium hover:bg-white/10 transition-colors">
-              <span className="grid h-6 w-6 place-items-center rounded-full bg-white/10">
+            <Link to="/about" className="group inline-flex items-center gap-2 rounded-full bg-white/80 border border-black/5 px-5 py-2.5 text-sm font-semibold text-foreground hover:bg-white transition-colors">
+              <span className="grid h-6 w-6 place-items-center rounded-full bg-secondary text-secondary-foreground">
                 <Rocket className="h-3 w-3" />
               </span>
               About Our Club
@@ -157,7 +156,7 @@ function FloatingCodeSnippets() {
       {snippets.map((s, i) => (
         <div
           key={i}
-          className="absolute glass rounded-xl px-3 py-2 animate-float-code shadow-elevated"
+          className="absolute glass rounded-xl px-3 py-2 animate-float-code"
           style={{ top: s.top, left: (s as any).left, right: (s as any).right, animationDelay: s.delay }}
         >
           <code className="text-xs font-mono text-cyan/80">{s.code}</code>
@@ -179,7 +178,7 @@ function FloatingGlyphs() {
   return (
     <div aria-hidden className="pointer-events-none absolute inset-0">
       {items.map(({ Icon, ...pos }, i) => (
-        <div key={i} className="absolute glass rounded-2xl p-3 animate-float shadow-elevated"
+        <div key={i} className="absolute glass rounded-2xl p-3 animate-float"
           style={{ top: pos.top, left: (pos as any).left, right: (pos as any).right, animationDelay: pos.delay }}>
           <Icon className="text-primary" style={{ width: pos.size, height: pos.size }} />
         </div>
@@ -247,7 +246,7 @@ function WhatWeDo() {
         {pillars.map(({ icon: I, title, desc }, i) => (
           <div key={title} data-reveal className="reveal" style={{ transitionDelay: `${i * 60}ms` }}>
             <GlassCard className="h-full">
-              <div className="mb-6 inline-grid h-11 w-11 place-items-center rounded-xl bg-gradient-primary shadow-glow">
+              <div className="mb-6 inline-grid h-11 w-11 place-items-center rounded-xl bg-primary">
                 <I className="h-5 w-5 text-primary-foreground" />
               </div>
               <h3 className="font-display text-lg font-semibold">{title}</h3>
@@ -280,10 +279,10 @@ function FeaturedEvents() {
       <div className="mt-12 grid gap-5 md:grid-cols-3">
         {events.map((e, i) => (
           <article key={e.title} data-reveal className="reveal group relative overflow-hidden rounded-3xl glass hover-lift" style={{ transitionDelay: `${i * 80}ms` }}>
-            <div className={`relative h-48 overflow-hidden bg-gradient-to-br ${e.grad}`}>
+            <div className="relative h-48 overflow-hidden bg-secondary/70">
               <div className="absolute inset-0 grid-bg opacity-60" />
               <div className="absolute inset-0 flex items-center justify-center">
-                <CalendarDays className="h-14 w-14 text-white/70" />
+                <CalendarDays className="h-12 w-12 text-primary" />
               </div>
               <div className="absolute left-4 top-4 rounded-full glass-strong px-3 py-1 text-[10px] uppercase tracking-widest">{e.tag}</div>
             </div>
@@ -371,7 +370,7 @@ function Timeline() {
       </div>
 
       <div className="relative mx-auto mt-16 max-w-3xl">
-        <div className="pointer-events-none absolute left-4 sm:left-1/2 top-0 bottom-0 w-px -translate-x-1/2 bg-gradient-to-b from-transparent via-primary/60 to-transparent" />
+        <div className="pointer-events-none absolute left-4 sm:left-1/2 top-0 bottom-0 w-px -translate-x-1/2 bg-primary/40" />
         <ol className="space-y-10">
           {timeline.map((t, i) => {
             const right = i % 2 === 1;
@@ -379,7 +378,7 @@ function Timeline() {
               <li key={`${t.year}-${i}`} data-reveal className="reveal relative sm:grid sm:grid-cols-2 sm:gap-10">
                 <div className={`hidden sm:block ${right ? "order-2" : ""}`} />
                 <div className={`relative pl-12 sm:pl-0 ${right ? "sm:pr-10 sm:text-right sm:order-1" : "sm:pl-10"}`}>
-                  <span className="absolute left-2 sm:left-1/2 top-1.5 -translate-x-1/2 grid h-5 w-5 place-items-center rounded-full bg-gradient-primary shadow-glow">
+                  <span className="absolute left-2 sm:left-1/2 top-1.5 -translate-x-1/2 grid h-5 w-5 place-items-center rounded-full bg-primary">
                     <span className="h-1.5 w-1.5 rounded-full bg-white" />
                   </span>
                   <GlassCard className="p-5">
@@ -488,7 +487,7 @@ function GalleryPreview() {
       <div className="mt-10 columns-2 md:columns-4 gap-4 [column-fill:_balance]">
         {tiles.map((t, i) => (
           <div key={i} className="mb-4 break-inside-avoid overflow-hidden rounded-2xl glass hover-lift">
-            <div className={`relative bg-gradient-to-br ${t.c}`} style={{ height: t.h }}>
+            <div className="relative bg-secondary" style={{ height: t.h }}>
               <div className="absolute inset-0 grid-bg opacity-50" />
             </div>
           </div>
@@ -514,8 +513,8 @@ function Testimonials() {
           <GlassCard key={t.name} className="p-7" data-reveal style={{ transitionDelay: `${i * 80}ms` }}>
             <Quote className="h-6 w-6 text-primary" />
             <p className="mt-4 text-foreground/90 leading-relaxed">"{t.quote}"</p>
-            <div className="mt-6 flex items-center gap-3 border-t border-white/5 pt-4">
-              <div className="grid h-10 w-10 place-items-center rounded-full bg-gradient-primary text-primary-foreground font-semibold">
+            <div className="mt-6 flex items-center gap-3 border-t border-black/5 pt-4">
+              <div className="grid h-10 w-10 place-items-center rounded-full bg-primary text-primary-foreground font-semibold">
                 {t.name.split(" ").map((s) => s[0]).slice(0, 2).join("")}
               </div>
               <div>
@@ -594,8 +593,7 @@ function Newsletter() {
 
   return (
     <Section>
-      <div data-reveal className="reveal relative overflow-hidden rounded-[32px] glass-strong p-10 sm:p-16 text-center shadow-elevated">
-        <div className="pointer-events-none absolute inset-0 opacity-70" style={{ background: "var(--gradient-hero)" }} />
+      <div data-reveal className="reveal relative overflow-hidden rounded-[32px] glass-strong p-10 sm:p-16 text-center">
         <div className="relative mx-auto max-w-2xl">
           <div className="flex justify-center"><Eyebrow>Stay in orbit</Eyebrow></div>
           <h2 className="mt-5 font-display text-4xl sm:text-5xl font-semibold tracking-tight text-balance">
@@ -613,7 +611,7 @@ function Newsletter() {
               <div className="pl-3 text-muted-foreground"><Mail className="h-4 w-4" /></div>
                <input type="email" required name="email" placeholder="neutrinoscienceclub@gmail.com" disabled={loading}
                 className="flex-1 bg-transparent px-2 py-2 text-sm outline-none placeholder:text-muted-foreground disabled:opacity-50" />
-              <button disabled={loading} className="rounded-full bg-gradient-primary px-4 py-2 text-sm font-medium text-primary-foreground shadow-glow hover:scale-[1.03] transition-transform disabled:opacity-70 disabled:hover:scale-100">
+              <button disabled={loading} className="rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:scale-[1.03] transition-transform disabled:opacity-70 disabled:hover:scale-100">
                 {loading ? "Wait..." : "Subscribe"}
               </button>
               {error && <div className="absolute -bottom-8 left-0 right-0 text-xs text-destructive text-center">{error}</div>}

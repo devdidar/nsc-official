@@ -35,21 +35,21 @@ function Team() {
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {core.map((m, i) => (
             <GlassCard key={m.name} className="p-0 overflow-hidden" data-reveal style={{ transitionDelay: `${i * 50}ms` }}>
-              <div className={`relative h-44 bg-gradient-to-br ${m.gradient}`}>
+              <div className="relative h-44 bg-secondary/60">
                 <div className="absolute inset-0 grid-bg opacity-50" />
                 <div className="absolute inset-0 grid place-items-center">
-                  <div className="grid h-16 w-16 place-items-center rounded-full glass-strong font-display text-xl font-semibold">
+                  <div className="grid h-16 w-16 place-items-center rounded-full bg-white border border-black/10 font-display text-xl font-bold text-primary shadow-xs">
                     {m.name.split(" ").map((s) => s[0]).slice(0, 2).join("")}
                   </div>
                 </div>
               </div>
-              <div className="p-5">
-                <div className="font-display text-lg font-semibold">{m.name}</div>
-                <div className="text-xs uppercase tracking-widest text-primary/90">{m.role}</div>
+              <div className="p-5 sm:p-6">
+                <div className="font-display text-lg font-bold text-foreground">{m.name}</div>
+                <div className="text-xs uppercase tracking-wider font-semibold text-primary">{m.role}</div>
                 <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{m.bio}</p>
                 <div className="mt-4 flex gap-2">
                   {[Github, Twitter, Linkedin].map((I, k) => (
-                    <a key={k} href="#" className="grid h-8 w-8 place-items-center rounded-lg glass hover:bg-white/10">
+                    <a key={k} href="#" className="grid h-8 w-8 place-items-center rounded-full bg-white border border-black/8 hover:bg-black/5 text-foreground transition-colors">
                       <I className="h-3.5 w-3.5" />
                     </a>
                   ))}

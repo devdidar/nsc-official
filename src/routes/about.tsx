@@ -4,10 +4,12 @@ import { PageHero, Section, SectionHeading, GlassCard, CTAButton, Eyebrow } from
 import { useRevealAll } from "@/hooks/use-reveal";
 
 export const Route = createFileRoute("/about")({
-  head: () => ({ meta: [
-    { title: "About — Neutrino Science Club" },
-    { name: "description", content: "The story, values and people behind Neutrino Science Club." },
-  ]}),
+  head: () => ({
+    meta: [
+      { title: "About — Neutrino Science Club" },
+      { name: "description", content: "The story, values and people behind Neutrino Science Club." },
+    ]
+  }),
   component: About,
 });
 
@@ -29,7 +31,7 @@ function About() {
         title={<>A community for people who <span className="text-gradient">build the future</span>.</>}
         description="Neutrino began in 2024 with a passion for discovery. Today it's a growing collective of curious minds — meeting weekly, shipping monthly, competing nationally."
       >
-        <CTAButton to="/team">Meet the team</CTAButton>
+        {/* <CTAButton to="/team">Meet the team</CTAButton> */}
         <CTAButton to="/contact" variant="ghost">Get involved</CTAButton>
       </PageHero>
 
@@ -76,7 +78,7 @@ function About() {
         <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {values.map(({ i: I, t, d }, k) => (
             <GlassCard key={t} data-reveal style={{ transitionDelay: `${k * 60}ms` }}>
-              <div className="inline-grid h-11 w-11 place-items-center rounded-xl bg-gradient-primary shadow-glow">
+              <div className="inline-grid h-11 w-11 place-items-center rounded-xl bg-primary">
                 <I className="h-5 w-5 text-primary-foreground" />
               </div>
               <h3 className="mt-4 font-display text-lg font-semibold">{t}</h3>

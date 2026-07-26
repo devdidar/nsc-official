@@ -36,14 +36,14 @@ function Events() {
         description="Summits, hackathons, workshops and observation nights — a calendar full of reasons to show up."
       />
       <Section>
-        <div className="flex justify-center gap-1 rounded-full glass p-1.5 w-fit mx-auto" data-reveal>
+        <div className="flex justify-center gap-1 rounded-full bg-white/80 border border-black/10 p-1.5 w-fit mx-auto shadow-xs" data-reveal>
           {tabs.map((t) => (
             <button
               key={t}
               onClick={() => setTab(t)}
               className={cn(
-                "rounded-full px-5 py-2 text-sm transition-all",
-                tab === t ? "bg-gradient-primary text-primary-foreground shadow-glow" : "text-muted-foreground hover:text-foreground",
+                "rounded-full px-6 py-2 text-xs sm:text-sm font-medium transition-all cursor-pointer",
+                tab === t ? "bg-secondary text-secondary-foreground font-semibold border border-secondary" : "text-muted-foreground hover:text-foreground",
               )}
             >
               {t}
@@ -51,29 +51,29 @@ function Events() {
           ))}
         </div>
 
-        <div className="mt-12 grid gap-5 lg:grid-cols-2">
+        <div className="mt-12 grid gap-6 lg:grid-cols-2">
           {list.map((e, i) => (
-            <article key={e.title} data-reveal className="reveal group relative overflow-hidden rounded-3xl glass hover-lift" style={{ transitionDelay: `${i * 60}ms` }}>
-              <div className="grid sm:grid-cols-[220px_1fr]">
-                <div className={`relative min-h-40 bg-gradient-to-br ${e.grad}`}>
+            <article key={e.title} data-reveal className="reveal group relative overflow-hidden rounded-3xl bg-white/90 border border-black/6 hover-lift backdrop-blur-md" style={{ transitionDelay: `${i * 60}ms` }}>
+              <div className="grid sm:grid-cols-[200px_1fr]">
+                <div className="relative min-h-40 bg-secondary/60">
                   <div className="absolute inset-0 grid-bg opacity-60" />
                   <div className="absolute inset-0 grid place-items-center">
-                    <CalendarDays className="h-12 w-12 text-white/70" />
+                    <CalendarDays className="h-12 w-12 text-primary" />
                   </div>
                 </div>
-                <div className="p-6">
+                <div className="p-6 sm:p-7">
                   <div className="flex items-center gap-2">
                     <Eyebrow>{e.tag}</Eyebrow>
                   </div>
-                  <h3 className="mt-3 font-display text-xl font-semibold">{e.title}</h3>
+                  <h3 className="mt-3 font-display text-xl font-bold text-foreground">{e.title}</h3>
                   <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{e.description}</p>
-                  <div className="mt-5 grid grid-cols-3 gap-3 text-xs text-muted-foreground">
+                  <div className="mt-5 flex flex-wrap gap-3 text-xs text-muted-foreground">
                     <Meta i={<CalendarDays className="h-3.5 w-3.5" />} v={e.date} />
                     <Meta i={<Clock className="h-3.5 w-3.5" />} v={e.time || ""} />
                     <Meta i={<MapPin className="h-3.5 w-3.5" />} v={e.city || ""} />
                   </div>
-                  <div className="mt-6 inline-flex items-center gap-1 text-sm text-primary/90">
-                    {e.status === "upcoming" ? "Reserve seat" : "Recap"} <ArrowRight className="h-4 w-4" />
+                  <div className="mt-6 inline-flex items-center gap-1.5 rounded-full bg-secondary/80 text-secondary-foreground px-4 py-1.5 text-xs font-semibold hover:bg-primary hover:text-primary-foreground transition-all">
+                    {e.status === "upcoming" ? "Reserve seat" : "Recap"} <ArrowRight className="h-3.5 w-3.5" />
                   </div>
                 </div>
               </div>

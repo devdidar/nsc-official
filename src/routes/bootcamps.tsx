@@ -26,14 +26,9 @@ function Bootcamps() {
       </PageHero>
 
       <Section>
-        <div data-reveal className="reveal relative overflow-hidden rounded-[32px] glass-strong p-8 sm:p-14 shadow-elevated text-center">
-          <div className="pointer-events-none absolute -top-32 -right-32 h-[400px] w-[400px] rounded-full opacity-30 blur-3xl"
-            style={{ background: "radial-gradient(circle, oklch(0.72 0.19 245 / 0.5), transparent 60%)" }} />
-          <div className="pointer-events-none absolute -bottom-32 -left-32 h-[350px] w-[350px] rounded-full opacity-20 blur-3xl"
-            style={{ background: "radial-gradient(circle, oklch(0.86 0.16 205 / 0.4), transparent 60%)" }} />
-
+        <div data-reveal className="reveal relative overflow-hidden rounded-[32px] glass-strong p-8 sm:p-14 text-center">
           <div className="relative">
-            <div className="mx-auto inline-grid h-20 w-20 place-items-center rounded-2xl bg-gradient-primary shadow-glow mb-6">
+            <div className="mx-auto inline-grid h-20 w-20 place-items-center rounded-2xl bg-primary mb-6">
               <Code2 className="h-9 w-9 text-primary-foreground" />
             </div>
             <h2 className="font-display text-3xl sm:text-4xl font-semibold tracking-tight">
@@ -58,7 +53,7 @@ function Bootcamps() {
             <div className="mt-8">
               <Link
                 to="/bootcamp/python"
-                className="group inline-flex items-center gap-2 rounded-full bg-gradient-primary px-6 py-3 text-sm font-medium text-primary-foreground shadow-glow hover:scale-[1.03] transition-transform"
+                className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:scale-[1.03] transition-transform"
               >
                 View Full Details
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />

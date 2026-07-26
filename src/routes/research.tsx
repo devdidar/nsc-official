@@ -39,7 +39,7 @@ function Research() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {tracks.map(({ i: I, t, d }, k) => (
             <GlassCard key={t} data-reveal style={{ transitionDelay: `${k * 60}ms` }}>
-              <div className="inline-grid h-11 w-11 place-items-center rounded-xl bg-gradient-primary shadow-glow">
+              <div className="inline-grid h-11 w-11 place-items-center rounded-xl bg-primary">
                 <I className="h-5 w-5 text-primary-foreground" />
               </div>
               <h3 className="mt-4 font-display text-lg font-semibold">{t}</h3>

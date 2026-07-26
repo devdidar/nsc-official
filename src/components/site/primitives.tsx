@@ -17,9 +17,9 @@ export function Section({
 
 export function Eyebrow({ children }: { children: ReactNode }) {
   return (
-    <div className="inline-flex items-center gap-2 rounded-full glass px-3 py-1 text-xs text-muted-foreground">
-      <span className="h-1.5 w-1.5 rounded-full bg-gradient-primary animate-pulse-glow" />
-      <span className="uppercase tracking-[0.18em]">{children}</span>
+    <div className="inline-flex items-center gap-2 rounded-full bg-secondary/80 text-secondary-foreground border border-secondary px-3.5 py-1 text-xs font-semibold">
+      <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+      <span className="uppercase tracking-[0.16em]">{children}</span>
     </div>
   );
 }
@@ -30,7 +30,7 @@ export function SectionHeading({
   return (
     <div className={cn("max-w-3xl", align === "center" && "mx-auto text-center")}>
       {eyebrow && <div className={cn("mb-5", align === "center" && "flex justify-center")}><Eyebrow>{eyebrow}</Eyebrow></div>}
-      <h2 className="text-balance font-display text-4xl font-semibold tracking-tight sm:text-5xl">
+      <h2 className="text-balance font-display text-4xl font-bold tracking-tight sm:text-5xl text-foreground">
         {title}
       </h2>
       {description && (
@@ -47,13 +47,11 @@ export function GlassCard({
     <div
       {...rest}
       className={cn(
-        "group relative rounded-3xl glass p-6 transition-all duration-500",
-        hover && "hover:border-white/20 hover:bg-white/[0.06] hover:-translate-y-1",
+        "group relative rounded-3xl bg-white/85 border border-black/5 p-6 transition-all duration-300",
+        hover && "hover:bg-white hover:border-black/10 hover:-translate-y-1",
         className,
       )}
     >
-      <div className="pointer-events-none absolute inset-0 rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-        style={{ background: "radial-gradient(400px circle at var(--x,50%) var(--y,0%), oklch(0.72 0.19 245 / 0.10), transparent 40%)" }} />
       <div className="relative">{children}</div>
     </div>
   );
@@ -62,10 +60,10 @@ export function GlassCard({
 export function CTAButton({
   to, href, children, variant = "primary", className, ...props
 }: { to?: string; href?: string; children: ReactNode; variant?: "primary" | "ghost"; className?: string } & React.AnchorHTMLAttributes<HTMLAnchorElement>) {
-  const base = "inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-medium transition-all duration-300";
+  const base = "inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold transition-all duration-300";
   const styles = variant === "primary"
-    ? "bg-gradient-primary text-primary-foreground shadow-glow hover:scale-[1.03]"
-    : "glass hover:bg-white/10";
+    ? "bg-primary text-primary-foreground hover:bg-primary/90 hover:scale-[1.02]"
+    : "bg-white/80 border border-black/5 text-foreground hover:bg-white";
   const cls = cn(base, styles, className);
   const content = <>{children}<ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" /></>;
   if (to) return <Link to={to} className={cn(cls, "group")} {...(props as any)}>{content}</Link>;
