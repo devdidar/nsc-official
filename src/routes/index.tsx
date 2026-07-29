@@ -76,10 +76,10 @@ function Home() {
       <FeaturedEvents />
       <Stats />
       <Timeline />
-      <FeaturedProjects />
-      <Research />
-      <Testimonials />
-      <Partners />
+      {/* <FeaturedProjects /> */}
+      {/* <Research /> */}
+      {/* <Testimonials /> */}
+      {/* <Partners /> */}
       <Newsletter />
     </div>
   );
@@ -210,19 +210,12 @@ function Mission() {
         </div>
 
         <div data-reveal className="reveal">
-          <div className="grid grid-cols-2 gap-4">
-            {[
-              { icon: Rocket, k: "Ship real work", v: "Every semester ends with a demo day." },
-              { icon: Users, k: "Peer-led", v: "Students teaching students, deeply." },
-              { icon: Trophy, k: "Compete", v: "Olympiads, hackathons and research fairs." },
-              { icon: Wrench, k: "Build", v: "Full access to labs, boards and compute." },
-            ].map(({ icon: I, k, v }) => (
-              <GlassCard key={k} className="p-5">
-                <I className="h-5 w-5 text-primary" />
-                <h3 className="mt-3 font-display font-semibold">{k}</h3>
-                <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{v}</p>
-              </GlassCard>
-            ))}
+          <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl">
+            <img
+              src="/images/kids-robot.jpg"
+              alt="Neutrino Science Club"
+              className="w-full h-full object-cover"
+            />
           </div>
         </div>
       </div>
@@ -609,7 +602,7 @@ function Newsletter() {
           ) : (
             <form onSubmit={handleSubscribe} className="mt-8 mx-auto flex max-w-md items-center gap-2 rounded-full glass p-1.5 relative">
               <div className="pl-3 text-muted-foreground"><Mail className="h-4 w-4" /></div>
-               <input type="email" required name="email" placeholder="neutrinoscienceclub@gmail.com" disabled={loading}
+              <input type="email" required name="email" placeholder="neutrinoscienceclub@gmail.com" disabled={loading}
                 className="flex-1 bg-transparent px-2 py-2 text-sm outline-none placeholder:text-muted-foreground disabled:opacity-50" />
               <button disabled={loading} className="rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:scale-[1.03] transition-transform disabled:opacity-70 disabled:hover:scale-100">
                 {loading ? "Wait..." : "Subscribe"}

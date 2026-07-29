@@ -8,6 +8,13 @@ export const Route = createFileRoute("/about")({
     meta: [
       { title: "About — Neutrino Science Club" },
       { name: "description", content: "The story, values and people behind Neutrino Science Club." },
+      { property: "og:title", content: "About — Neutrino Science Club" },
+      { property: "og:description", content: "The story, values and people behind Neutrino Science Club. Founded 2024 · 300+ Members · 46 Awards." },
+      { property: "og:url", content: "https://nsc-official.vercel.app/about" },
+      { property: "og:image", content: "https://nsc-official.vercel.app/og-about.png" },
+      { name: "twitter:title", content: "About — Neutrino Science Club" },
+      { name: "twitter:description", content: "The story, values and people behind NSC." },
+      { name: "twitter:image", content: "https://nsc-official.vercel.app/og-about.png" },
     ]
   }),
   component: About,

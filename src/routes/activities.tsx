@@ -8,6 +8,13 @@ export const Route = createFileRoute("/activities")({
   head: () => ({ meta: [
     { title: "Activities — Neutrino Science Club" },
     { name: "description", content: "Weekly programs, labs and clubs across programming, AI, robotics, astronomy, math and research." },
+    { property: "og:title", content: "Activities — Neutrino Science Club" },
+    { property: "og:description", content: "Weekly programs, labs and clubs across programming, AI, robotics, astronomy, math and research." },
+    { property: "og:url", content: "https://nsc-official.vercel.app/activities" },
+    { property: "og:image", content: "https://nsc-official.vercel.app/og-activities.png" },
+    { name: "twitter:title", content: "Activities — Neutrino Science Club" },
+    { name: "twitter:description", content: "Something happening every day of the week." },
+    { name: "twitter:image", content: "https://nsc-official.vercel.app/og-activities.png" },
   ]}),
   loader: async () => {
     const { data: activities, error } = await supabase.from("activities").select("*").order("sort_order");

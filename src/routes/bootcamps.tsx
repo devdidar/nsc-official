@@ -8,6 +8,13 @@ export const Route = createFileRoute("/bootcamps")({
     meta: [
       { title: "Bootcamps — Neutrino Science Club" },
       { name: "description", content: "Immersive Python Bootcamp — learn from zero to real projects with live classes, mentorship, and certification." },
+      { property: "og:title", content: "Bootcamps — Neutrino Science Club" },
+      { property: "og:description", content: "Immersive, mentor-led training programs. Our flagship Python Bootcamp is now live." },
+      { property: "og:url", content: "https://nsc-official.vercel.app/bootcamps" },
+      { property: "og:image", content: "https://nsc-official.vercel.app/og-bootcamps.png" },
+      { name: "twitter:title", content: "Bootcamps — Neutrino Science Club" },
+      { name: "twitter:description", content: "Our flagship Python Bootcamp is now live." },
+      { name: "twitter:image", content: "https://nsc-official.vercel.app/og-bootcamps.png" },
     ],
   }),
   component: Bootcamps,

@@ -10,6 +10,13 @@ export const Route = createFileRoute("/events")({
   head: () => ({ meta: [
     { title: "Events — Neutrino Science Club" },
     { name: "description", content: "Upcoming and past events: summits, hackathons, observation nights and workshops." },
+    { property: "og:title", content: "Events — Neutrino Science Club" },
+    { property: "og:description", content: "Summits, hackathons, workshops and observation nights — a calendar full of reasons to show up." },
+    { property: "og:url", content: "https://nsc-official.vercel.app/events" },
+    { property: "og:image", content: "https://nsc-official.vercel.app/og-events.png" },
+    { name: "twitter:title", content: "Events — Neutrino Science Club" },
+    { name: "twitter:description", content: "Meet, make, and launch things." },
+    { name: "twitter:image", content: "https://nsc-official.vercel.app/og-events.png" },
   ]}),
   loader: async () => {
     const { data: events, error } = await supabase.from("events").select("*").order("sort_order");

@@ -9,6 +9,13 @@ export const Route = createFileRoute("/contact")({
   head: () => ({ meta: [
     { title: "Contact — Neutrino Science Club" },
     { name: "description", content: "Reach the Neutrino Science Club — join, partner, mentor, or just say hi." },
+    { property: "og:title", content: "Contact — Neutrino Science Club" },
+    { property: "og:description", content: "Reach the Neutrino Science Club — join, partner, mentor, or just say hi." },
+    { property: "og:url", content: "https://nsc-official.vercel.app/contact" },
+    { property: "og:image", content: "https://nsc-official.vercel.app/og-contact.png" },
+    { name: "twitter:title", content: "Contact — Neutrino Science Club" },
+    { name: "twitter:description", content: "Join, partner, mentor, or just say hi." },
+    { name: "twitter:image", content: "https://nsc-official.vercel.app/og-contact.png" },
   ]}),
   component: Contact,
 });

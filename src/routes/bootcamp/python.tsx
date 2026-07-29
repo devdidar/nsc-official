@@ -20,6 +20,13 @@ export const Route = createFileRoute("/bootcamp/python")({
     meta: [
       { title: "NSC Python Bootcamp — Launch Scholarship | Neutrino Science Club" },
       { name: "description", content: "Claim your Launch Scholarship for the Founding Batch of NSC Python Bootcamp. Regular ৳299 — FREE for the First 50 Students. 4 Weeks, 8 Live Classes, Projects & Certificate." },
+      { property: "og:title", content: "NSC Python Bootcamp — Launch Scholarship" },
+      { property: "og:description", content: "FREE for First 50 Students (Regular ৳299). 4 Weeks · 8 Live Classes · Milestone Projects · Python Arcade · Certificate." },
+      { property: "og:url", content: "https://nsc-official.vercel.app/bootcamp/python" },
+      { property: "og:image", content: "https://nsc-official.vercel.app/og-python-bootcamp.png" },
+      { name: "twitter:title", content: "NSC Python Bootcamp — FREE for First 50 Students" },
+      { name: "twitter:description", content: "4 Weeks · 8 Live Classes · Milestone Projects · Python Arcade · Certificate." },
+      { name: "twitter:image", content: "https://nsc-official.vercel.app/og-python-bootcamp.png" },
     ],
   }),
   component: PythonBootcamp,

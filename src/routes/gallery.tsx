@@ -10,6 +10,13 @@ export const Route = createFileRoute("/gallery")({
   head: () => ({ meta: [
     { title: "Gallery — Neutrino Science Club" },
     { name: "description", content: "Photos and moments from the labs, bootcamps and observation nights." },
+    { property: "og:title", content: "Gallery — Neutrino Science Club" },
+    { property: "og:description", content: "Snapshots from the lab — labs, observation nights, builds and demos." },
+    { property: "og:url", content: "https://nsc-official.vercel.app/gallery" },
+    { property: "og:image", content: "https://nsc-official.vercel.app/og-gallery.png" },
+    { name: "twitter:title", content: "Gallery — Neutrino Science Club" },
+    { name: "twitter:description", content: "Photos and moments from the labs, bootcamps and observation nights." },
+    { name: "twitter:image", content: "https://nsc-official.vercel.app/og-gallery.png" },
   ]}),
   loader: async () => {
     const { data: gallery_items, error } = await supabase.from("gallery_items").select("*").order("sort_order");

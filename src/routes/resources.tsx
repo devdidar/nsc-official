@@ -10,6 +10,13 @@ export const Route = createFileRoute("/resources")({
   head: () => ({ meta: [
     { title: "Resources — Neutrino Science Club" },
     { name: "description", content: "Curated reading, tutorials, datasets, and starter kits from NSC members and mentors." },
+    { property: "og:title", content: "Resources — Neutrino Science Club" },
+    { property: "og:description", content: "Curated reading, tutorials, datasets and starter kits — most of it free, all of it open." },
+    { property: "og:url", content: "https://nsc-official.vercel.app/resources" },
+    { property: "og:image", content: "https://nsc-official.vercel.app/og-resources.png" },
+    { name: "twitter:title", content: "Resources — Neutrino Science Club" },
+    { name: "twitter:description", content: "Learn, borrow, remix — curated reading, tutorials and starter kits." },
+    { name: "twitter:image", content: "https://nsc-official.vercel.app/og-resources.png" },
   ]}),
   loader: async () => {
     const [resResp, faqResp] = await Promise.all([
