@@ -66,8 +66,8 @@ function About() {
             {[
               ["2024", "Founded"],
               ["300+", "Active members"],
-              ["46", "Awards won"],
-              ["22", "Partner schools"],
+              ["5+", "Awards won"],
+              ["10", "Partner schools"],
             ].map(([v, l]) => (
               <GlassCard key={l} className="p-6">
                 <div className="font-display text-4xl font-semibold text-gradient">{v}</div>

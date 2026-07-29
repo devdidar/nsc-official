@@ -1,97 +1,119 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useState } from "react";
-import { CalendarDays, MapPin, Clock, ArrowRight } from "lucide-react";
-import { PageHero, Section, GlassCard, Eyebrow } from "@/components/site/primitives";
+import { CalendarDays, MapPin, Clock, ArrowRight, Sparkles, Users, GraduationCap, Trophy, Gamepad2 } from "lucide-react";
+import { PageHero, Section, GlassCard, Eyebrow, CTAButton, SectionHeading } from "@/components/site/primitives";
 import { useRevealAll } from "@/hooks/use-reveal";
 import { cn } from "@/lib/utils";
-import { supabase } from "@/lib/supabase";
 
 export const Route = createFileRoute("/events")({
   head: () => ({ meta: [
     { title: "Events — Neutrino Science Club" },
-    { name: "description", content: "Upcoming and past events: summits, hackathons, observation nights and workshops." },
+    { name: "description", content: "Our flagship Python Bootcamp is launching soon. 4 weeks, 8 live classes, projects, and a certificate — FREE for the first 50 students." },
     { property: "og:title", content: "Events — Neutrino Science Club" },
-    { property: "og:description", content: "Summits, hackathons, workshops and observation nights — a calendar full of reasons to show up." },
+    { property: "og:description", content: "Our flagship Python Bootcamp is launching soon. 4 weeks, 8 live classes, projects, and a certificate — FREE for the first 50 students." },
     { property: "og:url", content: "https://nsc-official.vercel.app/events" },
     { property: "og:image", content: "https://nsc-official.vercel.app/og-events.png" },
     { name: "twitter:title", content: "Events — Neutrino Science Club" },
-    { name: "twitter:description", content: "Meet, make, and launch things." },
+    { name: "twitter:description", content: "The Python Bootcamp is launching. Be among the first 50 to join for free." },
     { name: "twitter:image", content: "https://nsc-official.vercel.app/og-events.png" },
   ]}),
-  loader: async () => {
-    const { data: events, error } = await supabase.from("events").select("*").order("sort_order");
-    if (error) throw error;
-    return { events };
-  },
   component: Events,
 });
 
-const tabs = ["Upcoming", "Past", "All"] as const;
+const bootcampDetails = [
+  { i: <Users className="h-5 w-5" />, label: "Batch size", value: "Limited seats" },
+  { i: <GraduationCap className="h-5 w-5" />, label: "Level", value: "Beginner friendly" },
+  { i: <Clock className="h-5 w-5" />, label: "Duration", value: "4 Weeks" },
+  { i: <Trophy className="h-5 w-5" />, label: "Reward", value: "Certificate + Arcade Project" },
+];
+
+const highlights = [
+  { icon: Sparkles, title: "8 Live Interactive Classes", desc: "Step-by-step live guidance with real-time Q&A and hands-on coding." },
+  { icon: Gamepad2, title: "Python Arcade Capstone", desc: "Build a complete multi-game arcade app by the end of the bootcamp." },
+  { icon: Users, title: "Mentor Support", desc: "Get interactive feedback and dedicated 1-on-1 help from mentors." },
+  { icon: Trophy, title: "Certificate of Completion", desc: "Official NSC certificate after your final showcase presentation." },
+];
 
 function Events() {
-  const { events } = Route.useLoaderData();
-  const [tab, setTab] = useState<(typeof tabs)[number]>("Upcoming");
   const ref = useRevealAll<HTMLDivElement>();
-  const list = events?.filter((e) =>
-    tab === "All" ? true : tab === "Upcoming" ? e.status === "upcoming" : e.status === "past"
-  ) || [];
   return (
     <div ref={ref}>
       <PageHero
-        eyebrow="Events"
-        title={<>Meet, make, and <span className="text-gradient">launch things</span>.</>}
-        description="Summits, hackathons, workshops and observation nights — a calendar full of reasons to show up."
-      />
-      <Section>
-        <div className="flex justify-center gap-1 rounded-full bg-white/80 border border-black/10 p-1.5 w-fit mx-auto shadow-xs" data-reveal>
-          {tabs.map((t) => (
-            <button
-              key={t}
-              onClick={() => setTab(t)}
-              className={cn(
-                "rounded-full px-6 py-2 text-xs sm:text-sm font-medium transition-all cursor-pointer",
-                tab === t ? "bg-secondary text-secondary-foreground font-semibold border border-secondary" : "text-muted-foreground hover:text-foreground",
-              )}
-            >
-              {t}
-            </button>
-          ))}
-        </div>
+        eyebrow="Launching Soon"
+        title={<>The <span className="text-gradient">Python Bootcamp</span> is almost here.</>}
+        description="Our first flagship bootcamp for absolute beginners. 4 weeks of live classes, hands-on projects, and a final Python Arcade showcase."
+      >
+        <CTAButton to="/bootcamp/python">Claim your free spot</CTAButton>
+      </PageHero>
 
-        <div className="mt-12 grid gap-6 lg:grid-cols-2">
-          {list.map((e, i) => (
-            <article key={e.title} data-reveal className="reveal group relative overflow-hidden rounded-3xl bg-white/90 border border-black/6 hover-lift backdrop-blur-md" style={{ transitionDelay: `${i * 60}ms` }}>
-              <div className="grid sm:grid-cols-[200px_1fr]">
-                <div className="relative min-h-40 bg-secondary/60">
-                  <div className="absolute inset-0 grid-bg opacity-60" />
-                  <div className="absolute inset-0 grid place-items-center">
-                    <CalendarDays className="h-12 w-12 text-primary" />
+      <Section>
+        <div className="grid gap-6 lg:grid-cols-2 items-start">
+          <GlassCard className="p-8 sm:p-10" data-reveal>
+            <Eyebrow>Flagship Launch</Eyebrow>
+            <h2 className="mt-5 font-display text-3xl sm:text-4xl font-semibold tracking-tight text-balance">
+              NSC Python Bootcamp — <span className="text-gradient">Founding Batch</span>
+            </h2>
+            <p className="mt-4 text-muted-foreground leading-relaxed">
+              Designed for kids and absolute starters. Whether you have never written a line of code before or you have tried and got stuck — this bootcamp will take you from zero to building real Python projects.
+            </p>
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              {bootcampDetails.map((item) => (
+                <div key={item.label} className="flex items-start gap-3 rounded-2xl bg-secondary/60 p-4">
+                  <div className="mt-0.5 text-primary">{item.i}</div>
+                  <div>
+                    <div className="text-xs uppercase tracking-widest text-muted-foreground">{item.label}</div>
+                    <div className="mt-1 text-sm font-semibold">{item.value}</div>
                   </div>
                 </div>
-                <div className="p-6 sm:p-7">
-                  <div className="flex items-center gap-2">
-                    <Eyebrow>{e.tag}</Eyebrow>
+              ))}
+            </div>
+            <div className="mt-8 flex flex-wrap gap-3">
+              <CTAButton to="/bootcamp/python">View full curriculum</CTAButton>
+            </div>
+          </GlassCard>
+
+          <GlassCard className="p-8 sm:p-10" data-reveal style={{ transitionDelay: "120ms" }}>
+            <h3 className="font-display text-xl font-semibold">What you will build</h3>
+            <div className="mt-6 space-y-4">
+              {highlights.map((h) => (
+                <div key={h.title} className="flex items-start gap-4 rounded-2xl border border-black/5 bg-white/70 p-4">
+                  <div className="mt-0.5 inline-grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary">
+                    <h.icon className="h-5 w-5" />
                   </div>
-                  <h3 className="mt-3 font-display text-xl font-bold text-foreground">{e.title}</h3>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{e.description}</p>
-                  <div className="mt-5 flex flex-wrap gap-3 text-xs text-muted-foreground">
-                    <Meta i={<CalendarDays className="h-3.5 w-3.5" />} v={e.date} />
-                    <Meta i={<Clock className="h-3.5 w-3.5" />} v={e.time || ""} />
-                    <Meta i={<MapPin className="h-3.5 w-3.5" />} v={e.city || ""} />
-                  </div>
-                  <div className="mt-6 inline-flex items-center gap-1.5 rounded-full bg-secondary/80 text-secondary-foreground px-4 py-1.5 text-xs font-semibold hover:bg-primary hover:text-primary-foreground transition-all">
-                    {e.status === "upcoming" ? "Reserve seat" : "Recap"} <ArrowRight className="h-3.5 w-3.5" />
+                  <div>
+                    <div className="font-medium">{h.title}</div>
+                    <p className="mt-1 text-sm text-muted-foreground leading-relaxed">{h.desc}</p>
                   </div>
                 </div>
-              </div>
-            </article>
-          ))}
+              ))}
+            </div>
+          </GlassCard>
+        </div>
+      </Section>
+
+      <Section>
+        <div data-reveal>
+          <SectionHeading eyebrow="Launch scholarship" title="First 50 students join for free" align="center"
+            description="Regular price is ৳299. Founding batch students get full access for free as part of our launch scholarship."
+          />
+        </div>
+        <div className="mt-10 flex justify-center">
+          <GlassCard className="max-w-xl w-full p-8 text-center" data-reveal>
+            <div className="inline-flex items-center gap-2 rounded-full bg-secondary px-4 py-1.5 text-xs font-semibold text-secondary-foreground">
+              <Sparkles className="h-4 w-4 text-primary" /> Founding Batch
+            </div>
+            <div className="mt-4 flex items-center justify-center gap-4">
+              <span className="text-2xl text-muted-foreground line-through decoration-2">৳299</span>
+              <span className="h-10 w-px bg-black/10" aria-hidden="true" />
+              <span className="font-display text-5xl font-bold text-gradient">FREE</span>
+            </div>
+            <p className="mt-2 text-sm text-muted-foreground">First 50 students get the bootcamp completely free.</p>
+            <div className="mt-6">
+              <CTAButton to="/bootcamp/python" className="w-full justify-center">Claim your scholarship</CTAButton>
+            </div>
+          </GlassCard>
         </div>
       </Section>
     </div>
   );
-}
-
-function Meta({ i, v }: { i: React.ReactNode; v: string }) {
-  return <div className="flex items-center gap-1.5"><span className="text-primary/90">{i}</span><span>{v}</span></div>;
 }
