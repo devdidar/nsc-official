@@ -6,17 +6,19 @@ import { useRevealAll } from "@/hooks/use-reveal";
 import { sendContactEmail } from "@/lib/email";
 
 export const Route = createFileRoute("/contact")({
-  head: () => ({ meta: [
-    { title: "Contact — Neutrino Science Club" },
-    { name: "description", content: "Reach the Neutrino Science Club — join, partner, mentor, or just say hi." },
-    { property: "og:title", content: "Contact — Neutrino Science Club" },
-    { property: "og:description", content: "Reach the Neutrino Science Club — join, partner, mentor, or just say hi." },
-    { property: "og:url", content: "https://nsc-official.vercel.app/contact" },
-    { property: "og:image", content: "https://nsc-official.vercel.app/og-contact.png" },
-    { name: "twitter:title", content: "Contact — Neutrino Science Club" },
-    { name: "twitter:description", content: "Join, partner, mentor, or just say hi." },
-    { name: "twitter:image", content: "https://nsc-official.vercel.app/og-contact.png" },
-  ]}),
+  head: () => ({
+    meta: [
+      { title: "Contact — Neutrino Science Club" },
+      { name: "description", content: "Reach the Neutrino Science Club — join, partner, mentor, or just say hi." },
+      { property: "og:title", content: "Contact — Neutrino Science Club" },
+      { property: "og:description", content: "Reach the Neutrino Science Club — join, partner, mentor, or just say hi." },
+      { property: "og:url", content: "https://nsc-official.vercel.app/contact" },
+      { property: "og:image", content: "https://nsc-official.vercel.app/og-contact.png" },
+      { name: "twitter:title", content: "Contact — Neutrino Science Club" },
+      { name: "twitter:description", content: "Join, partner, mentor, or just say hi." },
+      { name: "twitter:image", content: "https://nsc-official.vercel.app/og-contact.png" },
+    ]
+  }),
   component: Contact,
 });
 
@@ -92,8 +94,8 @@ function Contact() {
                 className="mt-6 grid gap-4"
               >
                 <div className="grid gap-4 sm:grid-cols-2">
-                  <Field label="Name" name="name" placeholder="Ada Lovelace" />
-                  <Field label="Email" name="email" type="email" placeholder="neutrinoscienceclub@gmail.com" />
+                  <Field label="Name" name="name" placeholder="Your Name" />
+                  <Field label="Email" name="email" type="email" placeholder="your@email.com" />
                 </div>
                 <Field label="Subject" name="subject" required={false} placeholder="Partnership · Mentoring · Membership" />
                 <div>

@@ -115,7 +115,7 @@ function Events() {
             description="Our next flagship event and training programs you can join right now."
           />
         </div>
-        <div className="mt-10 grid gap-6 max-w-4xl mx-auto">
+        <div className="mt-6 grid gap-6 max-w-4xl mx-auto">
           <article data-reveal className="reveal group relative overflow-hidden rounded-3xl bg-white/90 border border-black/10 hover-lift backdrop-blur-md shadow-md">
             <div className="grid sm:grid-cols-[220px_1fr]">
               <div className="relative min-h-48 bg-gradient-to-br from-primary/20 to-blue-500/10 flex items-center justify-center p-6">
@@ -176,7 +176,7 @@ function Events() {
           />
         </div>
 
-        <div className="mt-10 grid gap-6 max-w-4xl mx-auto">
+        <div className="mt-6 grid gap-6 max-w-4xl mx-auto">
           <article data-reveal className="reveal group relative overflow-hidden rounded-3xl bg-white/90 border border-black/10 hover-lift backdrop-blur-md shadow-md">
             <div className="grid sm:grid-cols-[240px_1fr]">
               <Link to="/events/science-fair-2025" className="relative min-h-52 bg-secondary/60 overflow-hidden block">

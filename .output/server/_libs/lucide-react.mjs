@@ -866,33 +866,6 @@ var ImagePlus = createLucideIcon("image-plus", [
 * This source code is licensed under the ISC license.
 * See the LICENSE file in the root directory of this source tree.
 */
-var Image = createLucideIcon("image", [
-	["rect", {
-		width: "18",
-		height: "18",
-		x: "3",
-		y: "3",
-		rx: "2",
-		ry: "2",
-		key: "1m3agn"
-	}],
-	["circle", {
-		cx: "9",
-		cy: "9",
-		r: "2",
-		key: "af1f0g"
-	}],
-	["path", {
-		d: "m21 15-3.086-3.086a2 2 0 0 0-2.828 0L6 21",
-		key: "1xmnt7"
-	}]
-]);
-/**
-* @license lucide-react v0.575.0 - ISC
-*
-* This source code is licensed under the ISC license.
-* See the LICENSE file in the root directory of this source tree.
-*/
 var Layers = createLucideIcon("layers", [
 	["path", {
 		d: "M12.83 2.18a2 2 0 0 0-1.66 0L2.6 6.08a1 1 0 0 0 0 1.83l8.58 3.91a2 2 0 0 0 1.66 0l8.58-3.9a1 1 0 0 0 0-1.83z",
@@ -1373,4 +1346,4 @@ var Zap = createLucideIcon("zap", [["path", {
 	key: "1xq2db"
 }]]);
 //#endregion
-export { Bot as $, Github as A, Compass as B, Linkedin as C, ImagePlus as D, Image as E, FileImage as F, CircleCheck as G, CodeXml as H, FileArchive as I, ChevronDown as J, ChevronRight as K, Facebook as L, Gamepad2 as M, FlaskConical as N, HeartHandshake as O, FileText as P, Calculator as Q, Database as R, Lock as S, Layers as T, Clock as U, Code as V, CircleQuestionMark as W, Calendar as X, Check as Y, CalendarDays as Z, Microscope as _, Twitter as a, ArrowLeft as at, MapPin as b, Telescope as c, Sparkles as d, BookOpen as et, Sigma as f, Quote as g, Rocket as h, Users as i, ArrowRight as it, GitBranch as j, GraduationCap as k, Target as l, Send as m, X as n, Award as nt, Trophy as o, ShieldCheck as p, ChevronLeft as q, Video as r, ArrowUpRight as rt, Terminal as s, Zap as t, Beaker as tt, Star as u, Menu as v, Lightbulb as w, Mail as x, Maximize2 as y, Cpu as z };
+export { BookOpen as $, GitBranch as A, Code as B, Linkedin as C, HeartHandshake as D, ImagePlus as E, FileArchive as F, ChevronRight as G, Clock as H, Facebook as I, Check as J, ChevronLeft as K, Database as L, FlaskConical as M, FileText as N, GraduationCap as O, FileImage as P, Bot as Q, Cpu as R, Lock as S, Layers as T, CircleQuestionMark as U, CodeXml as V, CircleCheck as W, CalendarDays as X, Calendar as Y, Calculator as Z, Microscope as _, Twitter as a, MapPin as b, Telescope as c, Sparkles as d, Beaker as et, Sigma as f, Quote as g, Rocket as h, Users as i, ArrowLeft as it, Gamepad2 as j, Github as k, Target as l, Send as m, X as n, ArrowUpRight as nt, Trophy as o, ShieldCheck as p, ChevronDown as q, Video as r, ArrowRight as rt, Terminal as s, Zap as t, Award as tt, Star as u, Menu as v, Lightbulb as w, Mail as x, Maximize2 as y, Compass as z };

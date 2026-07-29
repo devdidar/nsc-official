@@ -9,7 +9,7 @@ export function Section({
   id,
 }: { children: ReactNode; className?: string; id?: string }) {
   return (
-    <section id={id} className={cn("relative py-24 sm:py-32", className)}>
+    <section id={id} className={cn("relative py-10 sm:py-16", className)}>
       <div className="mx-auto max-w-7xl px-4 sm:px-6">{children}</div>
     </section>
   );
@@ -29,12 +29,12 @@ export function SectionHeading({
 }: { eyebrow?: string; title: ReactNode; description?: ReactNode; align?: "left" | "center" }) {
   return (
     <div className={cn("max-w-3xl", align === "center" && "mx-auto text-center")}>
-      {eyebrow && <div className={cn("mb-5", align === "center" && "flex justify-center")}><Eyebrow>{eyebrow}</Eyebrow></div>}
-      <h2 className="text-balance font-display text-4xl font-bold tracking-tight sm:text-5xl text-foreground">
+      {eyebrow && <div className={cn("mb-3", align === "center" && "flex justify-center")}><Eyebrow>{eyebrow}</Eyebrow></div>}
+      <h2 className="text-balance font-display text-3xl font-bold tracking-tight sm:text-4xl text-foreground">
         {title}
       </h2>
       {description && (
-        <p className="mt-5 text-base sm:text-lg text-muted-foreground leading-relaxed">{description}</p>
+        <p className="mt-3 text-base sm:text-lg text-muted-foreground leading-relaxed">{description}</p>
       )}
     </div>
   );
@@ -74,21 +74,21 @@ export function PageHero({
   eyebrow, title, description, children,
 }: { eyebrow: string; title: ReactNode; description?: ReactNode; children?: ReactNode }) {
   return (
-    <section className="relative pt-40 pb-16 sm:pt-48 sm:pb-24">
+    <section className="relative pt-28 pb-8 sm:pt-36 sm:pb-12">
       <div className="pointer-events-none absolute inset-0 bg-hero opacity-70" />
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-[520px] grid-bg" />
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-[400px] grid-bg" />
       <div className="relative mx-auto max-w-5xl px-4 sm:px-6 text-center">
         <div className="animate-blur-in">
           <div className="flex justify-center"><Eyebrow>{eyebrow}</Eyebrow></div>
-          <h1 className="mt-6 font-display text-5xl sm:text-6xl md:text-7xl font-semibold tracking-tight text-balance">
+          <h1 className="mt-4 font-display text-4xl sm:text-5xl md:text-6xl font-semibold tracking-tight text-balance">
             {title}
           </h1>
           {description && (
-            <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
+            <p className="mx-auto mt-4 max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed">
               {description}
             </p>
           )}
-          {children && <div className="mt-8 flex flex-wrap justify-center gap-3">{children}</div>}
+          {children && <div className="mt-6 flex flex-wrap justify-center gap-3">{children}</div>}
         </div>
       </div>
     </section>

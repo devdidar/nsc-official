@@ -78,15 +78,11 @@ function ScienceFair2025() {
         </div>
 
         {/* Photo Gallery Section */}
-        <div className="mt-12">
-          <GlassCard className="p-6 sm:p-10 border border-primary/20 shadow-xl" data-reveal>
-            <div className="flex items-center justify-between mb-6">
+        <div className="mt-6">
+          <GlassCard className="p-5 sm:p-7 border border-primary/20 shadow-lg" data-reveal>
+            <div className="flex items-center justify-between mb-4">
               <div>
                 <Eyebrow>Event Gallery</Eyebrow>
-                {/* <h3 className="mt-1 font-display text-2xl font-bold text-foreground flex items-center gap-2">
-                  <ImageIcon className="h-6 w-6 text-primary" />
-                  Photo Gallery (event1 – event5)
-                </h3> */}
               </div>
               <span className="text-xs text-muted-foreground hidden sm:inline-block">Click photo to view full size</span>
             </div>
@@ -113,9 +109,9 @@ function ScienceFair2025() {
         </div>
 
         {/* Full Bengali Description Article */}
-        <div className="mt-12 max-w-4xl mx-auto">
-          <GlassCard className="p-8 sm:p-12 border border-black/10 shadow-lg" data-reveal>
-            <div className="flex flex-wrap items-center justify-between gap-4 border-b border-black/10 pb-6 mb-8">
+        <div className="mt-6 max-w-4xl mx-auto">
+          <GlassCard className="p-6 sm:p-10 border border-black/10 shadow-lg" data-reveal>
+            <div className="flex flex-wrap items-center justify-between gap-4 border-b border-black/10 pb-5 mb-6">
               <div>
                 <Eyebrow>Official Event Recap</Eyebrow>
                 <h2 className="mt-2 font-display text-2xl sm:text-3xl font-bold text-foreground">
