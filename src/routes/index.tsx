@@ -212,7 +212,7 @@ function Mission() {
         <div data-reveal className="reveal">
           <div className="overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl">
             <img
-              src="/images/kids-robot.jpg"
+              src="/images/kids-robot.png"
               alt="Neutrino Science Club"
               className="w-full h-full object-cover"
             />
