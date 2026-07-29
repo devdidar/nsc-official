@@ -21,6 +21,8 @@ import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TeamRouteImport } from './routes/team'
 import { Route as BootcampPythonRouteImport } from './routes/bootcamp/python'
+import { Route as EventsIndexRouteImport } from './routes/events/index'
+import { Route as EventsScienceFair2025RouteImport } from './routes/events/science-fair-2025'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -82,6 +84,16 @@ const BootcampPythonRoute = BootcampPythonRouteImport.update({
   path: '/bootcamp/python',
   getParentRoute: () => rootRouteImport,
 } as any)
+const EventsIndexRoute = EventsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => EventsRoute,
+} as any)
+const EventsScienceFair2025Route = EventsScienceFair2025RouteImport.update({
+  id: '/science-fair-2025',
+  path: '/science-fair-2025',
+  getParentRoute: () => EventsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
@@ -89,13 +101,15 @@ export interface FileRoutesByFullPath {
   '/activities': typeof ActivitiesRoute
   '/bootcamps': typeof BootcampsRoute
   '/contact': typeof ContactRoute
-  '/events': typeof EventsRoute
+  '/events': typeof EventsRouteWithChildren
   '/gallery': typeof GalleryRoute
   '/research': typeof ResearchRoute
   '/resources': typeof ResourcesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
   '/bootcamp/python': typeof BootcampPythonRoute
+  '/events/science-fair-2025': typeof EventsScienceFair2025Route
+  '/events/': typeof EventsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -103,13 +117,14 @@ export interface FileRoutesByTo {
   '/activities': typeof ActivitiesRoute
   '/bootcamps': typeof BootcampsRoute
   '/contact': typeof ContactRoute
-  '/events': typeof EventsRoute
   '/gallery': typeof GalleryRoute
   '/research': typeof ResearchRoute
   '/resources': typeof ResourcesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
   '/bootcamp/python': typeof BootcampPythonRoute
+  '/events/science-fair-2025': typeof EventsScienceFair2025Route
+  '/events': typeof EventsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -118,13 +133,15 @@ export interface FileRoutesById {
   '/activities': typeof ActivitiesRoute
   '/bootcamps': typeof BootcampsRoute
   '/contact': typeof ContactRoute
-  '/events': typeof EventsRoute
+  '/events': typeof EventsRouteWithChildren
   '/gallery': typeof GalleryRoute
   '/research': typeof ResearchRoute
   '/resources': typeof ResourcesRoute
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
   '/bootcamp/python': typeof BootcampPythonRoute
+  '/events/science-fair-2025': typeof EventsScienceFair2025Route
+  '/events/': typeof EventsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -141,6 +158,8 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/team'
     | '/bootcamp/python'
+    | '/events/science-fair-2025'
+    | '/events/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -148,13 +167,14 @@ export interface FileRouteTypes {
     | '/activities'
     | '/bootcamps'
     | '/contact'
-    | '/events'
     | '/gallery'
     | '/research'
     | '/resources'
     | '/sitemap.xml'
     | '/team'
     | '/bootcamp/python'
+    | '/events/science-fair-2025'
+    | '/events'
   id:
     | '__root__'
     | '/'
@@ -169,6 +189,8 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/team'
     | '/bootcamp/python'
+    | '/events/science-fair-2025'
+    | '/events/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -177,7 +199,7 @@ export interface RootRouteChildren {
   ActivitiesRoute: typeof ActivitiesRoute
   BootcampsRoute: typeof BootcampsRoute
   ContactRoute: typeof ContactRoute
-  EventsRoute: typeof EventsRoute
+  EventsRoute: typeof EventsRouteWithChildren
   GalleryRoute: typeof GalleryRoute
   ResearchRoute: typeof ResearchRoute
   ResourcesRoute: typeof ResourcesRoute
@@ -272,8 +294,35 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof BootcampPythonRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/events/': {
+      id: '/events/'
+      path: '/'
+      fullPath: '/events/'
+      preLoaderRoute: typeof EventsIndexRouteImport
+      parentRoute: typeof EventsRoute
+    }
+    '/events/science-fair-2025': {
+      id: '/events/science-fair-2025'
+      path: '/science-fair-2025'
+      fullPath: '/events/science-fair-2025'
+      preLoaderRoute: typeof EventsScienceFair2025RouteImport
+      parentRoute: typeof EventsRoute
+    }
   }
 }
+
+interface EventsRouteChildren {
+  EventsScienceFair2025Route: typeof EventsScienceFair2025Route
+  EventsIndexRoute: typeof EventsIndexRoute
+}
+
+const EventsRouteChildren: EventsRouteChildren = {
+  EventsScienceFair2025Route: EventsScienceFair2025Route,
+  EventsIndexRoute: EventsIndexRoute,
+}
+
+const EventsRouteWithChildren =
+  EventsRoute._addFileChildren(EventsRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
@@ -281,7 +330,7 @@ const rootRouteChildren: RootRouteChildren = {
   ActivitiesRoute: ActivitiesRoute,
   BootcampsRoute: BootcampsRoute,
   ContactRoute: ContactRoute,
-  EventsRoute: EventsRoute,
+  EventsRoute: EventsRouteWithChildren,
   GalleryRoute: GalleryRoute,
   ResearchRoute: ResearchRoute,
   ResourcesRoute: ResourcesRoute,

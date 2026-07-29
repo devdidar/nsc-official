@@ -73,7 +73,7 @@ function Home() {
       <Hero />
       <Mission />
       <WhatWeDo />
-      <FeaturedEvents />
+      {/* <FeaturedEvents /> */}
       <Stats />
       <Timeline />
       {/* <FeaturedProjects /> */}

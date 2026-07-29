@@ -1,1 +1,0 @@
-import{n as e}from"./utils-Bun0kNdv.js";var t=e(`chevron-right`,[[`path`,{d:`m9 18 6-6-6-6`,key:`mthhwq`}]]);export{t};
