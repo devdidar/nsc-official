@@ -9,6 +9,7 @@ import { Blobs } from "@/components/site/Blobs";
 import { CTAButton, GlassCard, PageHero, Section, SectionHeading, Eyebrow } from "@/components/site/primitives";
 import { useRevealAll } from "@/hooks/use-reveal";
 import { supabase } from "@/lib/supabase";
+import clarity from "@microsoft/clarity";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -88,33 +89,33 @@ function Home() {
 /* ---------- Hero ---------- */
 function Hero() {
   return (
-    <section className="relative min-h-[100svh] pt-32 pb-24 flex items-center overflow-hidden">
+    <section className="relative min-h-[100svh] pt-24 sm:pt-32 pb-16 sm:pb-24 flex items-center overflow-hidden">
       <Blobs />
       <div className="pointer-events-none absolute inset-0 grid-bg opacity-70" />
 
       {/* Floating Python code snippets */}
       <FloatingCodeSnippets />
 
-      {/* Floating science glyphs */}
+      {/* Floating science glyphs — hidden on mobile for cleanliness */}
       <FloatingGlyphs />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 w-full">
         <div className="mx-auto max-w-4xl text-center animate-blur-in">
           <div className="flex justify-center">
-            <div className="inline-flex items-center gap-2 rounded-full glass px-4 py-1.5 text-xs">
-              <span className="h-2 w-2 rounded-full bg-primary" />
-              <span className="uppercase tracking-[0.18em] text-muted-foreground">Science in Thought · Innovation in Creation</span>
+            <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full glass px-3 sm:px-4 py-1.5 text-[10px] sm:text-xs">
+              <span className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-primary" />
+              <span className="uppercase tracking-[0.14em] sm:tracking-[0.18em] text-muted-foreground">Science in Thought · Innovation in Creation</span>
             </div>
           </div>
-          <h1 className="mt-6 font-display text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-semibold tracking-tight text-balance">
+          <h1 className="mt-5 sm:mt-6 font-display text-[2rem] leading-[1.15] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold tracking-tight text-balance">
             Empowering Young Minds Through <span className="text-gradient">Science & Innovation</span>
           </h1>
-          <p className="mx-auto mt-6 max-w-2xl text-lg text-muted-foreground leading-relaxed">
+          <p className="mx-auto mt-4 sm:mt-6 max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed px-2 sm:px-0">
             A student-led community building the next generation of scientists, engineers, and researchers. Hands-on projects, mentored research, bootcamps, and observation nights.
           </p>
-          <div className="mt-9 flex flex-wrap justify-center gap-3">
+          <div className="mt-7 sm:mt-9 flex flex-wrap justify-center gap-3">
             <CTAButton to="/bootcamp/python">Explore Python Bootcamp</CTAButton>
-            <Link to="/about" className="group inline-flex items-center gap-2 rounded-full bg-white/80 border border-black/5 px-5 py-2.5 text-sm font-semibold text-foreground hover:bg-white transition-colors">
+            <Link to="/about" className="group inline-flex items-center justify-center gap-2 rounded-full bg-white/80 border border-black/5 px-5 py-2.5 text-sm font-semibold text-foreground hover:bg-white transition-colors">
               <span className="grid h-6 w-6 place-items-center rounded-full bg-secondary text-secondary-foreground">
                 <Rocket className="h-3 w-3" />
               </span>
@@ -123,10 +124,10 @@ function Hero() {
           </div>
 
           {/* Marquee */}
-          <div className="mt-16 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_15%,black_85%,transparent)]">
-            <div className="flex gap-10 animate-marquee whitespace-nowrap text-xs uppercase tracking-[0.3em] text-muted-foreground">
+          <div className="mt-10 sm:mt-16 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_15%,black_85%,transparent)]">
+            <div className="flex gap-6 sm:gap-10 animate-marquee whitespace-nowrap text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] text-muted-foreground">
               {Array.from({ length: 2 }).map((_, k) => (
-                <div key={k} className="flex gap-10 shrink-0">
+                <div key={k} className="flex gap-6 sm:gap-10 shrink-0">
                   {["Programming", "Artificial Intelligence", "Robotics", "Astronomy", "Science Projects", "Mathematics", "Research", "Innovation"].map((x) => (
                     <span key={x + k}>{x}</span>
                   ))}
@@ -137,7 +138,7 @@ function Hero() {
         </div>
       </div>
 
-      <div className="pointer-events-none absolute bottom-6 left-1/2 -translate-x-1/2 text-[10px] uppercase tracking-[0.3em] text-muted-foreground">
+      <div className="pointer-events-none absolute bottom-4 sm:bottom-6 left-1/2 -translate-x-1/2 text-[10px] uppercase tracking-[0.3em] text-muted-foreground hidden sm:block">
         Scroll ↓
       </div>
     </section>
@@ -176,7 +177,7 @@ function FloatingGlyphs() {
     { top: "38%", right: "18%", Icon: Bot, size: 18, delay: "-5s" },
   ];
   return (
-    <div aria-hidden className="pointer-events-none absolute inset-0">
+    <div aria-hidden className="pointer-events-none absolute inset-0 hidden md:block">
       {items.map(({ Icon, ...pos }, i) => (
         <div key={i} className="absolute glass rounded-2xl p-3 animate-float"
           style={{ top: pos.top, left: (pos as any).left, right: (pos as any).right, animationDelay: pos.delay }}>
@@ -191,19 +192,19 @@ function FloatingGlyphs() {
 function Mission() {
   return (
     <Section>
-      <div className="grid gap-12 lg:grid-cols-[1.1fr_1fr] items-center">
+      <div className="grid gap-8 sm:gap-12 lg:grid-cols-[1.1fr_1fr] items-center">
         <div data-reveal className="reveal">
           <Eyebrow>Our mission</Eyebrow>
-          <h2 className="mt-5 font-display text-4xl sm:text-5xl font-semibold tracking-tight text-balance">
+          <h2 className="mt-4 sm:mt-5 font-display text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-balance">
             Build scientists.<br />Not just science projects.
           </h2>
-          <p className="mt-5 text-lg text-muted-foreground leading-relaxed">
+          <p className="mt-4 sm:mt-5 text-base sm:text-lg text-muted-foreground leading-relaxed">
             We believe learning happens fastest when students <em className="not-italic text-foreground">build things
               that don't exist yet.</em> NSC exists to give every curious mind the mentors,
             tools and community to turn wild ideas into working prototypes — and
             working prototypes into real research.
           </p>
-          <div className="mt-8 flex flex-wrap gap-3">
+          <div className="mt-6 sm:mt-8 flex flex-wrap gap-3">
             <CTAButton to="/about">Read our story</CTAButton>
             <CTAButton to="/research" variant="ghost">Explore research</CTAButton>
           </div>
@@ -329,8 +330,8 @@ function Stats() {
   }, []);
   return (
     <Section>
-      <div ref={ref} className="relative overflow-hidden rounded-[32px] glass p-8 sm:p-12">
-        <div className="grid grid-cols-2 md:grid-cols-5 gap-8">
+      <div ref={ref} className="relative overflow-hidden rounded-2xl sm:rounded-[32px] glass p-5 sm:p-8 md:p-12">
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-6 sm:gap-8">
           {stats.map((s) => <StatItem key={s.label} {...s} active={active} />)}
         </div>
       </div>
@@ -341,10 +342,10 @@ function StatItem({ value, suffix, label, active }: { value: number; suffix: str
   const n = useCounter(value, active);
   return (
     <div className="text-center">
-      <div className="font-display text-4xl sm:text-5xl font-semibold tabular-nums text-gradient">
+      <div className="font-display text-3xl sm:text-4xl md:text-5xl font-semibold tabular-nums text-gradient">
         {n.toLocaleString()}{suffix}
       </div>
-      <div className="mt-2 text-xs uppercase tracking-[0.2em] text-muted-foreground">{label}</div>
+      <div className="mt-1.5 sm:mt-2 text-[10px] sm:text-xs uppercase tracking-[0.15em] sm:tracking-[0.2em] text-muted-foreground">{label}</div>
     </div>
   );
 }
@@ -362,22 +363,22 @@ function Timeline() {
         />
       </div>
 
-      <div className="relative mx-auto mt-16 max-w-3xl">
+      <div className="relative mx-auto mt-10 sm:mt-16 max-w-3xl">
         <div className="pointer-events-none absolute left-4 sm:left-1/2 top-0 bottom-0 w-px -translate-x-1/2 bg-primary/40" />
-        <ol className="space-y-10">
+        <ol className="space-y-6 sm:space-y-10">
           {timeline.map((t, i) => {
             const right = i % 2 === 1;
             return (
               <li key={`${t.year}-${i}`} data-reveal className="reveal relative sm:grid sm:grid-cols-2 sm:gap-10">
                 <div className={`hidden sm:block ${right ? "order-2" : ""}`} />
-                <div className={`relative pl-12 sm:pl-0 ${right ? "sm:pr-10 sm:text-right sm:order-1" : "sm:pl-10"}`}>
+                <div className={`relative pl-10 sm:pl-0 ${right ? "sm:pr-10 sm:text-right sm:order-1" : "sm:pl-10"}`}>
                   <span className="absolute left-2 sm:left-1/2 top-1.5 -translate-x-1/2 grid h-5 w-5 place-items-center rounded-full bg-primary">
                     <span className="h-1.5 w-1.5 rounded-full bg-white" />
                   </span>
-                  <GlassCard className="p-5">
-                    <div className="text-xs uppercase tracking-[0.2em] text-primary/90">{t.year}</div>
-                    <h3 className="mt-2 font-display text-xl font-semibold">{t.title}</h3>
-                    <p className="mt-2 text-sm text-muted-foreground leading-relaxed">{t.desc}</p>
+                  <GlassCard className="p-4 sm:p-5">
+                    <div className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-primary/90">{t.year}</div>
+                    <h3 className="mt-1.5 sm:mt-2 font-display text-lg sm:text-xl font-semibold">{t.title}</h3>
+                    <p className="mt-1.5 sm:mt-2 text-sm text-muted-foreground leading-relaxed">{t.desc}</p>
                   </GlassCard>
                 </div>
               </li>
@@ -574,37 +575,41 @@ function Newsletter() {
     if (submitError) {
       if (submitError.code === "23505") {
         // Unique violation means they are already subscribed
+        if (typeof window !== "undefined") clarity.event("newsletter_subscribed");
         setSubscribed(true);
       } else {
         console.error("Error subscribing:", submitError);
         setError("Failed to subscribe. Please try again.");
       }
     } else {
+      if (typeof window !== "undefined") clarity.event("newsletter_subscribed");
       setSubscribed(true);
     }
   };
 
   return (
     <Section>
-      <div data-reveal className="reveal relative overflow-hidden rounded-[32px] glass-strong p-10 sm:p-16 text-center">
+      <div data-reveal className="reveal relative overflow-hidden rounded-2xl sm:rounded-[32px] glass-strong p-6 sm:p-10 md:p-16 text-center">
         <div className="relative mx-auto max-w-2xl">
           <div className="flex justify-center"><Eyebrow>Stay in orbit</Eyebrow></div>
-          <h2 className="mt-5 font-display text-4xl sm:text-5xl font-semibold tracking-tight text-balance">
+          <h2 className="mt-4 sm:mt-5 font-display text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-balance">
             The <span className="text-gradient">Neutrino</span> dispatch
           </h2>
-          <p className="mt-4 text-muted-foreground">
+          <p className="mt-3 sm:mt-4 text-sm sm:text-base text-muted-foreground">
             One thoughtful email a month — new bootcamps, research drops, and reading.
           </p>
           {subscribed ? (
-            <div className="mt-8 text-primary font-medium p-4 rounded-full glass-strong">
+            <div className="mt-6 sm:mt-8 text-primary font-medium p-3 sm:p-4 rounded-2xl sm:rounded-full glass-strong text-sm sm:text-base">
               Thanks for subscribing! Keep an eye on your inbox.
             </div>
           ) : (
-            <form onSubmit={handleSubscribe} className="mt-8 mx-auto flex max-w-md items-center gap-2 rounded-full glass p-1.5 relative">
-              <div className="pl-3 text-muted-foreground"><Mail className="h-4 w-4" /></div>
-              <input type="email" required name="email" placeholder="neutrinoscienceclub@gmail.com" disabled={loading}
-                className="flex-1 bg-transparent px-2 py-2 text-sm outline-none placeholder:text-muted-foreground disabled:opacity-50" />
-              <button disabled={loading} className="rounded-full bg-primary px-4 py-2 text-sm font-medium text-primary-foreground hover:scale-[1.03] transition-transform disabled:opacity-70 disabled:hover:scale-100">
+            <form onSubmit={handleSubscribe} data-clarity-mask="true" className="mt-6 sm:mt-8 mx-auto flex flex-col sm:flex-row max-w-md items-stretch sm:items-center gap-2 sm:gap-2 sm:rounded-full sm:glass sm:p-1.5 relative">
+              <div className="flex items-center gap-2 rounded-full glass p-1.5 sm:p-0 sm:bg-transparent sm:backdrop-blur-none sm:border-none flex-1">
+                <div className="pl-3 text-muted-foreground"><Mail className="h-4 w-4" /></div>
+                <input type="email" required name="email" placeholder="your@email.com" disabled={loading}
+                  className="flex-1 bg-transparent px-2 py-2.5 sm:py-2 text-sm outline-none placeholder:text-muted-foreground disabled:opacity-50 min-w-0" />
+              </div>
+              <button disabled={loading} className="rounded-full bg-primary px-5 py-2.5 sm:px-4 sm:py-2 text-sm font-medium text-primary-foreground hover:scale-[1.03] transition-transform disabled:opacity-70 disabled:hover:scale-100 shrink-0">
                 {loading ? "Wait..." : "Subscribe"}
               </button>
               {error && <div className="absolute -bottom-8 left-0 right-0 text-xs text-destructive text-center">{error}</div>}

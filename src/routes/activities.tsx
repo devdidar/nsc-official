@@ -69,11 +69,11 @@ function Activities() {
       </PageHero>
 
       <Section>
-        <div className="grid gap-6 sm:grid-cols-2">
+        <div className="grid gap-4 sm:gap-6 sm:grid-cols-2">
           {beginnerActivities.map((activity, k) => {
             return (
               <GlassCard key={activity.title} className="h-full p-0 hover-lift overflow-hidden" data-reveal style={{ transitionDelay: `${k * 80}ms` }}>
-                <div className={`relative h-56 sm:h-64 overflow-hidden bg-gradient-to-br ${activity.gradient}`}>
+                <div className={`relative h-44 sm:h-56 md:h-64 overflow-hidden bg-gradient-to-br ${activity.gradient}`}>
                   <img
                     src={activity.image}
                     alt={activity.title}
@@ -103,7 +103,7 @@ function Activities() {
             description="Anyone can attend a session. Members get labs, mentors and full access."
           />
         </div>
-        <div className="mt-12 grid gap-4 md:grid-cols-3">
+        <div className="mt-8 sm:mt-12 grid gap-3 sm:gap-4 sm:grid-cols-2 md:grid-cols-3">
           {[
             { t: "Drop-in", d: "Attend any weekly session — no signup required." },
             { t: "Become a member", d: "Free application, opens twice a year." },

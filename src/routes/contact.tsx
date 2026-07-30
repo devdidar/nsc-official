@@ -4,6 +4,7 @@ import { Mail, MapPin, Send, CheckCircle2, ImagePlus, X, FileImage } from "lucid
 import { PageHero, Section, GlassCard, Eyebrow } from "@/components/site/primitives";
 import { useRevealAll } from "@/hooks/use-reveal";
 import { sendContactEmail } from "@/lib/email";
+import clarity from "@microsoft/clarity";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -44,6 +45,7 @@ function Contact() {
         },
       });
       if (result.success) {
+        if (typeof window !== "undefined") clarity.event("contact_form_submitted");
         setSent(true);
       } else {
         setError(result.error || "Failed to send message. Please try again.");
@@ -64,7 +66,7 @@ function Contact() {
       />
 
       <Section>
-        <div className="grid gap-6 lg:grid-cols-[1fr_1.2fr]">
+        <div className="grid gap-4 sm:gap-6 lg:grid-cols-[1fr_1.2fr]">
           <div className="space-y-4" data-reveal>
             <GlassCard className="p-6">
               <Mail className="h-5 w-5 text-primary" />
@@ -92,6 +94,7 @@ function Contact() {
               <form
                 onSubmit={handleSubmit}
                 className="mt-6 grid gap-4"
+                data-clarity-mask="true"
               >
                 <div className="grid gap-4 sm:grid-cols-2">
                   <Field label="Name" name="name" placeholder="Your Name" />

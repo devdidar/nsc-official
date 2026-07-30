@@ -97,7 +97,7 @@ export function Navbar() {
       {/* Mobile menu */}
       <div
         className={cn(
-          "lg:hidden fixed inset-x-0 top-[72px] mx-3 rounded-3xl transition-all duration-300 origin-top",
+          "lg:hidden fixed inset-x-0 top-[64px] sm:top-[72px] mx-3 rounded-3xl transition-all duration-300 origin-top",
           open ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-95 pointer-events-none",
         )}
       >

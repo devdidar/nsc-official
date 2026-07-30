@@ -33,23 +33,23 @@ function Bootcamps() {
       </PageHero>
 
       <Section>
-        <div data-reveal className="reveal relative overflow-hidden rounded-[32px] glass-strong p-8 sm:p-14 text-center">
+        <div data-reveal className="reveal relative overflow-hidden rounded-2xl sm:rounded-[32px] glass-strong p-6 sm:p-8 md:p-14 text-center">
           <div className="relative">
             <div className="mx-auto inline-grid h-20 w-20 place-items-center rounded-2xl bg-primary mb-6">
               <Code2 className="h-9 w-9 text-primary-foreground" />
             </div>
-            <h2 className="font-display text-3xl sm:text-4xl font-semibold tracking-tight">
+            <h2 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold tracking-tight">
               NSC Python Bootcamp for Kids
             </h2>
-            <div className="mt-4 flex items-center justify-center gap-2">
-              <span className="rounded-full bg-primary/20 border border-primary/40 px-3 py-1 text-xs font-bold text-primary">
+            <div className="mt-3 sm:mt-4 flex items-center justify-center gap-2">
+              <span className="rounded-full bg-primary/20 border border-primary/40 px-3 py-1 text-[10px] sm:text-xs font-bold text-primary text-center leading-snug">
                 Launch Scholarship: FREE for First 50 Students (Regular ৳299)
               </span>
             </div>
             <p className="mt-4 mx-auto max-w-lg text-muted-foreground leading-relaxed">
               Learn complete Python fundamentals in 4 weeks. Build milestone projects like a Student Info System & Quiz Game, leading up to your own Python Arcade!
             </p>
-            <div className="mt-8 flex flex-wrap justify-center gap-4 text-sm text-muted-foreground">
+            <div className="mt-6 sm:mt-8 flex flex-wrap justify-center gap-2 sm:gap-4 text-xs sm:text-sm text-muted-foreground">
               {["4 Weeks", "8 Live Classes", "Milestone Projects", "Python Arcade", "Certificate", "First 50 Students FREE"].map((item) => (
                 <span key={item} className="inline-flex items-center gap-1.5 rounded-full glass px-3 py-1.5">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary" />

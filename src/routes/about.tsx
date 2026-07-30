@@ -46,7 +46,7 @@ function About() {
         <div className="grid gap-10 lg:grid-cols-2 items-center">
           <div data-reveal className="reveal">
             <Eyebrow>Our story</Eyebrow>
-            <h2 className="mt-5 font-display text-4xl sm:text-5xl font-semibold tracking-tight text-balance">
+            <h2 className="mt-4 sm:mt-5 font-display text-3xl sm:text-4xl md:text-5xl font-semibold tracking-tight text-balance">
               From a whiteboard, to a wing, to a <span className="text-gradient">worldwide network</span>.
             </h2>
             <div className="mt-6 space-y-4 text-muted-foreground leading-relaxed">
@@ -69,8 +69,8 @@ function About() {
               ["5+", "Awards won"],
               ["10", "Partner schools"],
             ].map(([v, l]) => (
-              <GlassCard key={l} className="p-6">
-                <div className="font-display text-4xl font-semibold text-gradient">{v}</div>
+              <GlassCard key={l} className="p-4 sm:p-6">
+                <div className="font-display text-3xl sm:text-4xl font-semibold text-gradient">{v}</div>
                 <div className="mt-1 text-xs uppercase tracking-widest text-muted-foreground">{l}</div>
               </GlassCard>
             ))}
@@ -82,7 +82,7 @@ function About() {
         <div data-reveal>
           <SectionHeading eyebrow="Values" title="What we believe" align="center" />
         </div>
-        <div className="mt-14 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+        <div className="mt-10 sm:mt-14 grid gap-3 sm:gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
           {values.map(({ i: I, t, d }, k) => (
             <GlassCard key={t} data-reveal style={{ transitionDelay: `${k * 60}ms` }}>
               <div className="inline-grid h-11 w-11 place-items-center rounded-xl bg-primary">

@@ -440,7 +440,7 @@ function HeroScholarshipCard() {
         </div>
 
         <div className="mt-7 flex flex-col gap-3">
-          <CTAButton href="https://forms.gle/UzsuiN3qGDn4Xuge7" target="_blank" rel="noopener noreferrer" className="w-full justify-center text-sm py-3.5">
+          <CTAButton href="https://forms.gle/UzsuiN3qGDn4Xuge7" target="_blank" rel="noopener noreferrer" className="text-sm py-3.5">
             Register Now
           </CTAButton>
           <a
@@ -971,7 +971,7 @@ function PricingSection() {
                   href="https://forms.gle/UzsuiN3qGDn4Xuge7"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground hover:scale-[1.02] transition-transform"
+                  className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground hover:scale-[1.02] transition-transform"
                 >
                   Register Now — Claim Launch Scholarship
                   <ArrowRight className="h-4 w-4" />

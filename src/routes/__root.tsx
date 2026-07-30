@@ -8,6 +8,8 @@ import {
   Scripts,
 } from "@tanstack/react-router";
 import type { ReactNode } from "react";
+import { useEffect } from "react";
+import clarity from "@microsoft/clarity";
 
 import appCss from "../styles.css?url";
 import { Navbar } from "@/components/site/Navbar";
@@ -86,6 +88,20 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       { rel: "stylesheet", href: "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400..800;1,400..800&family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" },
     ],
+    scripts: [
+      {
+        src: "https://www.googletagmanager.com/gtag/js?id=G-Q9XZ3BFQ11",
+        async: true,
+      },
+      {
+        children: `
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-Q9XZ3BFQ11');
+        `,
+      },
+    ],
   }),
   shellComponent: RootShell,
   component: RootComponent,
@@ -109,6 +125,13 @@ function RootShell({ children }: { children: ReactNode }) {
 
 function RootComponent() {
   const { queryClient } = Route.useRouteContext();
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      clarity.init("xugv2wn7oj");
+    }
+  }, []);
+
   return (
     <QueryClientProvider client={queryClient}>
       <div className="relative min-h-screen">
