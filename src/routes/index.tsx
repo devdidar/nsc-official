@@ -48,7 +48,7 @@ const projects = [
 const stats = [
   { value: 300, suffix: "+", label: "Active members" },
   { value: 20, suffix: "+", label: "Workshops hosted" },
-  // { value: 7, suffix: "", label: "Live projects" },
+  { value: 7, suffix: "", label: "Live projects" },
   { value: 10, suffix: "", label: "Partner schools" },
   { value: 5, suffix: "+", label: "Awards & prizes" },
 ] as const;
