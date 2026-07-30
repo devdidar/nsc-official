@@ -47,10 +47,10 @@ const projects = [
 
 const stats = [
   { value: 300, suffix: "+", label: "Active members" },
-  { value: 180, suffix: "+", label: "Workshops hosted" },
-  { value: 74, suffix: "", label: "Live projects" },
-  { value: 22, suffix: "", label: "Partner schools" },
-  { value: 46, suffix: "", label: "Awards & prizes" },
+  { value: 20, suffix: "+", label: "Workshops hosted" },
+  // { value: 7, suffix: "", label: "Live projects" },
+  { value: 10, suffix: "", label: "Partner schools" },
+  { value: 5, suffix: "+", label: "Awards & prizes" },
 ] as const;
 
 const timeline = [
