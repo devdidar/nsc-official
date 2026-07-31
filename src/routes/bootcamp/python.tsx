@@ -361,7 +361,7 @@ function BootcampHero() {
             </div>
 
             <div className="mt-8 flex flex-wrap gap-3">
-              <CTAButton href="https://forms.gle/gtQ7b16Zhp8qZvQZ6" target="_blank" rel="noopener noreferrer">
+              <CTAButton href="https://forms.gle/U13AYyNWQQBHfH889" target="_blank" rel="noopener noreferrer">
                 Register Now
               </CTAButton>
               <a href="#curriculum" className="group inline-flex items-center gap-2 rounded-full bg-white/80 border border-black/5 px-5 py-2.5 text-sm font-semibold text-foreground hover:bg-white transition-colors">
@@ -440,7 +440,7 @@ function HeroScholarshipCard() {
         </div>
 
         <div className="mt-7 flex flex-col gap-3">
-          <CTAButton href="https://forms.gle/gtQ7b16Zhp8qZvQZ6" target="_blank" rel="noopener noreferrer" className="text-sm py-3.5">
+          <CTAButton href="https://forms.gle/U13AYyNWQQBHfH889" target="_blank" rel="noopener noreferrer" className="text-sm py-3.5">
             Register Now
           </CTAButton>
           <a
@@ -967,7 +967,7 @@ function PricingSection() {
 
               <div className="mt-8">
                 <a
-                  href="https://forms.gle/gtQ7b16Zhp8qZvQZ6"
+                  href="https://forms.gle/U13AYyNWQQBHfH889"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3.5 text-sm font-medium text-primary-foreground hover:scale-[1.02] transition-transform"
@@ -1007,7 +1007,7 @@ function FinalCTA() {
 
           <div className="mt-8 flex flex-wrap justify-center gap-3">
             <a
-              href="https://forms.gle/gtQ7b16Zhp8qZvQZ6"
+              href="https://forms.gle/U13AYyNWQQBHfH889"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground hover:scale-[1.03] transition-transform"
