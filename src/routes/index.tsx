@@ -115,12 +115,26 @@ function Hero() {
           </p>
           <div className="mt-7 sm:mt-9 flex flex-wrap justify-center gap-3">
             <CTAButton to="/bootcamp/python">Explore Python Bootcamp</CTAButton>
-            <Link to="/about" className="group inline-flex items-center justify-center gap-2 rounded-full bg-white/80 border border-black/5 px-5 py-2.5 text-sm font-semibold text-foreground hover:bg-white transition-colors">
-              <span className="grid h-6 w-6 place-items-center rounded-full bg-secondary text-secondary-foreground">
-                <Rocket className="h-3 w-3" />
+            <a
+              href="https://forms.gle/zL5qfhdb2MFR1XqB6"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group/amb relative overflow-hidden inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:scale-[1.04] hover:shadow-[0_4px_28px_rgba(37,99,235,0.5)]"
+              style={{
+                background: "linear-gradient(135deg, #1d4ed8 0%, #2563eb 40%, #3b82f6 100%)",
+              }}
+            >
+              <span
+                className="absolute inset-0 opacity-0 group-hover/amb:opacity-100 transition-opacity duration-500"
+                style={{
+                  background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%)",
+                  animation: "ambassador-sweep 2s ease-in-out infinite",
+                }}
+              />
+              <span className="relative z-10">
+                Campus Ambassador
               </span>
-              About Our Club
-            </Link>
+            </a>
           </div>
 
           {/* Marquee */}
