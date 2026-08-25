@@ -18,6 +18,7 @@ import { Route as EventsRouteImport } from './routes/events'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as ResearchRouteImport } from './routes/research'
 import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as ScienceFest2026RouteImport } from './routes/science-fest-2026'
 import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TeamRouteImport } from './routes/team'
 import { Route as BootcampPythonRouteImport } from './routes/bootcamp/python'
@@ -69,6 +70,11 @@ const ResourcesRoute = ResourcesRouteImport.update({
   path: '/resources',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ScienceFest2026Route = ScienceFest2026RouteImport.update({
+  id: '/science-fest-2026',
+  path: '/science-fest-2026',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   id: '/sitemap.xml',
   path: '/sitemap.xml',
@@ -105,6 +111,7 @@ export interface FileRoutesByFullPath {
   '/gallery': typeof GalleryRoute
   '/research': typeof ResearchRoute
   '/resources': typeof ResourcesRoute
+  '/science-fest-2026': typeof ScienceFest2026Route
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
   '/bootcamp/python': typeof BootcampPythonRoute
@@ -120,6 +127,7 @@ export interface FileRoutesByTo {
   '/gallery': typeof GalleryRoute
   '/research': typeof ResearchRoute
   '/resources': typeof ResourcesRoute
+  '/science-fest-2026': typeof ScienceFest2026Route
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
   '/bootcamp/python': typeof BootcampPythonRoute
@@ -137,6 +145,7 @@ export interface FileRoutesById {
   '/gallery': typeof GalleryRoute
   '/research': typeof ResearchRoute
   '/resources': typeof ResourcesRoute
+  '/science-fest-2026': typeof ScienceFest2026Route
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
   '/bootcamp/python': typeof BootcampPythonRoute
@@ -155,6 +164,7 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/research'
     | '/resources'
+    | '/science-fest-2026'
     | '/sitemap.xml'
     | '/team'
     | '/bootcamp/python'
@@ -170,6 +180,7 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/research'
     | '/resources'
+    | '/science-fest-2026'
     | '/sitemap.xml'
     | '/team'
     | '/bootcamp/python'
@@ -186,6 +197,7 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/research'
     | '/resources'
+    | '/science-fest-2026'
     | '/sitemap.xml'
     | '/team'
     | '/bootcamp/python'
@@ -203,6 +215,7 @@ export interface RootRouteChildren {
   GalleryRoute: typeof GalleryRoute
   ResearchRoute: typeof ResearchRoute
   ResourcesRoute: typeof ResourcesRoute
+  ScienceFest2026Route: typeof ScienceFest2026Route
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TeamRoute: typeof TeamRoute
   BootcampPythonRoute: typeof BootcampPythonRoute
@@ -273,6 +286,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ResourcesRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/science-fest-2026': {
+      id: '/science-fest-2026'
+      path: '/science-fest-2026'
+      fullPath: '/science-fest-2026'
+      preLoaderRoute: typeof ScienceFest2026RouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/sitemap.xml': {
       id: '/sitemap.xml'
       path: '/sitemap.xml'
@@ -334,6 +354,7 @@ const rootRouteChildren: RootRouteChildren = {
   GalleryRoute: GalleryRoute,
   ResearchRoute: ResearchRoute,
   ResourcesRoute: ResourcesRoute,
+  ScienceFest2026Route: ScienceFest2026Route,
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TeamRoute: TeamRoute,
   BootcampPythonRoute: BootcampPythonRoute,
