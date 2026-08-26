@@ -99,7 +99,7 @@ export function Navbar() {
               to="/science-fest-2026"
               className="group/sf relative overflow-hidden rounded-full px-4 xl:px-5 py-2 text-xs xl:text-sm font-semibold text-white whitespace-nowrap shrink-0 transition-all duration-300 hover:scale-[1.05] science-fest-btn"
               style={{
-                background: "linear-gradient(135deg, #059669 0%, #10b981 40%, #34d399 100%)",
+                background: "linear-gradient(135deg, #be123c 0%, #f43f5e 40%, #fb7185 100%)",
               }}
             >
               <span
@@ -164,7 +164,7 @@ export function Navbar() {
               onClick={() => setOpen(false)}
               className="flex items-center justify-center gap-1.5 rounded-xl px-4 py-3 text-center text-sm font-semibold text-white overflow-hidden science-fest-btn"
               style={{
-                background: "linear-gradient(135deg, #059669 0%, #10b981 40%, #34d399 100%)",
+                background: "linear-gradient(135deg, #be123c 0%, #f43f5e 40%, #fb7185 100%)",
               }}
             >
               Science Fest

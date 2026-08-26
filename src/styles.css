@@ -480,10 +480,10 @@
 /* Science Fest button animations */
 @keyframes science-fest-pulse {
   0%, 100% {
-    box-shadow: 0 0 8px rgba(16, 185, 129, 0.4), 0 0 20px rgba(16, 185, 129, 0.15);
+    box-shadow: 0 0 8px rgba(244, 63, 94, 0.4), 0 0 20px rgba(244, 63, 94, 0.15);
   }
   50% {
-    box-shadow: 0 0 16px rgba(16, 185, 129, 0.6), 0 0 36px rgba(16, 185, 129, 0.25);
+    box-shadow: 0 0 16px rgba(244, 63, 94, 0.6), 0 0 36px rgba(244, 63, 94, 0.25);
   }
 }
 
@@ -492,7 +492,7 @@
 }
 
 .science-fest-glow {
-  background: radial-gradient(circle at 50% 50%, rgba(52, 211, 153, 0.15), transparent 70%);
+  background: radial-gradient(circle at 50% 50%, rgba(251, 113, 133, 0.15), transparent 70%);
   animation: science-fest-breathe 3s ease-in-out infinite;
 }
 

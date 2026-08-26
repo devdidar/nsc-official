@@ -119,13 +119,13 @@ function Events() {
           {/* Science Fest 2026 */}
           <article data-reveal className="reveal group relative overflow-hidden rounded-3xl bg-white/90 border border-black/10 hover-lift backdrop-blur-md shadow-md">
             <div className="grid sm:grid-cols-[220px_1fr]">
-              <div className="relative min-h-48 bg-gradient-to-br from-emerald-500/20 to-teal-400/10 flex items-center justify-center p-6">
+              <div className="relative min-h-48 bg-gradient-to-br from-rose-500/20 to-orange-400/10 flex items-center justify-center p-6">
                 <div className="absolute inset-0 grid-bg opacity-60" />
                 <div className="relative text-center">
-                  <div className="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-emerald-600 text-white shadow-lg">
+                  <div className="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-rose-600 text-white shadow-lg">
                     <FlaskConical className="h-7 w-7" />
                   </div>
-                  <span className="mt-3 inline-block rounded-full bg-emerald-500/20 px-3 py-1 text-[11px] font-bold text-emerald-700">
+                  <span className="mt-3 inline-block rounded-full bg-rose-500/20 px-3 py-1 text-[11px] font-bold text-rose-700">
                     Season 2
                   </span>
                 </div>
@@ -134,7 +134,7 @@ function Events() {
                 <div>
                   <div className="flex items-center justify-between">
                     <Eyebrow>Upcoming Event</Eyebrow>
-                    <span className="rounded-full bg-emerald-500/15 border border-emerald-500/30 px-2.5 py-0.5 text-xs font-semibold text-emerald-600">
+                    <span className="rounded-full bg-rose-500/15 border border-rose-500/30 px-2.5 py-0.5 text-xs font-semibold text-rose-600">
                       Registration Open
                     </span>
                   </div>
@@ -156,7 +156,7 @@ function Events() {
                   <Link
                     to="/science-fest-2026"
                     className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs font-bold text-white hover:scale-[1.02] transition-all shadow-md"
-                    style={{ background: "linear-gradient(135deg, #059669 0%, #10b981 40%, #34d399 100%)" }}
+                    style={{ background: "linear-gradient(135deg, #be123c 0%, #f43f5e 40%, #fb7185 100%)" }}
                   >
                     Register Now <ArrowRight className="h-4 w-4" />
                   </Link>
