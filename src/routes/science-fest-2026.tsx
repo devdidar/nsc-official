@@ -1,4 +1,4 @@
-import { createFileRoute, Link } from "@tanstack/react-router";
+import { createFileRoute } from "@tanstack/react-router";
 import {
   CalendarDays, MapPin, ArrowLeft, Users, Sparkles, FlaskConical, Rocket,
 } from "lucide-react";
@@ -37,14 +37,11 @@ function ScienceFest2026() {
         description="Neutrino Science Club (NSC) presents Science Fest 2026 — a celebration of curiosity, innovation, and scientific discovery. Register now to participate!"
       >
         <CTAButton href="https://forms.gle/znyes6T523dwSrdU8" target="_blank" rel="noopener noreferrer">
-          Register Now
+          Project Registration
         </CTAButton>
-        <Link
-          to="/events"
-          className="inline-flex items-center gap-2 rounded-full bg-white/80 border border-black/10 px-5 py-2.5 text-sm font-semibold text-foreground hover:bg-white transition-colors"
-        >
-          <ArrowLeft className="h-4 w-4" /> Back to All Events
-        </Link>
+        <CTAButton href="https://forms.gle/uZfHbrZtRndhAThUA" target="_blank" rel="noopener noreferrer">
+          Olympiad Registration
+        </CTAButton>
       </PageHero>
 
       {/* Highlights */}
@@ -71,9 +68,12 @@ function ScienceFest2026() {
             description="Fill out the registration form to secure your spot at Science Fest 2026. Don't miss this opportunity to showcase your scientific talent!"
             align="center"
           />
-          <div className="mt-8 flex justify-center">
+          <div className="mt-8 flex flex-col sm:flex-row justify-center gap-3">
             <CTAButton href="https://forms.gle/znyes6T523dwSrdU8" target="_blank" rel="noopener noreferrer">
-              Register Now
+              Project Registration
+            </CTAButton>
+            <CTAButton href="https://forms.gle/uZfHbrZtRndhAThUA" target="_blank" rel="noopener noreferrer">
+              Olympiad Registration
             </CTAButton>
           </div>
         </div>

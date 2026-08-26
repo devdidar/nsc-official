@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   CalendarDays, MapPin, Clock, ArrowRight, Sparkles, Users, GraduationCap,
-  Trophy, Gamepad2
+  Trophy, Gamepad2, FlaskConical
 } from "lucide-react";
 import { PageHero, Section, GlassCard, Eyebrow, CTAButton, SectionHeading } from "@/components/site/primitives";
 import { useRevealAll } from "@/hooks/use-reveal";
@@ -109,14 +109,64 @@ function Events() {
       <Section>
         <div data-reveal>
           <SectionHeading
-            eyebrow="Upcoming Events"
+            eyebrow="Happening Now"
             title="What's happening next"
             align="center"
-            description="Our next flagship event and training programs you can join right now."
+            description="Our currently running programs and upcoming flagship events you can join right now."
           />
         </div>
         <div className="mt-6 grid gap-6 max-w-4xl mx-auto">
+          {/* Science Fest 2026 */}
           <article data-reveal className="reveal group relative overflow-hidden rounded-3xl bg-white/90 border border-black/10 hover-lift backdrop-blur-md shadow-md">
+            <div className="grid sm:grid-cols-[220px_1fr]">
+              <div className="relative min-h-48 bg-gradient-to-br from-emerald-500/20 to-teal-400/10 flex items-center justify-center p-6">
+                <div className="absolute inset-0 grid-bg opacity-60" />
+                <div className="relative text-center">
+                  <div className="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-emerald-600 text-white shadow-lg">
+                    <FlaskConical className="h-7 w-7" />
+                  </div>
+                  <span className="mt-3 inline-block rounded-full bg-emerald-500/20 px-3 py-1 text-[11px] font-bold text-emerald-700">
+                    Season 2
+                  </span>
+                </div>
+              </div>
+              <div className="p-6 sm:p-8 flex flex-col justify-between">
+                <div>
+                  <div className="flex items-center justify-between">
+                    <Eyebrow>Upcoming Event</Eyebrow>
+                    <span className="rounded-full bg-emerald-500/15 border border-emerald-500/30 px-2.5 py-0.5 text-xs font-semibold text-emerald-600">
+                      Registration Open
+                    </span>
+                  </div>
+                  <h3 className="mt-3 font-display text-2xl font-bold text-foreground">
+                    <Link to="/science-fest-2026" className="hover:text-primary transition-colors">
+                      শহীদ তানভীন সায়েন্স ফেস্ট অ্যান্ড অলিম্পিয়াড (সিজন ২)
+                    </Link>
+                  </h3>
+                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
+                    Neutrino Science Club (NSC) presents Science Fest 2026 — a celebration of curiosity, innovation, and scientific discovery. Participate in project showcases, quizzes, and the science olympiad!
+                  </p>
+                  <div className="mt-5 flex flex-wrap gap-4 text-xs font-medium text-muted-foreground">
+                    <Meta i={<CalendarDays className="h-4 w-4" />} v="2026" />
+                    <Meta i={<Trophy className="h-4 w-4" />} v="Projects + Olympiad" />
+                    <Meta i={<Users className="h-4 w-4" />} v="Open to All Students" />
+                  </div>
+                </div>
+                <div className="mt-6">
+                  <Link
+                    to="/science-fest-2026"
+                    className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs font-bold text-white hover:scale-[1.02] transition-all shadow-md"
+                    style={{ background: "linear-gradient(135deg, #059669 0%, #10b981 40%, #34d399 100%)" }}
+                  >
+                    Register Now <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          {/* Python Bootcamp — Running Now */}
+          <article data-reveal className="reveal group relative overflow-hidden rounded-3xl bg-white/90 border border-black/10 hover-lift backdrop-blur-md shadow-md" style={{ transitionDelay: "100ms" }}>
             <div className="grid sm:grid-cols-[220px_1fr]">
               <div className="relative min-h-48 bg-gradient-to-br from-primary/20 to-blue-500/10 flex items-center justify-center p-6">
                 <div className="absolute inset-0 grid-bg opacity-60" />
@@ -125,16 +175,16 @@ function Events() {
                     <GraduationCap className="h-7 w-7" />
                   </div>
                   <span className="mt-3 inline-block rounded-full bg-primary/20 px-3 py-1 text-[11px] font-bold text-primary">
-                    FREE for First 50
+                    Founding Batch
                   </span>
                 </div>
               </div>
               <div className="p-6 sm:p-8 flex flex-col justify-between">
                 <div>
                   <div className="flex items-center justify-between">
-                    <Eyebrow>Upcoming Bootcamp</Eyebrow>
-                    <span className="rounded-full bg-emerald-500/15 border border-emerald-500/30 px-2.5 py-0.5 text-xs font-semibold text-emerald-600">
-                      Registration Open
+                    <Eyebrow>Running Bootcamp</Eyebrow>
+                    <span className="rounded-full bg-blue-500/15 border border-blue-500/30 px-2.5 py-0.5 text-xs font-semibold text-blue-600">
+                      Running Now
                     </span>
                   </div>
                   <h3 className="mt-3 font-display text-2xl font-bold text-foreground">
@@ -146,7 +196,7 @@ function Events() {
                     4-week beginner-friendly Python program with 8 live interactive classes, mentor guidance, milestone projects, and a Python Arcade capstone.
                   </p>
                   <div className="mt-5 flex flex-wrap gap-4 text-xs font-medium text-muted-foreground">
-                    <Meta i={<CalendarDays className="h-4 w-4" />} v="Launching Soon" />
+                    <Meta i={<CalendarDays className="h-4 w-4" />} v="In Progress" />
                     <Meta i={<Clock className="h-4 w-4" />} v="4 Weeks (8 Live Classes)" />
                     <Meta i={<MapPin className="h-4 w-4" />} v="Online / Live Zoom" />
                   </div>
@@ -156,7 +206,7 @@ function Events() {
                     to="/bootcamp/python"
                     className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-xs font-bold text-primary-foreground hover:scale-[1.02] transition-all shadow-md"
                   >
-                    Claim free spot <ArrowRight className="h-4 w-4" />
+                    View Bootcamp <ArrowRight className="h-4 w-4" />
                   </Link>
                 </div>
               </div>

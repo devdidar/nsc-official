@@ -476,3 +476,33 @@
     transform: translateX(100%);
   }
 }
+
+/* Science Fest button animations */
+@keyframes science-fest-pulse {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(16, 185, 129, 0.4), 0 0 20px rgba(16, 185, 129, 0.15);
+  }
+  50% {
+    box-shadow: 0 0 16px rgba(16, 185, 129, 0.6), 0 0 36px rgba(16, 185, 129, 0.25);
+  }
+}
+
+.science-fest-btn {
+  animation: science-fest-pulse 2.5s ease-in-out infinite !important;
+}
+
+.science-fest-glow {
+  background: radial-gradient(circle at 50% 50%, rgba(52, 211, 153, 0.15), transparent 70%);
+  animation: science-fest-breathe 3s ease-in-out infinite;
+}
+
+@keyframes science-fest-breathe {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  }
+}

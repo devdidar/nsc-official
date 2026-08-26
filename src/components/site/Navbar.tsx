@@ -1,6 +1,6 @@
 import { Link } from "@tanstack/react-router";
 import { useEffect, useState } from "react";
-import { Menu, X, Code2, Sparkles } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 const CAMPUS_AMBASSADOR_URL = "https://forms.gle/zL5qfhdb2MFR1XqB6";
@@ -96,12 +96,22 @@ export function Navbar() {
               </span>
             </a>
             <Link
-              to="/bootcamp/python"
-              className="relative rounded-full bg-primary px-4 xl:px-5 py-2 text-xs xl:text-sm font-semibold text-primary-foreground transition-transform hover:scale-[1.03] whitespace-nowrap shrink-0"
+              to="/science-fest-2026"
+              className="group/sf relative overflow-hidden rounded-full px-4 xl:px-5 py-2 text-xs xl:text-sm font-semibold text-white whitespace-nowrap shrink-0 transition-all duration-300 hover:scale-[1.05] science-fest-btn"
+              style={{
+                background: "linear-gradient(135deg, #059669 0%, #10b981 40%, #34d399 100%)",
+              }}
             >
-              <span className="relative z-10 flex items-center gap-1.5">
-                <Code2 className="h-4 w-4" />
-                Python Bootcamp
+              <span
+                className="absolute inset-0 opacity-0 group-hover/sf:opacity-100 transition-opacity duration-500"
+                style={{
+                  background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.25) 50%, transparent 100%)",
+                  animation: "ambassador-sweep 2s ease-in-out infinite",
+                }}
+              />
+              <span className="absolute inset-0 rounded-full science-fest-glow" />
+              <span className="relative z-10">
+                Science Fest
               </span>
             </Link>
           </div>
@@ -150,12 +160,14 @@ export function Navbar() {
               Campus Ambassador
             </a>
             <Link
-              to="/bootcamp/python"
+              to="/science-fest-2026"
               onClick={() => setOpen(false)}
-              className="flex items-center justify-center gap-1.5 rounded-xl bg-primary px-4 py-3 text-center text-sm font-semibold text-primary-foreground"
+              className="flex items-center justify-center gap-1.5 rounded-xl px-4 py-3 text-center text-sm font-semibold text-white overflow-hidden science-fest-btn"
+              style={{
+                background: "linear-gradient(135deg, #059669 0%, #10b981 40%, #34d399 100%)",
+              }}
             >
-              <Code2 className="h-4 w-4" />
-              Python Bootcamp
+              Science Fest
             </Link>
           </div>
         </div>
