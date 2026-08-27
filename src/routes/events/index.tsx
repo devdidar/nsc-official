@@ -210,13 +210,13 @@ function Events() {
             className="reveal group relative overflow-hidden rounded-3xl bg-white/90 border border-black/10 hover-lift backdrop-blur-md shadow-md"
           >
             <div className="grid sm:grid-cols-[220px_1fr]">
-              <div className="relative min-h-48 bg-gradient-to-br from-rose-500/20 to-orange-400/10 flex items-center justify-center p-6">
+              <div className="relative min-h-48 bg-gradient-to-br from-[#153D24]/20 to-emerald-500/10 flex items-center justify-center p-6">
                 <div className="absolute inset-0 grid-bg opacity-60" />
                 <div className="relative text-center">
-                  <div className="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-rose-600 text-white shadow-lg">
+                  <div className="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-[#153D24] text-white shadow-lg">
                     <FlaskConical className="h-7 w-7" />
                   </div>
-                  <span className="mt-3 inline-block rounded-full bg-rose-500/20 px-3 py-1 text-[11px] font-bold text-rose-700">
+                  <span className="mt-3 inline-block rounded-full bg-[#153D24]/15 px-3 py-1 text-[11px] font-bold text-[#153D24]">
                     Season 2
                   </span>
                 </div>
@@ -225,7 +225,7 @@ function Events() {
                 <div>
                   <div className="flex items-center justify-between">
                     <Eyebrow>Upcoming Event</Eyebrow>
-                    <span className="rounded-full bg-rose-500/15 border border-rose-500/30 px-2.5 py-0.5 text-xs font-semibold text-rose-600">
+                    <span className="rounded-full bg-[#153D24]/10 border border-[#153D24]/25 px-2.5 py-0.5 text-xs font-semibold text-[#153D24]">
                       Registration Open
                     </span>
                   </div>
