@@ -15,10 +15,7 @@ const links = [
   { to: "/contact", label: "Contact" },
 ] as const;
 
-const mobileLinks = [
-  { to: "/", label: "Home" },
-  ...links,
-] as const;
+const mobileLinks = [{ to: "/", label: "Home" }, ...links] as const;
 
 export function Navbar() {
   const [scrolled, setScrolled] = useState(false);
@@ -33,7 +30,9 @@ export function Navbar() {
 
   useEffect(() => {
     document.body.style.overflow = open ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [open]);
 
   return (
@@ -67,7 +66,10 @@ export function Navbar() {
                 key={l.to}
                 to={l.to}
                 className="relative rounded-full px-2.5 xl:px-3 py-1.5 text-xs xl:text-sm font-medium text-muted-foreground transition-colors hover:text-foreground hover:bg-black/5 whitespace-nowrap"
-                activeProps={{ className: "bg-secondary text-secondary-foreground font-semibold" }}
+                activeProps={{
+                  className:
+                    "bg-secondary text-secondary-foreground font-semibold",
+                }}
               >
                 {l.label}
               </Link>
@@ -81,38 +83,37 @@ export function Navbar() {
               rel="noopener noreferrer"
               className="group/amb relative overflow-hidden rounded-full px-4 xl:px-5 py-2 text-xs xl:text-sm font-semibold text-white whitespace-nowrap shrink-0 transition-all duration-300 hover:scale-[1.05] hover:shadow-[0_4px_24px_rgba(37,99,235,0.45)]"
               style={{
-                background: "linear-gradient(135deg, #1d4ed8 0%, #2563eb 40%, #3b82f6 100%)",
+                background:
+                  "linear-gradient(135deg, #1d4ed8 0%, #2563eb 40%, #3b82f6 100%)",
               }}
             >
               <span
                 className="absolute inset-0 opacity-0 group-hover/amb:opacity-100 transition-opacity duration-500"
                 style={{
-                  background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%)",
+                  background:
+                    "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%)",
                   animation: "ambassador-sweep 2s ease-in-out infinite",
                 }}
               />
-              <span className="relative z-10">
-                Campus Ambassador
-              </span>
+              <span className="relative z-10">Campus Ambassador</span>
             </a>
             <Link
               to="/science-fest-2026"
               className="group/sf relative overflow-hidden rounded-full px-4 xl:px-5 py-2 text-xs xl:text-sm font-semibold text-white whitespace-nowrap shrink-0 transition-all duration-300 hover:scale-[1.05] science-fest-btn"
               style={{
-                background: "linear-gradient(135deg, #be123c 0%, #f43f5e 40%, #fb7185 100%)",
+                background: "#153D24",
               }}
             >
               <span
                 className="absolute inset-0 opacity-0 group-hover/sf:opacity-100 transition-opacity duration-500"
                 style={{
-                  background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.25) 50%, transparent 100%)",
+                  background:
+                    "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.25) 50%, transparent 100%)",
                   animation: "ambassador-sweep 2s ease-in-out infinite",
                 }}
               />
               <span className="absolute inset-0 rounded-full science-fest-glow" />
-              <span className="relative z-10">
-                Science Fest
-              </span>
+              <span className="relative z-10">Science Fest</span>
             </Link>
           </div>
 
@@ -130,7 +131,9 @@ export function Navbar() {
       <div
         className={cn(
           "lg:hidden fixed inset-x-0 top-[64px] sm:top-[72px] mx-3 rounded-3xl transition-all duration-300 origin-top",
-          open ? "opacity-100 scale-100 pointer-events-auto" : "opacity-0 scale-95 pointer-events-none",
+          open
+            ? "opacity-100 scale-100 pointer-events-auto"
+            : "opacity-0 scale-95 pointer-events-none",
         )}
       >
         <div className="bg-white/95 backdrop-blur-2xl border border-black/10 rounded-3xl p-4 shadow-lg">
@@ -141,7 +144,10 @@ export function Navbar() {
                 to={l.to}
                 onClick={() => setOpen(false)}
                 className="rounded-xl px-4 py-2.5 text-sm font-medium text-muted-foreground hover:bg-black/5 hover:text-foreground"
-                activeProps={{ className: "bg-secondary text-secondary-foreground font-semibold" }}
+                activeProps={{
+                  className:
+                    "bg-secondary text-secondary-foreground font-semibold",
+                }}
                 activeOptions={{ exact: l.to === "/" }}
               >
                 {l.label}
@@ -154,7 +160,8 @@ export function Navbar() {
               onClick={() => setOpen(false)}
               className="mt-2 relative flex items-center justify-center gap-1.5 rounded-xl px-4 py-3 text-center text-sm font-semibold text-white overflow-hidden"
               style={{
-                background: "linear-gradient(135deg, #1d4ed8 0%, #2563eb 40%, #3b82f6 100%)",
+                background:
+                  "linear-gradient(135deg, #1d4ed8 0%, #2563eb 40%, #3b82f6 100%)",
               }}
             >
               Campus Ambassador
@@ -164,7 +171,7 @@ export function Navbar() {
               onClick={() => setOpen(false)}
               className="flex items-center justify-center gap-1.5 rounded-xl px-4 py-3 text-center text-sm font-semibold text-white overflow-hidden science-fest-btn"
               style={{
-                background: "linear-gradient(135deg, #be123c 0%, #f43f5e 40%, #fb7185 100%)",
+                background: "#153D24",
               }}
             >
               Science Fest

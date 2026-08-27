@@ -36,56 +36,58 @@
   --color-glass: var(--glass);
   --color-glass-border: var(--glass-border);
 
-  --font-display: "Plus Jakarta Sans", "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
-  --font-sans: "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display:
+    "Plus Jakarta Sans", "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans:
+    "Plus Jakarta Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
 }
 
 :root {
   --radius: 1rem;
 
   /* Modern Light Pastel & Electric Violet Palette (inspired by Corely design) */
-  --background: #F8F8FD;
+  --background: #f8f8fd;
   --foreground: #121217;
 
-  --card: #FFFFFF;
+  --card: #ffffff;
   --card-foreground: #121217;
 
-  --popover: #FFFFFF;
+  --popover: #ffffff;
   --popover-foreground: #121217;
 
-  --primary: #6344F5;
-  --primary-foreground: #FFFFFF;
+  --primary: #6344f5;
+  --primary-foreground: #ffffff;
 
-  --secondary: #EDE8FF;
-  --secondary-foreground: #5236E2;
+  --secondary: #ede8ff;
+  --secondary-foreground: #5236e2;
 
-  --muted: #F2F1F7;
+  --muted: #f2f1f7;
   --muted-foreground: #616172;
 
-  --accent: #F4F0FF;
-  --accent-foreground: #5236E2;
+  --accent: #f4f0ff;
+  --accent-foreground: #5236e2;
 
-  --destructive: #EF4444;
-  --destructive-foreground: #FFFFFF;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
 
   --border: rgba(0, 0, 0, 0.07);
   --input: rgba(0, 0, 0, 0.08);
-  --ring: #6344F5;
+  --ring: #6344f5;
 
-  --electric: #6344F5;
-  --cyan: #5236E2;
+  --electric: #6344f5;
+  --cyan: #5236e2;
   --glass: rgba(255, 255, 255, 0.82);
   --glass-border: rgba(0, 0, 0, 0.06);
 
   --gradient-hero: none;
-  --gradient-primary: #6344F5;
+  --gradient-primary: #6344f5;
   --gradient-text: #121217;
   --shadow-glow: none;
   --shadow-elevated: none;
 }
 
 .dark {
-  --background: #F8F8FD;
+  --background: #f8f8fd;
   --foreground: #121217;
 }
 
@@ -117,9 +119,21 @@
     overflow-x: hidden;
     -webkit-tap-highlight-color: transparent;
     background-image:
-      radial-gradient(1100px 750px at 15% 40%, rgba(235, 227, 255, 0.85), transparent 65%),
-      radial-gradient(1000px 650px at 85% 15%, rgba(255, 241, 232, 0.75), transparent 60%),
-      radial-gradient(900px 700px at 50% 92%, rgba(240, 235, 255, 0.65), transparent 70%);
+      radial-gradient(
+        1100px 750px at 15% 40%,
+        rgba(235, 227, 255, 0.85),
+        transparent 65%
+      ),
+      radial-gradient(
+        1000px 650px at 85% 15%,
+        rgba(255, 241, 232, 0.75),
+        transparent 60%
+      ),
+      radial-gradient(
+        900px 700px at 50% 92%,
+        rgba(240, 235, 255, 0.65),
+        transparent 70%
+      );
     background-attachment: fixed;
   }
 
@@ -127,8 +141,16 @@
   @media (max-width: 640px) {
     body {
       background-image:
-        radial-gradient(600px 400px at 20% 30%, rgba(235, 227, 255, 0.7), transparent 65%),
-        radial-gradient(500px 350px at 80% 20%, rgba(255, 241, 232, 0.6), transparent 60%);
+        radial-gradient(
+          600px 400px at 20% 30%,
+          rgba(235, 227, 255, 0.7),
+          transparent 65%
+        ),
+        radial-gradient(
+          500px 350px at 80% 20%,
+          rgba(255, 241, 232, 0.6),
+          transparent 60%
+        );
     }
   }
 
@@ -210,7 +232,6 @@
 }
 
 @keyframes float {
-
   0%,
   100% {
     transform: translateY(0) translateX(0);
@@ -222,7 +243,6 @@
 }
 
 @keyframes float-slow {
-
   0%,
   100% {
     transform: translate(0, 0) scale(1);
@@ -260,7 +280,6 @@
 }
 
 @keyframes gradient-shift {
-
   0%,
   100% {
     background-position: 0% 50%;
@@ -282,7 +301,6 @@
 }
 
 @keyframes pulse-glow {
-
   0%,
   100% {
     box-shadow: 0 0 20px oklch(0.72 0.19 245 / 0.3);
@@ -333,21 +351,23 @@
 }
 
 @keyframes glow-border {
-
   0%,
   100% {
     border-color: oklch(0.72 0.19 245 / 0.6);
-    box-shadow: 0 0 12px oklch(0.72 0.19 245 / 0.3), inset 0 0 12px oklch(0.72 0.19 245 / 0.05);
+    box-shadow:
+      0 0 12px oklch(0.72 0.19 245 / 0.3),
+      inset 0 0 12px oklch(0.72 0.19 245 / 0.05);
   }
 
   50% {
     border-color: oklch(0.86 0.16 205 / 0.8);
-    box-shadow: 0 0 24px oklch(0.86 0.16 205 / 0.4), inset 0 0 18px oklch(0.86 0.16 205 / 0.08);
+    box-shadow:
+      0 0 24px oklch(0.86 0.16 205 / 0.4),
+      inset 0 0 18px oklch(0.86 0.16 205 / 0.08);
   }
 }
 
 @keyframes code-blink {
-
   0%,
   100% {
     opacity: 1;
@@ -411,7 +431,6 @@
 }
 
 @keyframes float-code {
-
   0%,
   100% {
     transform: translateY(0) rotate(-1deg);
@@ -460,7 +479,9 @@
 @utility reveal {
   opacity: 0;
   transform: translateY(24px);
-  transition: opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1), transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
+  transition:
+    opacity 0.9s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.9s cubic-bezier(0.22, 1, 0.36, 1);
 
   &.is-visible {
     opacity: 1;
@@ -479,11 +500,16 @@
 
 /* Science Fest button animations */
 @keyframes science-fest-pulse {
-  0%, 100% {
-    box-shadow: 0 0 8px rgba(244, 63, 94, 0.4), 0 0 20px rgba(244, 63, 94, 0.15);
+  0%,
+  100% {
+    box-shadow:
+      0 0 8px rgba(34, 197, 94, 0.4),
+      0 0 20px rgba(34, 197, 94, 0.15);
   }
   50% {
-    box-shadow: 0 0 16px rgba(244, 63, 94, 0.6), 0 0 36px rgba(244, 63, 94, 0.25);
+    box-shadow:
+      0 0 16px rgba(34, 197, 94, 0.6),
+      0 0 36px rgba(34, 197, 94, 0.25);
   }
 }
 
@@ -492,12 +518,17 @@
 }
 
 .science-fest-glow {
-  background: radial-gradient(circle at 50% 50%, rgba(251, 113, 133, 0.15), transparent 70%);
+  background: radial-gradient(
+    circle at 50% 50%,
+    rgba(34, 197, 94, 0.15),
+    transparent 70%
+  );
   animation: science-fest-breathe 3s ease-in-out infinite;
 }
 
 @keyframes science-fest-breathe {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 0;
     transform: scale(0.95);
   }
