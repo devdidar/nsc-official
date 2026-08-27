@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, redirect } from "@tanstack/react-router";
 import {
   CalendarDays, MapPin, ArrowLeft, Users, Sparkles, FlaskConical, Rocket,
 } from "lucide-react";
@@ -6,6 +6,12 @@ import { PageHero, Section, SectionHeading, GlassCard, CTAButton, Eyebrow } from
 import { useRevealAll } from "@/hooks/use-reveal";
 
 export const Route = createFileRoute("/science-fest-2026")({
+  beforeLoad: () => {
+    throw redirect({
+      href: "https://sf26.neutrinoscienceclub.org/",
+      statusCode: 301,
+    });
+  },
   head: () => ({
     meta: [
       { title: "Science Fest 2026 — Neutrino Science Club" },
