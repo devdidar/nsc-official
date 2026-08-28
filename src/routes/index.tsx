@@ -7,6 +7,7 @@ import {
 } from "lucide-react";
 import { Blobs } from "@/components/site/Blobs";
 import { CTAButton, GlassCard, PageHero, Section, SectionHeading, Eyebrow } from "@/components/site/primitives";
+import { ScienceFestHeroCard } from "@/components/site/FeaturedScienceFest";
 import { useRevealAll } from "@/hooks/use-reveal";
 import { supabase } from "@/lib/supabase";
 import clarity from "@microsoft/clarity";
@@ -100,54 +101,85 @@ function Hero() {
       <FloatingGlyphs />
 
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 w-full">
-        <div className="mx-auto max-w-4xl text-center animate-blur-in">
-          <div className="flex justify-center">
+        {/* 2-Column Hero: Left Headline + Right Featured Event */}
+        <div className="grid lg:grid-cols-12 gap-8 lg:gap-10 xl:gap-14 items-center animate-blur-in">
+          {/* Left Column: Main Hero Messaging */}
+          <div className="lg:col-span-7 flex flex-col items-start text-left">
             <div className="inline-flex items-center gap-1.5 sm:gap-2 rounded-full glass px-3 sm:px-4 py-1.5 text-[10px] sm:text-xs">
-              <span className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-primary" />
-              <span className="uppercase tracking-[0.14em] sm:tracking-[0.18em] text-muted-foreground">Science in Thought · Innovation in Creation</span>
-            </div>
-          </div>
-          <h1 className="mt-5 sm:mt-6 font-display text-[2rem] leading-[1.15] sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-semibold tracking-tight text-balance">
-            Empowering Young Minds Through <span className="text-gradient">Science & Innovation</span>
-          </h1>
-          <p className="mx-auto mt-4 sm:mt-6 max-w-2xl text-base sm:text-lg text-muted-foreground leading-relaxed px-2 sm:px-0">
-            A student-led community building the next generation of scientists, engineers, and researchers. Hands-on projects, mentored research, bootcamps, and observation nights.
-          </p>
-          <div className="mt-7 sm:mt-9 flex flex-wrap justify-center gap-3">
-            <CTAButton to="/bootcamp/python">Explore Python Bootcamp</CTAButton>
-            <a
-              href="https://forms.gle/zL5qfhdb2MFR1XqB6"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="group/amb relative overflow-hidden inline-flex items-center justify-center gap-2 rounded-full px-5 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:scale-[1.04] hover:shadow-[0_4px_28px_rgba(37,99,235,0.5)]"
-              style={{
-                background: "linear-gradient(135deg, #1d4ed8 0%, #2563eb 40%, #3b82f6 100%)",
-              }}
-            >
-              <span
-                className="absolute inset-0 opacity-0 group-hover/amb:opacity-100 transition-opacity duration-500"
-                style={{
-                  background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%)",
-                  animation: "ambassador-sweep 2s ease-in-out infinite",
-                }}
-              />
-              <span className="relative z-10">
-                Campus Ambassador
+              <span className="h-1.5 w-1.5 sm:h-2 sm:w-2 rounded-full bg-primary animate-pulse" />
+              <span className="uppercase tracking-[0.14em] sm:tracking-[0.18em] text-muted-foreground font-semibold">
+                Science in Thought · Innovation in Creation
               </span>
-            </a>
+            </div>
+
+            <h1 className="mt-4 sm:mt-6 font-display text-3xl sm:text-4xl md:text-5xl lg:text-5xl xl:text-6xl font-bold tracking-tight text-balance leading-[1.12]">
+              Empowering Young Minds Through <span className="text-gradient">Science &amp; Innovation</span>
+            </h1>
+
+            <p className="mt-4 sm:mt-5 max-w-xl text-base sm:text-lg text-muted-foreground leading-relaxed">
+              A student-led community building the next generation of scientists, engineers, and researchers. Hands-on projects, mentored research, bootcamps, and observation nights.
+            </p>
+
+            <div className="mt-6 sm:mt-8 flex flex-wrap items-center gap-3">
+              <a
+                href="https://forms.gle/zL5qfhdb2MFR1XqB6"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group/amb relative overflow-hidden inline-flex items-center justify-center gap-2 rounded-full px-6 py-2.5 text-sm font-semibold text-white transition-all duration-300 hover:scale-[1.04] hover:shadow-[0_4px_28px_rgba(37,99,235,0.5)]"
+                style={{
+                  background: "linear-gradient(135deg, #1d4ed8 0%, #2563eb 40%, #3b82f6 100%)",
+                }}
+              >
+                <span
+                  className="absolute inset-0 opacity-0 group-hover/amb:opacity-100 transition-opacity duration-500"
+                  style={{
+                    background: "linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.2) 50%, transparent 100%)",
+                    animation: "ambassador-sweep 2s ease-in-out infinite",
+                  }}
+                />
+                <span className="relative z-10">
+                  Campus Ambassador
+                </span>
+                <ArrowRight className="h-4 w-4 relative z-10 transition-transform group-hover/amb:translate-x-0.5" />
+              </a>
+              <CTAButton to="/activities" variant="ghost">
+                Explore Activities
+              </CTAButton>
+            </div>
+
+            {/* Quick Highlights / Proof Pills */}
+            <div className="mt-7 sm:mt-8 pt-5 sm:pt-6 border-t border-black/5 flex flex-wrap items-center gap-x-6 gap-y-2 text-xs text-muted-foreground">
+              <div className="flex items-center gap-2 font-medium">
+                <span className="h-1.5 w-1.5 rounded-full bg-primary" />
+                <span>300+ Active Members</span>
+              </div>
+              <div className="flex items-center gap-2 font-medium">
+                <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
+                <span>20+ Workshops</span>
+              </div>
+              <div className="flex items-center gap-2 font-medium">
+                <span className="h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                <span>National Competitions</span>
+              </div>
+            </div>
           </div>
 
-          {/* Marquee */}
-          <div className="mt-10 sm:mt-16 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_15%,black_85%,transparent)]">
-            <div className="flex gap-6 sm:gap-10 animate-marquee whitespace-nowrap text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] text-muted-foreground">
-              {Array.from({ length: 2 }).map((_, k) => (
-                <div key={k} className="flex gap-6 sm:gap-10 shrink-0">
-                  {["Programming", "Artificial Intelligence", "Robotics", "Astronomy", "Science Projects", "Mathematics", "Research", "Innovation"].map((x) => (
-                    <span key={x + k}>{x}</span>
-                  ))}
-                </div>
-              ))}
-            </div>
+          {/* Right Column: Featured Science Fest Event Card */}
+          <div className="lg:col-span-5 w-full">
+            <ScienceFestHeroCard />
+          </div>
+        </div>
+
+        {/* Full-width Marquee below */}
+        <div className="mt-12 sm:mt-16 overflow-hidden [mask-image:linear-gradient(90deg,transparent,black_15%,black_85%,transparent)]">
+          <div className="flex gap-6 sm:gap-10 animate-marquee whitespace-nowrap text-[10px] sm:text-xs uppercase tracking-[0.2em] sm:tracking-[0.3em] text-muted-foreground">
+            {Array.from({ length: 2 }).map((_, k) => (
+              <div key={k} className="flex gap-6 sm:gap-10 shrink-0">
+                {["Programming", "Artificial Intelligence", "Robotics", "Astronomy", "Science Projects", "Mathematics", "Research", "Innovation"].map((x) => (
+                  <span key={x + k}>{x}</span>
+                ))}
+              </div>
+            ))}
           </div>
         </div>
       </div>
@@ -161,20 +193,20 @@ function Hero() {
 
 function FloatingCodeSnippets() {
   const snippets = [
-    { code: 'print("Hello, World!")', top: "20%", left: "3%", delay: "0s" },
-    { code: 'for i in range(10):', top: "65%", right: "4%", delay: "-2s" },
-    { code: 'def learn():', top: "75%", left: "5%", delay: "-4s" },
-    { code: 'import python_bootcamp', top: "30%", right: "6%", delay: "-1s" },
+    { code: 'print("Hello, World!")', top: "12%", left: "1%", delay: "0s" },
+    { code: 'import neutrino', top: "12%", right: "1.5%", delay: "-1s" },
+    { code: 'def innovate():', top: "86%", left: "1.5%", delay: "-3s" },
+    { code: 'for i in range(10):', top: "88%", right: "1.5%", delay: "-2s" },
   ];
   return (
-    <div aria-hidden className="pointer-events-none absolute inset-0 hidden md:block">
+    <div aria-hidden className="pointer-events-none absolute inset-0 hidden 2xl:block overflow-hidden">
       {snippets.map((s, i) => (
         <div
           key={i}
-          className="absolute glass rounded-xl px-3 py-2 animate-float-code"
+          className="absolute glass rounded-xl px-2.5 py-1.5 animate-float-code opacity-70"
           style={{ top: s.top, left: (s as any).left, right: (s as any).right, animationDelay: s.delay }}
         >
-          <code className="text-xs font-mono text-cyan/80">{s.code}</code>
+          <code className="text-[11px] font-mono text-cyan/80">{s.code}</code>
         </div>
       ))}
     </div>
@@ -183,17 +215,15 @@ function FloatingCodeSnippets() {
 
 function FloatingGlyphs() {
   const items = [
-    { top: "18%", left: "6%", Icon: Telescope, size: 20, delay: "0s" },
-    { top: "28%", right: "8%", Icon: Cpu, size: 18, delay: "-3s" },
-    { top: "70%", left: "10%", Icon: FlaskConical, size: 22, delay: "-6s" },
-    { top: "62%", right: "12%", Icon: Sigma, size: 20, delay: "-2s" },
-    { top: "42%", left: "14%", Icon: Sparkles, size: 16, delay: "-4s" },
-    { top: "38%", right: "18%", Icon: Bot, size: 18, delay: "-5s" },
+    { top: "6%", left: "2%", Icon: Telescope, size: 18, delay: "0s" },
+    { top: "6%", right: "3%", Icon: Sparkles, size: 16, delay: "-3s" },
+    { top: "92%", left: "3%", Icon: FlaskConical, size: 18, delay: "-5s" },
+    { top: "92%", right: "3%", Icon: Bot, size: 18, delay: "-2s" },
   ];
   return (
-    <div aria-hidden className="pointer-events-none absolute inset-0 hidden md:block">
+    <div aria-hidden className="pointer-events-none absolute inset-0 hidden 2xl:block overflow-hidden">
       {items.map(({ Icon, ...pos }, i) => (
-        <div key={i} className="absolute glass rounded-2xl p-3 animate-float"
+        <div key={i} className="absolute glass rounded-xl p-2.5 animate-float opacity-60"
           style={{ top: pos.top, left: (pos as any).left, right: (pos as any).right, animationDelay: pos.delay }}>
           <Icon className="text-primary" style={{ width: pos.size, height: pos.size }} />
         </div>

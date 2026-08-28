@@ -113,26 +113,38 @@ function Events() {
   return (
     <div ref={ref}>
       <PageHero
-        eyebrow="Events & Programs"
+        eyebrow="Events &amp; Programs"
         title={
           <>
             Discover our{" "}
-            <span className="text-gradient">Events & Bootcamps</span>.
+            <span className="text-gradient">Events &amp; Programs</span>.
           </>
         }
-        description="Join our upcoming flagship Python Bootcamp or explore recap & highlights from our past events like Science Fair 2025."
+        description="Join our upcoming flagship Shaheed Tanvir Science Fest &amp; Olympiad 2026, bootcamps, and past science events."
       >
-        <CTAButton to="/bootcamp/python">Join Python Bootcamp</CTAButton>
+        <CTAButton to="/science-fest-2026">Explore Science Fest 2026</CTAButton>
       </PageHero>
 
-      {/* Flagship Bootcamp Highlight */}
+      {/* ── 2. Running Program: NSC Python Bootcamp ── */}
       <Section>
-        <div className="grid gap-6 lg:grid-cols-2 items-start">
+        <div data-reveal>
+          <SectionHeading
+            eyebrow="Bootcamp Program"
+            title={
+              <>
+                NSC Python Bootcamp — <span className="text-gradient">Founding Batch</span>
+              </>
+            }
+            description="Our structured 4-week programming curriculum taking students from first principles to building real Python projects."
+            align="center"
+          />
+        </div>
+
+        <div className="mt-8 grid gap-6 lg:grid-cols-2 items-start">
           <GlassCard className="p-8 sm:p-10" data-reveal>
-            <Eyebrow>Flagship Launch</Eyebrow>
-            <h2 className="mt-5 font-display text-3xl sm:text-4xl font-semibold tracking-tight text-balance">
-              NSC Python Bootcamp —{" "}
-              <span className="text-gradient">Founding Batch</span>
+            <Eyebrow>Flagship Bootcamp</Eyebrow>
+            <h2 className="mt-5 font-display text-2xl sm:text-3xl font-semibold tracking-tight text-balance">
+              Zero to Real Software Creation
             </h2>
             <p className="mt-4 text-muted-foreground leading-relaxed">
               Designed for kids and absolute starters. Whether you have never
@@ -190,149 +202,6 @@ function Events() {
               ))}
             </div>
           </GlassCard>
-        </div>
-      </Section>
-
-      {/* Upcoming Events Section */}
-      <Section>
-        <div data-reveal>
-          <SectionHeading
-            eyebrow="Happening Now"
-            title="What's happening next"
-            align="center"
-            description="Our currently running programs and upcoming flagship events you can join right now."
-          />
-        </div>
-        <div className="mt-6 grid gap-6 max-w-4xl mx-auto">
-          {/* Science Fest 2026 */}
-          <article
-            data-reveal
-            className="reveal group relative overflow-hidden rounded-3xl bg-white/90 border border-black/10 hover-lift backdrop-blur-md shadow-md"
-          >
-            <div className="grid sm:grid-cols-[220px_1fr]">
-              <div className="relative min-h-48 bg-gradient-to-br from-[#153D24]/20 to-emerald-500/10 flex items-center justify-center p-6">
-                <div className="absolute inset-0 grid-bg opacity-60" />
-                <div className="relative text-center">
-                  <div className="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-[#153D24] text-white shadow-lg">
-                    <FlaskConical className="h-7 w-7" />
-                  </div>
-                  <span className="mt-3 inline-block rounded-full bg-[#153D24]/15 px-3 py-1 text-[11px] font-bold text-[#153D24]">
-                    Season 2
-                  </span>
-                </div>
-              </div>
-              <div className="p-6 sm:p-8 flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center justify-between">
-                    <Eyebrow>Upcoming Event</Eyebrow>
-                    <span className="rounded-full bg-[#153D24]/10 border border-[#153D24]/25 px-2.5 py-0.5 text-xs font-semibold text-[#153D24]">
-                      Registration Open
-                    </span>
-                  </div>
-                  <h3 className="mt-3 font-display text-2xl font-bold text-foreground">
-                    <Link
-                      to="/science-fest-2026"
-                      className="hover:text-primary transition-colors"
-                    >
-                      শহীদ তানভীন সায়েন্স ফেস্ট অ্যান্ড অলিম্পিয়াড (সিজন ২)
-                    </Link>
-                  </h3>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                    Neutrino Science Club (NSC) presents Science Fest 2026 — a
-                    celebration of curiosity, innovation, and scientific
-                    discovery. Participate in project showcases, quizzes, and
-                    the science olympiad!
-                  </p>
-                  <div className="mt-5 flex flex-wrap gap-4 text-xs font-medium text-muted-foreground">
-                    <Meta i={<CalendarDays className="h-4 w-4" />} v="2026" />
-                    <Meta
-                      i={<Trophy className="h-4 w-4" />}
-                      v="Projects + Olympiad"
-                    />
-                    <Meta
-                      i={<Users className="h-4 w-4" />}
-                      v="Open to All Students"
-                    />
-                  </div>
-                </div>
-                <div className="mt-6">
-                  <Link
-                    to="/science-fest-2026"
-                    className="inline-flex items-center gap-2 rounded-full px-5 py-2.5 text-xs font-bold text-white hover:scale-[1.02] transition-all shadow-md"
-                    style={{ background: "#153D24" }}
-                  >
-                    Register Now <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          {/* Python Bootcamp — Running Now */}
-          <article
-            data-reveal
-            className="reveal group relative overflow-hidden rounded-3xl bg-white/90 border border-black/10 hover-lift backdrop-blur-md shadow-md"
-            style={{ transitionDelay: "100ms" }}
-          >
-            <div className="grid sm:grid-cols-[220px_1fr]">
-              <div className="relative min-h-48 bg-gradient-to-br from-primary/20 to-blue-500/10 flex items-center justify-center p-6">
-                <div className="absolute inset-0 grid-bg opacity-60" />
-                <div className="relative text-center">
-                  <div className="mx-auto grid h-14 w-14 place-items-center rounded-2xl bg-primary text-primary-foreground shadow-lg">
-                    <GraduationCap className="h-7 w-7" />
-                  </div>
-                  <span className="mt-3 inline-block rounded-full bg-primary/20 px-3 py-1 text-[11px] font-bold text-primary">
-                    Founding Batch
-                  </span>
-                </div>
-              </div>
-              <div className="p-6 sm:p-8 flex flex-col justify-between">
-                <div>
-                  <div className="flex items-center justify-between">
-                    <Eyebrow>Running Bootcamp</Eyebrow>
-                    <span className="rounded-full bg-blue-500/15 border border-blue-500/30 px-2.5 py-0.5 text-xs font-semibold text-blue-600">
-                      Running Now
-                    </span>
-                  </div>
-                  <h3 className="mt-3 font-display text-2xl font-bold text-foreground">
-                    <Link
-                      to="/bootcamp/python"
-                      className="hover:text-primary transition-colors"
-                    >
-                      NSC Python Bootcamp — Founding Batch
-                    </Link>
-                  </h3>
-                  <p className="mt-2 text-sm text-muted-foreground leading-relaxed">
-                    4-week beginner-friendly Python program with 8 live
-                    interactive classes, mentor guidance, milestone projects,
-                    and a Python Arcade capstone.
-                  </p>
-                  <div className="mt-5 flex flex-wrap gap-4 text-xs font-medium text-muted-foreground">
-                    <Meta
-                      i={<CalendarDays className="h-4 w-4" />}
-                      v="In Progress"
-                    />
-                    <Meta
-                      i={<Clock className="h-4 w-4" />}
-                      v="4 Weeks (8 Live Classes)"
-                    />
-                    <Meta
-                      i={<MapPin className="h-4 w-4" />}
-                      v="Online / Live Zoom"
-                    />
-                  </div>
-                </div>
-                <div className="mt-6">
-                  <Link
-                    to="/bootcamp/python"
-                    className="inline-flex items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-xs font-bold text-primary-foreground hover:scale-[1.02] transition-all shadow-md"
-                  >
-                    View Bootcamp <ArrowRight className="h-4 w-4" />
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </article>
         </div>
       </Section>
 
