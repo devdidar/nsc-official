@@ -6,15 +6,16 @@ import { formatCompletedOn } from "@/lib/certificates";
 // Every font the certificate uses. Add to a route's head().links with crossOrigin "anonymous"
 // so html-to-image can read and embed them in downloads.
 export const certificateFontsHref =
-  "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600&family=Mrs+Saint+Delafield&family=JetBrains+Mono:wght@500&display=swap";
+  "https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:opsz,wght@9..144,600&family=JetBrains+Mono:wght@500&display=swap";
 
 // Designed at A4 landscape (1123×794 CSS px = 297×210mm at 96dpi), scaled to fit its container.
 const W = 1123;
 const H = 794;
 
-const signatories = [
-  { name: "Didarul Azam Mahi", role: "President & Lead Instructor" },
-  { name: "Faisal Abdullah Fahim", role: "Chairman" },
+// `image`: transparent PNG of the real signature, drawn `height` px tall.
+const signatories: { name: string; role: string; image: string; height: number }[] = [
+  { name: "Faisal Abdullah Fahim", role: "Chairman", image: "/signatures/faisal-abdullah-fahim.png", height: 58 },
+  { name: "Didarul Azam Mahi", role: "President & Lead Instructor", image: "/signatures/didarul-azam-mahi.png", height: 80 },
 ];
 
 export function verifyUrl(id: string) {
@@ -128,7 +129,9 @@ export function Certificate({ cert, certRef }: { cert: CertificateData; certRef?
             </div>
             {signatories.map((s) => (
               <div key={s.name}>
-                <div className="sig">{s.name}</div>
+                <div className="sig">
+                  <img className="sig-img" src={s.image} alt={`${s.name} signature`} style={{ height: s.height }} />
+                </div>
                 <div className="line" />
                 <div className="who">{s.name}</div>
                 <div className="role">{s.role}</div>
@@ -174,7 +177,8 @@ const css = `
 .nsc-cert .body { margin-top: 26px; max-width: 560px; font-size: 17px; line-height: 1.6; color: #3A3A48; }
 .nsc-cert .foot { margin-top: auto; display: grid; grid-template-columns: 0.8fr 1fr 1fr; gap: 36px; align-items: end; }
 .nsc-cert .val { font-size: 18px; font-weight: 700; height: 46px; display: flex; align-items: flex-end; }
-.nsc-cert .sig { white-space: nowrap; font-family: "Mrs Saint Delafield", cursive; font-size: 36px; line-height: .9; color: var(--navy); height: 46px; display: flex; align-items: flex-end; }
+.nsc-cert .sig { height: 46px; display: flex; align-items: flex-end; }
+.nsc-cert .sig-img { display: block; width: auto; max-width: 100%; margin-bottom: -6px; }
 .nsc-cert .line { margin-top: 10px; height: 1px; background: #D6D4E4; }
 .nsc-cert .who { margin-top: 10px; font-size: 14px; font-weight: 700; }
 .nsc-cert .role { margin-top: 2px; font-size: 12px; color: var(--muted); }
