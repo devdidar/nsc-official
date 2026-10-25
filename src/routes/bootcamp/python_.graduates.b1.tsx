@@ -1,4 +1,4 @@
-import { createFileRoute } from "@tanstack/react-router";
+import { createFileRoute, Link } from "@tanstack/react-router";
 import { useMemo, useState } from "react";
 import { Search, GraduationCap } from "lucide-react";
 import { PageHero, Section, GlassCard, CTAButton } from "@/components/site/primitives";
@@ -35,7 +35,7 @@ function Graduates() {
 
   const list = useMemo(() => {
     const needle = q.trim().toLowerCase();
-    return needle ? graduates.filter((n) => n.toLowerCase().includes(needle)) : graduates;
+    return needle ? graduates.filter((g) => g.full_name.toLowerCase().includes(needle)) : graduates;
   }, [graduates, q]);
 
   return (
@@ -67,14 +67,16 @@ function Graduates() {
           </div>
 
           <div className="mt-8 grid grid-cols-2 gap-3 sm:grid-cols-3 sm:gap-4 lg:grid-cols-4">
-            {list.map((name) => (
-              <GlassCard key={name} className="flex flex-col items-center p-5 text-center sm:p-6">
-                <div className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-secondary text-base font-bold text-primary sm:h-16 sm:w-16 sm:text-lg">
-                  {initials(name)}
-                </div>
-                <div className="mt-3.5 font-display text-sm font-bold leading-snug text-foreground text-balance sm:text-base">{name}</div>
-                <div className="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-primary">Graduate · B1</div>
-              </GlassCard>
+            {list.map((g) => (
+              <Link key={g.id} to="/certificate/$certId" params={{ certId: g.id }} className="block">
+                <GlassCard className="flex h-full flex-col items-center p-5 text-center sm:p-6">
+                  <div className="mx-auto grid h-14 w-14 place-items-center rounded-full bg-secondary text-base font-bold text-primary sm:h-16 sm:w-16 sm:text-lg">
+                    {initials(g.full_name)}
+                  </div>
+                  <div className="mt-3.5 font-display text-sm font-bold leading-snug text-foreground text-balance sm:text-base">{g.full_name}</div>
+                  <div className="mt-1.5 text-[11px] font-semibold uppercase tracking-[0.14em] text-primary">View certificate</div>
+                </GlassCard>
+              </Link>
             ))}
           </div>
 

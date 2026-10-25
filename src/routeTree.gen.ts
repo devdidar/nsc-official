@@ -17,15 +17,16 @@ import { Route as ResearchRouteImport } from './routes/research'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as EventsRouteImport } from './routes/events'
 import { Route as ContactRouteImport } from './routes/contact'
-import { Route as CertificateRouteImport } from './routes/certificate'
 import { Route as BootcampsRouteImport } from './routes/bootcamps'
 import { Route as ActivitiesRouteImport } from './routes/activities'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as VerifyIndexRouteImport } from './routes/verify/index'
 import { Route as EventsIndexRouteImport } from './routes/events/index'
+import { Route as CertificateIndexRouteImport } from './routes/certificate/index'
 import { Route as VerifyCertIdRouteImport } from './routes/verify/$certId'
 import { Route as EventsScienceFair2025RouteImport } from './routes/events/science-fair-2025'
+import { Route as CertificateCertIdRouteImport } from './routes/certificate/$certId'
 import { Route as BootcampPythonRouteImport } from './routes/bootcamp/python'
 import { Route as BootcampPythonGraduatesB1RouteImport } from './routes/bootcamp/python_.graduates.b1'
 
@@ -69,11 +70,6 @@ const ContactRoute = ContactRouteImport.update({
   path: '/contact',
   getParentRoute: () => rootRouteImport,
 } as any)
-const CertificateRoute = CertificateRouteImport.update({
-  id: '/certificate',
-  path: '/certificate',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const BootcampsRoute = BootcampsRouteImport.update({
   id: '/bootcamps',
   path: '/bootcamps',
@@ -104,6 +100,11 @@ const EventsIndexRoute = EventsIndexRouteImport.update({
   path: '/',
   getParentRoute: () => EventsRoute,
 } as any)
+const CertificateIndexRoute = CertificateIndexRouteImport.update({
+  id: '/certificate/',
+  path: '/certificate/',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const VerifyCertIdRoute = VerifyCertIdRouteImport.update({
   id: '/verify/$certId',
   path: '/verify/$certId',
@@ -113,6 +114,11 @@ const EventsScienceFair2025Route = EventsScienceFair2025RouteImport.update({
   id: '/science-fair-2025',
   path: '/science-fair-2025',
   getParentRoute: () => EventsRoute,
+} as any)
+const CertificateCertIdRoute = CertificateCertIdRouteImport.update({
+  id: '/certificate/$certId',
+  path: '/certificate/$certId',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const BootcampPythonRoute = BootcampPythonRouteImport.update({
   id: '/bootcamp/python',
@@ -131,7 +137,6 @@ export interface FileRoutesByFullPath {
   '/about': typeof AboutRoute
   '/activities': typeof ActivitiesRoute
   '/bootcamps': typeof BootcampsRoute
-  '/certificate': typeof CertificateRoute
   '/contact': typeof ContactRoute
   '/events': typeof EventsRouteWithChildren
   '/gallery': typeof GalleryRoute
@@ -141,8 +146,10 @@ export interface FileRoutesByFullPath {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
   '/bootcamp/python': typeof BootcampPythonRoute
+  '/certificate/$certId': typeof CertificateCertIdRoute
   '/events/science-fair-2025': typeof EventsScienceFair2025Route
   '/verify/$certId': typeof VerifyCertIdRoute
+  '/certificate/': typeof CertificateIndexRoute
   '/events/': typeof EventsIndexRoute
   '/verify/': typeof VerifyIndexRoute
   '/bootcamp/python/graduates/b1': typeof BootcampPythonGraduatesB1Route
@@ -152,7 +159,6 @@ export interface FileRoutesByTo {
   '/about': typeof AboutRoute
   '/activities': typeof ActivitiesRoute
   '/bootcamps': typeof BootcampsRoute
-  '/certificate': typeof CertificateRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
   '/research': typeof ResearchRoute
@@ -161,8 +167,10 @@ export interface FileRoutesByTo {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
   '/bootcamp/python': typeof BootcampPythonRoute
+  '/certificate/$certId': typeof CertificateCertIdRoute
   '/events/science-fair-2025': typeof EventsScienceFair2025Route
   '/verify/$certId': typeof VerifyCertIdRoute
+  '/certificate': typeof CertificateIndexRoute
   '/events': typeof EventsIndexRoute
   '/verify': typeof VerifyIndexRoute
   '/bootcamp/python/graduates/b1': typeof BootcampPythonGraduatesB1Route
@@ -173,7 +181,6 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/activities': typeof ActivitiesRoute
   '/bootcamps': typeof BootcampsRoute
-  '/certificate': typeof CertificateRoute
   '/contact': typeof ContactRoute
   '/events': typeof EventsRouteWithChildren
   '/gallery': typeof GalleryRoute
@@ -183,8 +190,10 @@ export interface FileRoutesById {
   '/sitemap.xml': typeof SitemapDotxmlRoute
   '/team': typeof TeamRoute
   '/bootcamp/python': typeof BootcampPythonRoute
+  '/certificate/$certId': typeof CertificateCertIdRoute
   '/events/science-fair-2025': typeof EventsScienceFair2025Route
   '/verify/$certId': typeof VerifyCertIdRoute
+  '/certificate/': typeof CertificateIndexRoute
   '/events/': typeof EventsIndexRoute
   '/verify/': typeof VerifyIndexRoute
   '/bootcamp/python_/graduates/b1': typeof BootcampPythonGraduatesB1Route
@@ -196,7 +205,6 @@ export interface FileRouteTypes {
     | '/about'
     | '/activities'
     | '/bootcamps'
-    | '/certificate'
     | '/contact'
     | '/events'
     | '/gallery'
@@ -206,8 +214,10 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/team'
     | '/bootcamp/python'
+    | '/certificate/$certId'
     | '/events/science-fair-2025'
     | '/verify/$certId'
+    | '/certificate/'
     | '/events/'
     | '/verify/'
     | '/bootcamp/python/graduates/b1'
@@ -217,7 +227,6 @@ export interface FileRouteTypes {
     | '/about'
     | '/activities'
     | '/bootcamps'
-    | '/certificate'
     | '/contact'
     | '/gallery'
     | '/research'
@@ -226,8 +235,10 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/team'
     | '/bootcamp/python'
+    | '/certificate/$certId'
     | '/events/science-fair-2025'
     | '/verify/$certId'
+    | '/certificate'
     | '/events'
     | '/verify'
     | '/bootcamp/python/graduates/b1'
@@ -237,7 +248,6 @@ export interface FileRouteTypes {
     | '/about'
     | '/activities'
     | '/bootcamps'
-    | '/certificate'
     | '/contact'
     | '/events'
     | '/gallery'
@@ -247,8 +257,10 @@ export interface FileRouteTypes {
     | '/sitemap.xml'
     | '/team'
     | '/bootcamp/python'
+    | '/certificate/$certId'
     | '/events/science-fair-2025'
     | '/verify/$certId'
+    | '/certificate/'
     | '/events/'
     | '/verify/'
     | '/bootcamp/python_/graduates/b1'
@@ -259,7 +271,6 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ActivitiesRoute: typeof ActivitiesRoute
   BootcampsRoute: typeof BootcampsRoute
-  CertificateRoute: typeof CertificateRoute
   ContactRoute: typeof ContactRoute
   EventsRoute: typeof EventsRouteWithChildren
   GalleryRoute: typeof GalleryRoute
@@ -269,7 +280,9 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TeamRoute: typeof TeamRoute
   BootcampPythonRoute: typeof BootcampPythonRoute
+  CertificateCertIdRoute: typeof CertificateCertIdRoute
   VerifyCertIdRoute: typeof VerifyCertIdRoute
+  CertificateIndexRoute: typeof CertificateIndexRoute
   VerifyIndexRoute: typeof VerifyIndexRoute
   BootcampPythonGraduatesB1Route: typeof BootcampPythonGraduatesB1Route
 }
@@ -332,13 +345,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ContactRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/certificate': {
-      id: '/certificate'
-      path: '/certificate'
-      fullPath: '/certificate'
-      preLoaderRoute: typeof CertificateRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/bootcamps': {
       id: '/bootcamps'
       path: '/bootcamps'
@@ -381,6 +387,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EventsIndexRouteImport
       parentRoute: typeof EventsRoute
     }
+    '/certificate/': {
+      id: '/certificate/'
+      path: '/certificate'
+      fullPath: '/certificate/'
+      preLoaderRoute: typeof CertificateIndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/verify/$certId': {
       id: '/verify/$certId'
       path: '/verify/$certId'
@@ -394,6 +407,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/events/science-fair-2025'
       preLoaderRoute: typeof EventsScienceFair2025RouteImport
       parentRoute: typeof EventsRoute
+    }
+    '/certificate/$certId': {
+      id: '/certificate/$certId'
+      path: '/certificate/$certId'
+      fullPath: '/certificate/$certId'
+      preLoaderRoute: typeof CertificateCertIdRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/bootcamp/python': {
       id: '/bootcamp/python'
@@ -430,7 +450,6 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ActivitiesRoute: ActivitiesRoute,
   BootcampsRoute: BootcampsRoute,
-  CertificateRoute: CertificateRoute,
   ContactRoute: ContactRoute,
   EventsRoute: EventsRouteWithChildren,
   GalleryRoute: GalleryRoute,
@@ -440,7 +459,9 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TeamRoute: TeamRoute,
   BootcampPythonRoute: BootcampPythonRoute,
+  CertificateCertIdRoute: CertificateCertIdRoute,
   VerifyCertIdRoute: VerifyCertIdRoute,
+  CertificateIndexRoute: CertificateIndexRoute,
   VerifyIndexRoute: VerifyIndexRoute,
   BootcampPythonGraduatesB1Route: BootcampPythonGraduatesB1Route,
 }

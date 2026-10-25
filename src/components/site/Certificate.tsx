@@ -14,12 +14,12 @@ const H = 794;
 
 // `image`: transparent PNG of the real signature, drawn `height` px tall.
 const signatories: { name: string; role: string; image: string; height: number }[] = [
-  { name: "Faisal Abdullah Fahim", role: "Chairman", image: "/signatures/faisal-abdullah-fahim.png", height: 56 },
+  { name: "Md. Faisal Abdullah Fahim", role: "Chairman", image: "/signatures/faisal-abdullah-fahim.png", height: 66 },
   { name: "Didarul Azam Mahi", role: "President & Lead Instructor", image: "/signatures/didarul-azam-mahi.png", height: 84 },
 ];
 
-export function verifyUrl(id: string) {
-  return `https://www.neutrinoscienceclub.org/verify/${id}`;
+export function certificateUrl(id: string) {
+  return `https://www.neutrinoscienceclub.org/certificate/${id}`;
 }
 
 // NSC-B1001 → "01" (batch digits before the 3-digit serial).
@@ -61,7 +61,7 @@ export function Certificate({ cert, certRef }: { cert: CertificateData; certRef?
   const batch = batchNumber(cert.id);
 
   useEffect(() => {
-    QRCode.toDataURL(verifyUrl(cert.id), { margin: 0, width: 300, color: { dark: "#16163B", light: "#FFFFFF" } }).then(setQr);
+    QRCode.toDataURL(certificateUrl(cert.id), { margin: 0, width: 300, color: { dark: "#16163B", light: "#FFFFFF" } }).then(setQr);
   }, [cert.id]);
 
   useEffect(() => {
@@ -92,17 +92,10 @@ export function Certificate({ cert, certRef }: { cert: CertificateData; certRef?
     <div ref={wrapRef} className="nsc-cert-wrap" style={{ height: H * scale }}>
       <style>{css}</style>
       <div ref={certRef} className="nsc-cert" style={{ transform: `scale(${scale})` }}>
+        <GlassTiles />
         <div className="frame" />
-        <Corner className="corner tl" />
-        <Corner className="corner br" />
+        <PixelCorners />
 
-        <div className="code-bg">
-          <span className="k">def</span> graduate(student):{"\n"}
-          {"    "}skills = [<span className="s">"python"</span>, <span className="s">"logic"</span>]{"\n"}
-          {"    "}<span className="k">for</span> s <span className="k">in</span> skills:{"\n"}
-          {"        "}student.learn(s){"\n"}
-          {"    "}<span className="k">return</span> <span className="k">True</span>
-        </div>
 
         <div className="content">
           <div className="brand">
@@ -173,60 +166,76 @@ function Signature({ s }: { s: (typeof signatories)[number] }) {
   );
 }
 
-// Corner ornament: layered shards, logo-style network, gradient strip and short circuit traces.
-// Drawn for the top-left; the bottom-right copy is rotated 180° in CSS.
-function Corner({ className }: { className: string }) {
-  const id = useId().replace(/:/g, "");
+// Frosted glass tiles over the two glows (top-right, bottom-left), fading out with distance.
+// Opacity is computed per tile instead of with an SVG mask, which html-to-image drops.
+const TILE = 92;
+const glows = [
+  { x: 960, y: 70, r: 430 },
+  { x: 150, y: 760, r: 360 },
+];
+const tiles = Array.from({ length: Math.ceil(W / TILE) * Math.ceil(H / TILE) }, (_, i) => {
+  const x = (i % Math.ceil(W / TILE)) * TILE - 18;
+  const y = Math.floor(i / Math.ceil(W / TILE)) * TILE - 26;
+  const o = Math.max(...glows.map((g) => 1 - Math.hypot(x + TILE / 2 - g.x, y + TILE / 2 - g.y) / g.r));
+  return { x, y, o: Math.max(0, o) };
+}).filter((t) => t.o > 0.04);
+
+function GlassTiles() {
   return (
-    <svg className={className} viewBox="0 0 280 280" aria-hidden>
+    <svg className="tiles" viewBox={`0 0 ${W} ${H}`} aria-hidden>
+      {tiles.map((t) => (
+        <rect
+          key={`${t.x},${t.y}`}
+          x={t.x + 5}
+          y={t.y + 5}
+          width={TILE - 10}
+          height={TILE - 10}
+          rx="14"
+          fill="#fff"
+          fillOpacity={0.42 * t.o}
+          stroke="#fff"
+          strokeOpacity={0.9 * t.o}
+        />
+      ))}
+    </svg>
+  );
+}
+
+// Corner ornament: staggered pixel blocks in two corners plus slim gradient edge bars.
+function PixelCorners() {
+  const id = useId().replace(/:/g, "");
+  // [x, y, size, color] in top-left space; mirrored for the bottom-right.
+  const blocks: [number, number, number, string][] = [
+    [0, 0, 72, "#16163B"],
+    [72, 0, 36, "#6344f5"],
+    [0, 72, 36, "#6344f5"],
+    [108, 0, 18, "#3EE0E8"],
+    [72, 36, 18, "#B6F23C"],
+    [0, 108, 18, "#3EE0E8"],
+    [36, 72, 18, "#B6F23C"],
+    [126, 18, 10, "#6344f5"],
+    [18, 126, 10, "#6344f5"],
+  ];
+  return (
+    <svg className="ornament" viewBox={`0 0 ${W} ${H}`} aria-hidden>
       <defs>
-        <linearGradient id={`nv${id}`} x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0" stopColor="#16163B" />
-          <stop offset="1" stopColor="#2B2470" />
+        <linearGradient id={`rb${id}`} x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0" stopColor="#6344f5" />
+          <stop offset="1" stopColor="#3EE0E8" />
         </linearGradient>
-        <linearGradient id={`gl${id}`} x1="0" y1="0" x2="1" y2="0">
+        <linearGradient id={`lb${id}`} x1="0" y1="0" x2="0" y2="1">
           <stop offset="0" stopColor="#3EE0E8" />
           <stop offset="1" stopColor="#B6F23C" />
         </linearGradient>
-        <pattern id={`dt${id}`} width="9" height="9" patternUnits="userSpaceOnUse">
-          <circle cx="1.5" cy="1.5" r="1" fill="#fff" opacity=".12" />
-        </pattern>
-        <clipPath id={`cp${id}`}>
-          <polygon points="0,0 176,0 0,176" />
-        </clipPath>
       </defs>
-      <polygon points="0,0 262,0 0,46" fill="#6344f5" opacity=".9" />
-      <polygon points="0,0 46,0 0,262" fill="#6344f5" opacity=".9" />
-      <polygon points="0,0 228,0 0,98" fill="#8B74FF" opacity=".35" />
-      <polygon points="0,0 98,0 0,228" fill="#8B74FF" opacity=".35" />
-      <polygon points="0,0 176,0 0,176" fill={`url(#nv${id})`} />
-      <rect width="176" height="176" fill={`url(#dt${id})`} clipPath={`url(#cp${id})`} />
-      <polygon points="186,0 196,0 0,196 0,186" fill={`url(#gl${id})`} />
-      <g stroke="#3EE0E8" strokeWidth="1.2" opacity=".85">
-        <line x1="28" y1="34" x2="66" y2="22" />
-        <line x1="66" y1="22" x2="58" y2="62" />
-        <line x1="28" y1="34" x2="58" y2="62" />
-        <line x1="58" y1="62" x2="100" y2="40" />
-        <line x1="66" y1="22" x2="100" y2="40" />
-        <line x1="28" y1="34" x2="22" y2="86" />
-        <line x1="22" y1="86" x2="58" y2="62" />
-      </g>
-      <circle cx="28" cy="34" r="3.6" fill="#B6F23C" />
-      <circle cx="66" cy="22" r="3" fill="#3EE0E8" />
-      <circle cx="58" cy="62" r="4.4" fill="#B6F23C" />
-      <circle cx="100" cy="40" r="3" fill="#3EE0E8" />
-      <circle cx="22" cy="86" r="3" fill="#3EE0E8" />
-      {/* Kept clear of the signature rows. */}
-      <g fill="none" stroke="#6344f5" strokeWidth="1.3" opacity=".45" strokeLinecap="round">
-        <path d="M40 160 V186 L54 200 V214" />
-        <path d="M72 128 V156 L92 176 V222" />
-        <path d="M100 116 V138 L114 152 V170" />
-      </g>
-      <g fill="#fff" stroke="#6344f5" strokeWidth="1.5" opacity=".75">
-        <circle cx="54" cy="214" r="2.6" />
-        <circle cx="92" cy="222" r="3.4" />
-        <circle cx="114" cy="170" r="2.6" />
-      </g>
+      {blocks.map(([x, y, s, c]) => (
+        <g key={`${x},${y}`}>
+          <rect x={x} y={y} width={s} height={s} fill={c} />
+          <rect x={W - x - s} y={H - y - s} width={s} height={s} fill={c} />
+        </g>
+      ))}
+      <rect x={W - 12} y="150" width="12" height="330" fill={`url(#rb${id})`} />
+      <rect x="0" y={H - 480} width="12" height="330" fill={`url(#lb${id})`} />
     </svg>
   );
 }
@@ -236,16 +245,17 @@ const css = `
 .nsc-cert {
   --navy: #16163B; --violet: #6344f5; --cyan: #3EE0E8; --lime: #B6F23C; --ink: #121217; --muted: #6B6B7B; --line: #E4E2EF;
   position: absolute; top: 0; left: 0; width: ${W}px; height: ${H}px; transform-origin: top left; overflow: hidden;
-  background: radial-gradient(circle at 1px 1px, rgba(22,22,59,.07) 1px, transparent 0) 0 0 / 22px 22px, #fff;
+  background:
+    radial-gradient(560px 440px at 90% 4%, rgba(99,68,245,.42), transparent 70%),
+    radial-gradient(420px 340px at 72% 26%, rgba(62,224,232,.30), transparent 70%),
+    radial-gradient(520px 400px at 8% 100%, rgba(182,242,60,.42), transparent 70%),
+    radial-gradient(420px 340px at 30% 84%, rgba(62,224,232,.24), transparent 70%),
+    linear-gradient(160deg, #FBFBFE 0%, #F2F1FA 100%);
   font-family: "Plus Jakarta Sans", sans-serif; color: var(--ink); text-align: center;
 }
+.nsc-cert .tiles { position: absolute; inset: 0; width: ${W}px; height: ${H}px; }
 .nsc-cert .frame { position: absolute; inset: 22px; border: 1px solid var(--line); border-radius: 4px; }
-.nsc-cert .corner { position: absolute; width: 280px; height: 280px; }
-.nsc-cert .corner.tl { top: 0; left: 0; }
-.nsc-cert .corner.br { bottom: 0; right: 0; transform: rotate(180deg); }
-.nsc-cert .code-bg { position: absolute; top: 52px; right: 56px; text-align: left; white-space: pre; font-family: "JetBrains Mono", monospace; font-size: 11px; line-height: 1.75; color: rgba(22,22,59,.16); }
-.nsc-cert .code-bg .k { color: rgba(99,68,245,.32); }
-.nsc-cert .code-bg .s { color: rgba(6,150,120,.32); }
+.nsc-cert .ornament { position: absolute; inset: 0; width: ${W}px; height: ${H}px; }
 
 .nsc-cert .content { position: relative; height: 100%; padding: 50px 120px 46px; display: flex; flex-direction: column; align-items: center; }
 .nsc-cert .brand { display: flex; align-items: center; gap: 12px; }
