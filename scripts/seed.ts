@@ -79,7 +79,6 @@ const resources = [
 
 const faqs = [
   { question: "Do I need to be a member to use these?", answer: "Most resources are public. Members get access to private mentor sessions, GPU quota and the Slack.", sort_order: 1 },
-  { question: "Can I contribute a resource?", answer: "Absolutely — open a PR on our GitHub or email the maintainers.", sort_order: 2 },
   { question: "Do you offer certification?", answer: "We issue attendance and project completion certificates for bootcamps.", sort_order: 3 },
   { question: "Is there a licensing policy?", answer: "All datasets ship under CC-BY-4.0 unless otherwise stated.", sort_order: 4 },
 ];
