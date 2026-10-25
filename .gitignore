@@ -5,3 +5,6 @@
 node_modules
 dist
 .output
+
+# Private certificate database and passcodes
+private/

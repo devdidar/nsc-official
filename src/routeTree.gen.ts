@@ -9,70 +9,29 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as IndexRouteImport } from './routes/index'
-import { Route as AboutRouteImport } from './routes/about'
-import { Route as ActivitiesRouteImport } from './routes/activities'
-import { Route as BootcampsRouteImport } from './routes/bootcamps'
-import { Route as ContactRouteImport } from './routes/contact'
-import { Route as EventsRouteImport } from './routes/events'
-import { Route as GalleryRouteImport } from './routes/gallery'
-import { Route as ResearchRouteImport } from './routes/research'
-import { Route as ResourcesRouteImport } from './routes/resources'
-import { Route as ScienceFest2026RouteImport } from './routes/science-fest-2026'
-import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
 import { Route as TeamRouteImport } from './routes/team'
-import { Route as BootcampPythonRouteImport } from './routes/bootcamp/python'
+import { Route as SitemapDotxmlRouteImport } from './routes/sitemap[.]xml'
+import { Route as ScienceFest2026RouteImport } from './routes/science-fest-2026'
+import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as ResearchRouteImport } from './routes/research'
+import { Route as GalleryRouteImport } from './routes/gallery'
+import { Route as EventsRouteImport } from './routes/events'
+import { Route as ContactRouteImport } from './routes/contact'
+import { Route as CertificateRouteImport } from './routes/certificate'
+import { Route as BootcampsRouteImport } from './routes/bootcamps'
+import { Route as ActivitiesRouteImport } from './routes/activities'
+import { Route as AboutRouteImport } from './routes/about'
+import { Route as IndexRouteImport } from './routes/index'
+import { Route as VerifyIndexRouteImport } from './routes/verify/index'
 import { Route as EventsIndexRouteImport } from './routes/events/index'
+import { Route as VerifyCertIdRouteImport } from './routes/verify/$certId'
 import { Route as EventsScienceFair2025RouteImport } from './routes/events/science-fair-2025'
+import { Route as BootcampPythonRouteImport } from './routes/bootcamp/python'
+import { Route as BootcampPythonGraduatesB1RouteImport } from './routes/bootcamp/python_.graduates.b1'
 
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AboutRoute = AboutRouteImport.update({
-  id: '/about',
-  path: '/about',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ActivitiesRoute = ActivitiesRouteImport.update({
-  id: '/activities',
-  path: '/activities',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const BootcampsRoute = BootcampsRouteImport.update({
-  id: '/bootcamps',
-  path: '/bootcamps',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ContactRoute = ContactRouteImport.update({
-  id: '/contact',
-  path: '/contact',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const EventsRoute = EventsRouteImport.update({
-  id: '/events',
-  path: '/events',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const GalleryRoute = GalleryRouteImport.update({
-  id: '/gallery',
-  path: '/gallery',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ResearchRoute = ResearchRouteImport.update({
-  id: '/research',
-  path: '/research',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ResourcesRoute = ResourcesRouteImport.update({
-  id: '/resources',
-  path: '/resources',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ScienceFest2026Route = ScienceFest2026RouteImport.update({
-  id: '/science-fest-2026',
-  path: '/science-fest-2026',
+const TeamRoute = TeamRouteImport.update({
+  id: '/team',
+  path: '/team',
   getParentRoute: () => rootRouteImport,
 } as any)
 const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
@@ -80,14 +39,64 @@ const SitemapDotxmlRoute = SitemapDotxmlRouteImport.update({
   path: '/sitemap.xml',
   getParentRoute: () => rootRouteImport,
 } as any)
-const TeamRoute = TeamRouteImport.update({
-  id: '/team',
-  path: '/team',
+const ScienceFest2026Route = ScienceFest2026RouteImport.update({
+  id: '/science-fest-2026',
+  path: '/science-fest-2026',
   getParentRoute: () => rootRouteImport,
 } as any)
-const BootcampPythonRoute = BootcampPythonRouteImport.update({
-  id: '/bootcamp/python',
-  path: '/bootcamp/python',
+const ResourcesRoute = ResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResearchRoute = ResearchRouteImport.update({
+  id: '/research',
+  path: '/research',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const GalleryRoute = GalleryRouteImport.update({
+  id: '/gallery',
+  path: '/gallery',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const EventsRoute = EventsRouteImport.update({
+  id: '/events',
+  path: '/events',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ContactRoute = ContactRouteImport.update({
+  id: '/contact',
+  path: '/contact',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const CertificateRoute = CertificateRouteImport.update({
+  id: '/certificate',
+  path: '/certificate',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BootcampsRoute = BootcampsRouteImport.update({
+  id: '/bootcamps',
+  path: '/bootcamps',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ActivitiesRoute = ActivitiesRouteImport.update({
+  id: '/activities',
+  path: '/activities',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AboutRoute = AboutRouteImport.update({
+  id: '/about',
+  path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const VerifyIndexRoute = VerifyIndexRouteImport.update({
+  id: '/verify/',
+  path: '/verify/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const EventsIndexRoute = EventsIndexRouteImport.update({
@@ -95,17 +104,34 @@ const EventsIndexRoute = EventsIndexRouteImport.update({
   path: '/',
   getParentRoute: () => EventsRoute,
 } as any)
+const VerifyCertIdRoute = VerifyCertIdRouteImport.update({
+  id: '/verify/$certId',
+  path: '/verify/$certId',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const EventsScienceFair2025Route = EventsScienceFair2025RouteImport.update({
   id: '/science-fair-2025',
   path: '/science-fair-2025',
   getParentRoute: () => EventsRoute,
 } as any)
+const BootcampPythonRoute = BootcampPythonRouteImport.update({
+  id: '/bootcamp/python',
+  path: '/bootcamp/python',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BootcampPythonGraduatesB1Route =
+  BootcampPythonGraduatesB1RouteImport.update({
+    id: '/bootcamp/python_/graduates/b1',
+    path: '/bootcamp/python/graduates/b1',
+    getParentRoute: () => rootRouteImport,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/activities': typeof ActivitiesRoute
   '/bootcamps': typeof BootcampsRoute
+  '/certificate': typeof CertificateRoute
   '/contact': typeof ContactRoute
   '/events': typeof EventsRouteWithChildren
   '/gallery': typeof GalleryRoute
@@ -116,13 +142,17 @@ export interface FileRoutesByFullPath {
   '/team': typeof TeamRoute
   '/bootcamp/python': typeof BootcampPythonRoute
   '/events/science-fair-2025': typeof EventsScienceFair2025Route
+  '/verify/$certId': typeof VerifyCertIdRoute
   '/events/': typeof EventsIndexRoute
+  '/verify/': typeof VerifyIndexRoute
+  '/bootcamp/python/graduates/b1': typeof BootcampPythonGraduatesB1Route
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
   '/activities': typeof ActivitiesRoute
   '/bootcamps': typeof BootcampsRoute
+  '/certificate': typeof CertificateRoute
   '/contact': typeof ContactRoute
   '/gallery': typeof GalleryRoute
   '/research': typeof ResearchRoute
@@ -132,7 +162,10 @@ export interface FileRoutesByTo {
   '/team': typeof TeamRoute
   '/bootcamp/python': typeof BootcampPythonRoute
   '/events/science-fair-2025': typeof EventsScienceFair2025Route
+  '/verify/$certId': typeof VerifyCertIdRoute
   '/events': typeof EventsIndexRoute
+  '/verify': typeof VerifyIndexRoute
+  '/bootcamp/python/graduates/b1': typeof BootcampPythonGraduatesB1Route
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -140,6 +173,7 @@ export interface FileRoutesById {
   '/about': typeof AboutRoute
   '/activities': typeof ActivitiesRoute
   '/bootcamps': typeof BootcampsRoute
+  '/certificate': typeof CertificateRoute
   '/contact': typeof ContactRoute
   '/events': typeof EventsRouteWithChildren
   '/gallery': typeof GalleryRoute
@@ -150,7 +184,10 @@ export interface FileRoutesById {
   '/team': typeof TeamRoute
   '/bootcamp/python': typeof BootcampPythonRoute
   '/events/science-fair-2025': typeof EventsScienceFair2025Route
+  '/verify/$certId': typeof VerifyCertIdRoute
   '/events/': typeof EventsIndexRoute
+  '/verify/': typeof VerifyIndexRoute
+  '/bootcamp/python_/graduates/b1': typeof BootcampPythonGraduatesB1Route
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -159,6 +196,7 @@ export interface FileRouteTypes {
     | '/about'
     | '/activities'
     | '/bootcamps'
+    | '/certificate'
     | '/contact'
     | '/events'
     | '/gallery'
@@ -169,13 +207,17 @@ export interface FileRouteTypes {
     | '/team'
     | '/bootcamp/python'
     | '/events/science-fair-2025'
+    | '/verify/$certId'
     | '/events/'
+    | '/verify/'
+    | '/bootcamp/python/graduates/b1'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
     | '/activities'
     | '/bootcamps'
+    | '/certificate'
     | '/contact'
     | '/gallery'
     | '/research'
@@ -185,13 +227,17 @@ export interface FileRouteTypes {
     | '/team'
     | '/bootcamp/python'
     | '/events/science-fair-2025'
+    | '/verify/$certId'
     | '/events'
+    | '/verify'
+    | '/bootcamp/python/graduates/b1'
   id:
     | '__root__'
     | '/'
     | '/about'
     | '/activities'
     | '/bootcamps'
+    | '/certificate'
     | '/contact'
     | '/events'
     | '/gallery'
@@ -202,7 +248,10 @@ export interface FileRouteTypes {
     | '/team'
     | '/bootcamp/python'
     | '/events/science-fair-2025'
+    | '/verify/$certId'
     | '/events/'
+    | '/verify/'
+    | '/bootcamp/python_/graduates/b1'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -210,6 +259,7 @@ export interface RootRouteChildren {
   AboutRoute: typeof AboutRoute
   ActivitiesRoute: typeof ActivitiesRoute
   BootcampsRoute: typeof BootcampsRoute
+  CertificateRoute: typeof CertificateRoute
   ContactRoute: typeof ContactRoute
   EventsRoute: typeof EventsRouteWithChildren
   GalleryRoute: typeof GalleryRoute
@@ -219,78 +269,18 @@ export interface RootRouteChildren {
   SitemapDotxmlRoute: typeof SitemapDotxmlRoute
   TeamRoute: typeof TeamRoute
   BootcampPythonRoute: typeof BootcampPythonRoute
+  VerifyCertIdRoute: typeof VerifyCertIdRoute
+  VerifyIndexRoute: typeof VerifyIndexRoute
+  BootcampPythonGraduatesB1Route: typeof BootcampPythonGraduatesB1Route
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/about': {
-      id: '/about'
-      path: '/about'
-      fullPath: '/about'
-      preLoaderRoute: typeof AboutRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/activities': {
-      id: '/activities'
-      path: '/activities'
-      fullPath: '/activities'
-      preLoaderRoute: typeof ActivitiesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/bootcamps': {
-      id: '/bootcamps'
-      path: '/bootcamps'
-      fullPath: '/bootcamps'
-      preLoaderRoute: typeof BootcampsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/contact': {
-      id: '/contact'
-      path: '/contact'
-      fullPath: '/contact'
-      preLoaderRoute: typeof ContactRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/events': {
-      id: '/events'
-      path: '/events'
-      fullPath: '/events'
-      preLoaderRoute: typeof EventsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/gallery': {
-      id: '/gallery'
-      path: '/gallery'
-      fullPath: '/gallery'
-      preLoaderRoute: typeof GalleryRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/research': {
-      id: '/research'
-      path: '/research'
-      fullPath: '/research'
-      preLoaderRoute: typeof ResearchRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/resources': {
-      id: '/resources'
-      path: '/resources'
-      fullPath: '/resources'
-      preLoaderRoute: typeof ResourcesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/science-fest-2026': {
-      id: '/science-fest-2026'
-      path: '/science-fest-2026'
-      fullPath: '/science-fest-2026'
-      preLoaderRoute: typeof ScienceFest2026RouteImport
+    '/team': {
+      id: '/team'
+      path: '/team'
+      fullPath: '/team'
+      preLoaderRoute: typeof TeamRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/sitemap.xml': {
@@ -300,18 +290,88 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof SitemapDotxmlRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/team': {
-      id: '/team'
-      path: '/team'
-      fullPath: '/team'
-      preLoaderRoute: typeof TeamRouteImport
+    '/science-fest-2026': {
+      id: '/science-fest-2026'
+      path: '/science-fest-2026'
+      fullPath: '/science-fest-2026'
+      preLoaderRoute: typeof ScienceFest2026RouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/bootcamp/python': {
-      id: '/bootcamp/python'
-      path: '/bootcamp/python'
-      fullPath: '/bootcamp/python'
-      preLoaderRoute: typeof BootcampPythonRouteImport
+    '/resources': {
+      id: '/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/research': {
+      id: '/research'
+      path: '/research'
+      fullPath: '/research'
+      preLoaderRoute: typeof ResearchRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/gallery': {
+      id: '/gallery'
+      path: '/gallery'
+      fullPath: '/gallery'
+      preLoaderRoute: typeof GalleryRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/events': {
+      id: '/events'
+      path: '/events'
+      fullPath: '/events'
+      preLoaderRoute: typeof EventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/contact': {
+      id: '/contact'
+      path: '/contact'
+      fullPath: '/contact'
+      preLoaderRoute: typeof ContactRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/certificate': {
+      id: '/certificate'
+      path: '/certificate'
+      fullPath: '/certificate'
+      preLoaderRoute: typeof CertificateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bootcamps': {
+      id: '/bootcamps'
+      path: '/bootcamps'
+      fullPath: '/bootcamps'
+      preLoaderRoute: typeof BootcampsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/activities': {
+      id: '/activities'
+      path: '/activities'
+      fullPath: '/activities'
+      preLoaderRoute: typeof ActivitiesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/about': {
+      id: '/about'
+      path: '/about'
+      fullPath: '/about'
+      preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/verify/': {
+      id: '/verify/'
+      path: '/verify'
+      fullPath: '/verify/'
+      preLoaderRoute: typeof VerifyIndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/events/': {
@@ -321,12 +381,33 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof EventsIndexRouteImport
       parentRoute: typeof EventsRoute
     }
+    '/verify/$certId': {
+      id: '/verify/$certId'
+      path: '/verify/$certId'
+      fullPath: '/verify/$certId'
+      preLoaderRoute: typeof VerifyCertIdRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/events/science-fair-2025': {
       id: '/events/science-fair-2025'
       path: '/science-fair-2025'
       fullPath: '/events/science-fair-2025'
       preLoaderRoute: typeof EventsScienceFair2025RouteImport
       parentRoute: typeof EventsRoute
+    }
+    '/bootcamp/python': {
+      id: '/bootcamp/python'
+      path: '/bootcamp/python'
+      fullPath: '/bootcamp/python'
+      preLoaderRoute: typeof BootcampPythonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/bootcamp/python_/graduates/b1': {
+      id: '/bootcamp/python_/graduates/b1'
+      path: '/bootcamp/python/graduates/b1'
+      fullPath: '/bootcamp/python/graduates/b1'
+      preLoaderRoute: typeof BootcampPythonGraduatesB1RouteImport
+      parentRoute: typeof rootRouteImport
     }
   }
 }
@@ -349,6 +430,7 @@ const rootRouteChildren: RootRouteChildren = {
   AboutRoute: AboutRoute,
   ActivitiesRoute: ActivitiesRoute,
   BootcampsRoute: BootcampsRoute,
+  CertificateRoute: CertificateRoute,
   ContactRoute: ContactRoute,
   EventsRoute: EventsRouteWithChildren,
   GalleryRoute: GalleryRoute,
@@ -358,6 +440,9 @@ const rootRouteChildren: RootRouteChildren = {
   SitemapDotxmlRoute: SitemapDotxmlRoute,
   TeamRoute: TeamRoute,
   BootcampPythonRoute: BootcampPythonRoute,
+  VerifyCertIdRoute: VerifyCertIdRoute,
+  VerifyIndexRoute: VerifyIndexRoute,
+  BootcampPythonGraduatesB1Route: BootcampPythonGraduatesB1Route,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
